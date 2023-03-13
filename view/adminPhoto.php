@@ -35,7 +35,7 @@ include("view/_partials/adminPanel.php");
                     <div class="form-group">
                         <label  class="col-lg-2 control-label">Photo</label>
                         <div class="col-lg-10">
-                            <input type="file" class="filestyle" data-classbutton="btn btn-default btn-lg" data-input="false" id="filestyle-0" tabindex="-1" style="position: fixed; left: -500px;"><div class="bootstrap-filestyle input-group"><input type="text" class="form-control " disabled="" placeholder="Choose file"> <span class="input-group-btn" tabindex="0">  <label for="filestyle-0" class="btn btn-default btn-lg">    <span class="glyphicon glyphicon-folder-open"></span>   </label></span></div>
+                            <input type="file" class="filestyle" data-classbutton="btn btn-default btn-lg" data-input="false" id="filestyle-0" tabindex="-1" style="position: fixed; left: -500px;"><div class="bootstrap-filestyle input-group"><input type="text" class="form-control " disabled="" placeholder="Choose file"> <span class="input-group-btn" tabindex="0">  <label for="filestyle-0" class="btn btn-default btn-lg">    <span class="fa-solid fa-folder-open"></span>   </label></span></div>
                         </div>
                     </div>
                 </form>
