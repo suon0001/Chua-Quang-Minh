@@ -8,7 +8,7 @@ require $rootPath . "controller/ArticleController.php";
 
 <div class="container-fluid">
     <?php
-    while ($row = $ArticleResult->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $allActicles->fetch(PDO::FETCH_ASSOC)) {
     ?>
 
     <div class="row">
