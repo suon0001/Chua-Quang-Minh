@@ -4,7 +4,6 @@ include("view/_partials/adminPanel.php");
 
 ?>
 
-<h2 class="title">Profile<span class="pro-label label label-warning">PRO</span></h2>
 <form class="form-horizontal">
     <fieldset class="fieldset">
         <h3 class="fieldset-title">Personal Info</h3>
