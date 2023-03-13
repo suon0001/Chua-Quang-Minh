@@ -15,6 +15,8 @@ if (isset($parsedRequest[0])) {
     $toCheck = $urlpath;
 }
 
+$isAdmin = isset($_SESSION['userID']);
+
 $view = match ($toCheck) {
     '' => '/view/home.php',
     '/' => '/view/home.php',
@@ -24,9 +26,24 @@ $view = match ($toCheck) {
     '/photo' => '/view/photo.php',
     '/contact' => '/view/contact.php',
     '/article' => '/view/article.php',
-    '/addArticle' => '/view/addArticle.php',
+    '/login' => '/view/login.php',
+
+//admin
+
+    '/admin-panel' => '/view/adminPanel.php',
+    '/admin-profile' => '/view/adminProfile.php',
+    '/add-article' => '/view/addArticle.php',
+
+
     default => null
 };
+
+if ($view == null && $isAdmin) {
+    $view = match ($toCheck) {
+
+        default => null
+    };
+}
 
 if ($view !== null) {
     require __DIR__ . $view;

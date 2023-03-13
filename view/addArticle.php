@@ -6,8 +6,15 @@ require $rootPath . "controller/AddArticleController.php";
 
 ?>
 
+<?php
+
+include("view/_partials/adminPanel.php");
+
+?>
+
 <div class="container-fluid">
-    <h1>Article</h1>
+    <h3>Article</h3>
+    <hr>
     <div class="row">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -27,12 +34,8 @@ require $rootPath . "controller/AddArticleController.php";
                 </div>
                 <div class="col-xs-5 col-md-3">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-default">Save Draft</button>
-                        <button type="submit" class="btn btn-primary">Publish</button>
-                    </div>
-                    <div class="form-group">
                         <label for="created">Created</label>
-                        <input type="text" class="form-control" id="created" placeholder="<?php echo date("Y/m/d");?>">
+                        <input type="text" class="form-control" id="created" placeholder="<?php echo date("Y/m/d"); ?>">
                     </div>
                     <div class="form-group">
                         <label for="category_id">Category</label>
@@ -57,17 +60,13 @@ require $rootPath . "controller/AddArticleController.php";
                         <div class="form-group">
                             <label for="image">Image</label>
                             <input type="file" name="image" id="image" class="form-control"/>
-                            <p class="help-block">Image definitions</p>
                         </div>
-                        <a href="#" class="thumbnail">
-                            <img src="http://fakeimg.pl/300/">
-                        </a>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Save Draft</button>
+                            <button type="submit" class="btn btn-primary">Publish</button>
+                        </div>
                     </div>
                 </div>
         </form>
     </div>
 </div>
-
-<style>
-    <?php include 'styles/index.css'; ?>
-</style>
