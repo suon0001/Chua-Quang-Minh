@@ -46,6 +46,15 @@ CREATE TABLE Event
     year        INT(4)
 ) ENGINE = InnoDB;
 
+CREATE TABLE Mail
+(
+    mailID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    firstName VARCHAR(255),
+    lastName VARCHAR(255),
+    email VARCHAR(255),
+    mailSubject VARCHAR(255),
+    message TEXT
+) ENGINE = InnoDB;
 
 CREATE TABLE Admin
 (

@@ -1,11 +1,20 @@
 <?php
 
+require("rootPath.php");
+
+require $rootPath . "model/ContactModel.php";
+require $rootPath . "controller/ContactController.php";
+
+
 include("view/_partials/adminPanel.php");
 
 ?>
 
 <table class="table table-hover mails">
     <tbody>
+    <?php
+    foreach ($showAllMails as $row) {
+    ?>
     <tr>
         <td class="mail-select">
             <label class="cr-styled">
@@ -16,409 +25,25 @@ include("view/_partials/adminPanel.php");
             <i class="fa fa-star"></i>
         </td>
         <td>
-            <a href="##email-read.html">Google Inc</a>
+            <a href="/mail?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?>  <?php echo $row['lastName']; ?></a>
+            <p> <?php echo $row['mailSubject']; ?></p>
         </td>
         <td>
-            <a href="##email-read.html"><i class="fa fa-circle text-info m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
+            <a href="##email-read.html"><i class="fa fa-circle text-info m-r-15"></i> <?php echo $row['message']; ?></a>
         </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
+
         <td class="text-right">
             07:23 AM
         </td>
-    </tr>
-
-    <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="##email-read.html">John Deo</a>
-        </td>
-        <td>
-            <a href="##email-read.html"><i class="fa fa-circle text-success m-r-15"></i>Hi Bro, How are you?</a>
-        </td>
-        <td>
-
-        </td>
         <td class="text-right">
-            07:03 AM
+            delete
         </td>
     </tr>
+        <?php
+    } ?>
 
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Manager</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-purple m-r-15"></i>Dolor sit amet, consectetuer adipiscing</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            03:00 AM
-        </td>
-    </tr>
 
-    <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Manager</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-warning m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            22 Feb
-        </td>
-    </tr>
 
-    <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Facebook</a>
-        </td>
-        <td>
-            <a href="#email-read.html">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-
-        </td>
-        <td class="text-right">
-            22 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Google Inc</a>
-        </td>
-        <td>
-            <a href="#email-read.html">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-
-        </td>
-        <td class="text-right">
-            21 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Twitter Inc</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-info m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            21 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Jonaly Smith</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-pink m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            19 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Google Inc</a>
-        </td>
-        <td>
-            <a href="#email-read.html">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            19 Feb
-        </td>
-    </tr>
-
-    <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Google Inc</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-info m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            19 Feb
-        </td>
-    </tr>
-
-    <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">John Deo</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-success m-r-15"></i>Hi Bro, How are you?</a>
-        </td>
-        <td>
-
-        </td>
-        <td class="text-right">
-            18 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Manager</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-purple m-r-15"></i>Dolor sit amet, consectetuer adipiscing</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            18 Feb
-        </td>
-    </tr>
-
-    <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Manager</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-warning m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            15 Feb
-        </td>
-    </tr>
-
-    <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Facebook</a>
-        </td>
-        <td>
-            <a href="#email-read.html">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-
-        </td>
-        <td class="text-right">
-            15 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star text-warning"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Google Inc</a>
-        </td>
-        <td>
-            <a href="#email-read.html">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-
-        </td>
-        <td class="text-right">
-            14 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Twitter Inc</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-info m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            12 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Jonaly Smith</a>
-        </td>
-        <td>
-            <a href="#email-read.html"><i class="fa fa-circle text-pink m-r-15"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            12 Feb
-        </td>
-    </tr>
-
-    <tr class="active">
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
-        <td class="mail-rateing">
-            <i class="fa fa-star"></i>
-        </td>
-        <td>
-            <a href="#email-read.html">Google Inc</a>
-        </td>
-        <td>
-            <a href="#email-read.html">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a>
-        </td>
-        <td>
-            <i class="fa fa-paperclip"></i>
-        </td>
-        <td class="text-right">
-            10 Feb
-        </td>
-    </tr>
 
     </tbody>
 </table>

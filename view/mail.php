@@ -1,5 +1,11 @@
 <?php
 
+require("rootPath.php");
+
+require $rootPath . "model/MailModel.php";
+require $rootPath . "controller/MailController.php";
+
+
 include("view/_partials/adminPanel.php");
 
 ?>
