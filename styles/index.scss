@@ -1,0 +1,52 @@
+@import "variables";
+@import "photo";
+@import "contact";
+@import "news";
+@import "event";
+
+.carousel .carousel-item {
+    height: 35rem;
+}
+
+.carousel-deco {
+    background-color: $primary;
+    padding: 10px;
+}
+
+.img-fluid-small{
+    float: left;
+    width:  5rem;
+    height: 4rem;
+    object-fit: cover;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.timeDate {
+    font-size: 14px;
+    color: #777;
+}
+
+.blog .image img {
+    width: 100%;
+}
+
+//article
+.bg-image {
+    height: 30rem;
+    object-fit: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.media div.media-img img {
+    height: auto;
+    transform: scale(1, 1);
+    transition-duration: 2000ms;
+    transition-timing-function: ease-out;
+    width: 100%;
+    justify-content: center;
+}
