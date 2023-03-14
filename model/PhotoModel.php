@@ -11,12 +11,14 @@ if (isset($_GET["skip"])) {
     $skip = 0;
 }
 
-$firstPageQuery = "SELECT * FROM photo LIMIT $limit";
-$currentPagePhotoQuery = "SELECT * FROM photo ORDER BY photoID ASC";
-$pageCountQuery = "SELECT * FROM photo";
+$firstPageQuery = "SELECT * FROM Photo LIMIT $limit";
+$currentPagePhotoQuery = "SELECT * FROM Photo ORDER BY photoID ASC";
+$pageCountQuery = "SELECT * FROM Photo";
 
 
 class PhotoModel
 {
+    public $insertPhoto = "INSERT INTO Photo (`alt`, `photo`, `month`, `year`) 
+                VALUES (:alt, :photo, MONTH(CURRENT_TIMESTAMP), YEAR(CURRENT_TIMESTAMP))";
 }
 $PhotoModel = new PhotoModel();

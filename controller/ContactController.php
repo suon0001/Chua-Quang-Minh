@@ -42,4 +42,10 @@ if (isset($_POST['send_email'])) {
 //display mail
 $showAllMails = $conn->query($ContactModel->showMails);
 
-
+//delete mail
+if (isset($_REQUEST['del'])) {
+    $setMail = $_REQUEST['mailID'];
+    $handle = $conn->prepare($ContactModel->deleteMail);
+    $handle->execute(array(":mailID" => $setMail));
+    header("Location:admin-mail");
+}

@@ -53,7 +53,8 @@ CREATE TABLE Mail
     lastName VARCHAR(255),
     email VARCHAR(255),
     mailSubject VARCHAR(255),
-    message TEXT
+    message TEXT,
+    timestamp TIMESTAMP
 ) ENGINE = InnoDB;
 
 CREATE TABLE Admin

@@ -21,7 +21,7 @@ require $rootPath . "controller/PhotoController.php";
             <div class="col-12 col-sm-6 col-lg-3 mt-4">
                 <form method="post" action="/photo?action=photos&photoID=&photoID=<?php echo $row['photoID'] ?>"
                       target="photo">
-                    <img class="img-fluid img-thumbnail" src="/Chua/assets/<?php echo $row['photo'] ?>"
+                    <img class="img-fluid img-thumbnail" src="assets/<?php echo $row['photo'] ?>"
                          style="height: 100%" alt="" onclick="openModal();currentSlide(<?php echo $i; ?>)"
                          class="hover-shadow">
                 </form>
@@ -39,7 +39,7 @@ require $rootPath . "controller/PhotoController.php";
         foreach ($photoResult as $row) { ?>
             <div class="mySlides">
                 <div class="numbertext"><?php echo $row['photoID'] ?> / 8</div>
-                <img src="/Chua/assets/<?php echo $row['photo'] ?>" style="width:100%">
+                <img src="assets/<?php echo $row['photo'] ?>" style="width:100%">
             </div>
             <?php $i++;
         } ?>

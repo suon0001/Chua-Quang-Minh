@@ -32,7 +32,7 @@ if (isset($_POST['productAdd'])) {
 
             $addArticleResult = $addArticle->execute();
             $conn->commit();
-            header("Location:admin-product");
+            header("Location:admin-profile");
         } catch (Exception $err) {
             echo $err;
             $errorTransaction = true;

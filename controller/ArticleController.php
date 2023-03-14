@@ -1,4 +1,4 @@
 <?php
-$ArticleResult = $conn->query($getArticle);
+$articleResult = $conn->query($getArticle);
 
 $allActicles = $conn->query($ArticleModel->allArticles);

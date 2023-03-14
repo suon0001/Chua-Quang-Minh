@@ -42,3 +42,47 @@ if (isset($_GET["action"])) {
     }
 }
 
+
+
+//add photo
+if (isset($_POST['submitPhoto'])) {
+    $alt = $sanitized['alt'];
+    $photo = $_FILES["photo"]["name"];
+
+    if (!empty($alt) && !empty($photo))
+
+        $filename = strtolower($photo);
+
+    if ($_FILES['photo']['name']) {
+        move_uploaded_file(
+            $_FILES['photo']['tmp_name'],
+            "assets/" . $filename
+        );
+    }
+    try {
+        $conn->beginTransaction();
+        $addPhoto = $conn->prepare($PhotoModel->insertPhoto);
+        $addPhoto->bindParam(':alt', $alt, PDO::PARAM_STR);
+        $addPhoto->bindParam(':photo', $photo, PDO::PARAM_STR);
+
+        $addPhotoResult = $addPhoto->execute();
+        $conn->commit();
+        header("Location:admin-profile");
+
+
+    } catch (Exception $err) {
+        echo $err;
+        $errorTransaction = true;
+        $conn->rollback();
+    }
+
+}
+
+
+
+
+
+
+
+
+

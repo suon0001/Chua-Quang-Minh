@@ -85,7 +85,7 @@ require $rootPath . "controller/HomeController.php";
                                         <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                             <div class="row mb-4 border-bottom pb-2">
                                                 <div class="col-3">
-                                                    <img src="/Chua/assets/<?php echo $row['photo'] ?>"
+                                                    <img src="assets/<?php echo $row['photo'] ?>"
                                                          class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
                                                          alt="<?php echo $row['photo'] ?>"/>
                                                 </div>
@@ -136,7 +136,7 @@ require $rootPath . "controller/HomeController.php";
                                         <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                             <div class="row mb-4 border-bottom pb-2">
                                                 <div class="col-3">
-                                                    <img src="/Chua/assets/<?php echo $row['photo'] ?>"
+                                                    <img src="assets/<?php echo $row['photo'] ?>"
                                                          class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
                                                          alt="<?php echo $row['photo'] ?>"/>
                                                 </div>
@@ -187,7 +187,7 @@ require $rootPath . "controller/HomeController.php";
                                         <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                             <div class="row mb-4 border-bottom pb-2">
                                                 <div class="col-3">
-                                                    <img src="/Chua/assets/<?php echo $row['photo'] ?>"
+                                                    <img src="assets/<?php echo $row['photo'] ?>"
                                                          class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
                                                          alt="<?php echo $row['photo'] ?>"/>
                                                 </div>
