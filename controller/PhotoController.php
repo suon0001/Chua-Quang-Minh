@@ -78,7 +78,13 @@ if (isset($_POST['submitPhoto'])) {
 
 }
 
-
+//delete photo
+if (isset($_REQUEST['del'])) {
+    $setPhoto = $_REQUEST['photoID'];
+    $handle = $conn->prepare($PhotoModel->deletePhoto);
+    $handle->execute(array(":photoID" => $setPhoto));
+    header("Location:admin-photo");
+}
 
 
 

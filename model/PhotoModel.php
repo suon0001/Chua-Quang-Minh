@@ -20,5 +20,7 @@ class PhotoModel
 {
     public $insertPhoto = "INSERT INTO Photo (`alt`, `photo`, `month`, `year`) 
                 VALUES (:alt, :photo, MONTH(CURRENT_TIMESTAMP), YEAR(CURRENT_TIMESTAMP))";
+
+    public $deletePhoto = "DELETE FROM Photo WHERE photoID = :photoID";
 }
 $PhotoModel = new PhotoModel();
