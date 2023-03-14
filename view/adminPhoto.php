@@ -19,8 +19,7 @@ include("view/_partials/adminPanel.php");
 
     <div class="input-group mb-3">
         <div class="custom-file">
-            <input type="file" name="photo" class="custom-file-input" id="inputGroupFile02"/>
-            <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+            <input type="file" name="photo" id="image" class="form-control"/>
         </div>
         <div class="input-group-append">
             <button type="submit" name="submitPhoto" class="btn btn-primary"><i class="bi bi-save"></i> <span

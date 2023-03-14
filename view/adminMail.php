@@ -38,7 +38,8 @@ include("view/_partials/adminPanel.php");
             <i class="fa fa-star"></i>
         </td>
         <td>
-            <a href="/mail?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?><?php echo $row['lastName']; ?></a>
+            <a href="/mail?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?>
+                <?php echo $row['lastName']; ?></a>
 
         </td>
         <td>
@@ -50,7 +51,23 @@ include("view/_partials/adminPanel.php");
             <?php echo $row['timestamp']; ?>
         </td>
         <td>
-            <a href="/admin-mail.php?del=1&mailID=<?= $row["mailID"] ?>">Delete</a>
+            <div class="" onclick="openModal()">Delete</div>
+            <div id="myModal" class="modal">
+
+                <div class="delete-mail container bg-white">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><?php echo $row['mailSubject']; ?></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this mail?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="closeModal()">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a
+                                    href="/admin-mail.php?del=1&mailID=<?= $row["mailID"] ?>">Delete</a></button>
+                    </div>
+                </div>
+            </div>
         </td>
     </tr>
     </form>
@@ -59,3 +76,13 @@ include("view/_partials/adminPanel.php");
 
     </tbody>
 </table>
+
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+</script>

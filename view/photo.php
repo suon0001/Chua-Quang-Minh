@@ -33,20 +33,22 @@ require $rootPath . "controller/PhotoController.php";
 
 <div id="myModal" class="modal">
     <span class="close cursor" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <?php
-        $i = 1;
-        foreach ($photoResult as $row) { ?>
-            <div class="mySlides">
-                <div class="numbertext"><?php echo $row['photoID'] ?> / 8</div>
-                <img src="assets/<?php echo $row['photo'] ?>" style="width:100%">
-            </div>
-            <?php $i++;
-        } ?>
-        <!-- Next/previous controls -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="gallery-modal container">
+        <div class="modal-content">
+            <?php
+            $i = 1;
+            foreach ($photoResult as $row) { ?>
+                <div class="mySlides">
+                    <div class="numbertext"><?php echo $row['photoID'] ?> / 8</div>
+                    <img src="assets/<?php echo $row['photo'] ?>" style="width:100%">
+                </div>
+                <?php $i++;
+            } ?>
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
+        </div>
     </div>
 </div>
 <br>

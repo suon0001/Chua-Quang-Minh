@@ -1106,4 +1106,8 @@ a {
   justify-content: center;
 }
 
+.delete-mail .gallery-modal {
+  width: 1300px;
+}
+
 /*# sourceMappingURL=index.css.map */
