@@ -20,7 +20,6 @@ include("view/_partials/adminPanel.php");
     <form method="post" action="">
     <thead>
     <tr>
-        <th scope="col">#</th>
         <th scope="col">star</th>
         <th scope="col">Name</th>
         <th scope="col">Subject</th>
@@ -29,11 +28,6 @@ include("view/_partials/adminPanel.php");
     </tr>
     </thead>
     <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
         <td class="mail-rateing">
             <i class="fa fa-star"></i>
         </td>
@@ -53,7 +47,6 @@ include("view/_partials/adminPanel.php");
         <td>
             <div class="" onclick="openModal()">Delete</div>
             <div id="myModal" class="modal">
-
                 <div class="delete-mail container bg-white">
                     <div class="modal-header">
                         <h4 class="modal-title"><?php echo $row['mailSubject']; ?></h4>

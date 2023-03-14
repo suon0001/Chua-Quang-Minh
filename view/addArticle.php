@@ -1,16 +1,13 @@
 <?php
 require("rootPath.php");
 
-require $rootPath . "model/AddArticleModel.php";
-require $rootPath . "controller/AddArticleController.php";
-
-?>
-
-<?php
+require $rootPath . "model/ArticleModel.php";
+require $rootPath . "controller/ArticleController.php";
 
 include("view/_partials/adminPanel.php");
 
 ?>
+
 
 <div class="container-fluid">
     <h3>Article</h3>
@@ -19,51 +16,49 @@ include("view/_partials/adminPanel.php");
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Title">
+                <input type="text" name="title" class="form-control" id="title" placeholder="Title">
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-7 col-md-9">
                     <div class="form-group">
+                        <label for="title">Author</label>
+                        <input type="text" name="author" class="form-control" id="author" placeholder="Author">
+                    </div>
+                    <div class="form-group">
                         <label for="title">Description</label>
-                        <textarea class="form-control" id="textAreaExample1" rows="4"></textarea>
+                        <textarea class="form-control" name="description" id="textAreaExample1" rows="4"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="title">Paragraph</label>
-                        <textarea class="form-control" id="textAreaExample1" rows="20"></textarea>
+                        <textarea class="form-control" name="paragraph" id="textAreaExample1" rows="20"></textarea>
                     </div>
                 </div>
                 <div class="col-xs-5 col-md-3">
                     <div class="form-group">
-                        <label for="created">Created</label>
-                        <input type="text" class="form-control" id="created" placeholder="<?php echo date("Y/m/d"); ?>">
-                    </div>
-                    <div class="form-group">
                         <label for="category_id">Category</label>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">
-                                Category 1
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">
-                                Category 2
-                            </label>
+                        <?php
+                        while ($row = $newsOption->fetch(PDO::FETCH_ASSOC)) { ?>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="newsTypeID" value="<?php echo $row["newsTypeID"]; ?>">
+                                    <?php echo $row['typeName'] ?>
+                                </label>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                        <div class="form-group">
+                            <select type="category" name="photoID" class="form-control" required>
+                                <?php
+                                while ($row = $imageOption->fetch(PDO::FETCH_ASSOC)) { ?>
+                                    <option value="<?php echo $row["photoID"]; ?>"><?php echo $row["alt"]; ?><img
+                                                src="<?php echo $row["photo"]; ?>" alt=""></option>
+                                <?php  } ?>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="metakeywords">Metakeywords</label>
-                            <textarea placeholder="Metakeywords" name="metakeywords" class="form-control"
-                                      rows="2"></textarea>
-                            <p class="help-block">Separe the words with comma</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="image">Image</label>
-                            <input type="file" name="image" id="image" class="form-control"/>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-default">Save Draft</button>
-                            <button type="submit" class="btn btn-primary">Publish</button>
+                            <button type="submit" name="save" class="btn btn-primary">Save Draft</button>
+                            <button type="submit" name="publish" class="btn btn-primary">Publish</button>
                         </div>
                     </div>
                 </div>

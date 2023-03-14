@@ -67,7 +67,7 @@ if (isset($_POST['submitPhoto'])) {
 
         $addPhotoResult = $addPhoto->execute();
         $conn->commit();
-        header("Location:admin-profile");
+        header("Location:admin-photo");
 
 
     } catch (Exception $err) {
@@ -83,6 +83,7 @@ if (isset($_REQUEST['del'])) {
     $setPhoto = $_REQUEST['photoID'];
     $handle = $conn->prepare($PhotoModel->deletePhoto);
     $handle->execute(array(":photoID" => $setPhoto));
+    //unlink($filename);
     header("Location:admin-photo");
 }
 

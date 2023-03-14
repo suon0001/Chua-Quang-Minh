@@ -18,9 +18,9 @@ if (isset($_GET["newsTypeID"])) {
 } else {
     $newsTypeID = null;
 }
-$firstPageBlogsQuery = "SELECT * FROM NewsOrderbyType LIMIT $limit";
-$insertAllNews = "SELECT * FROM NewsOrderbyType";
-$pageCountQuery = "SELECT * FROM NewsOrderbyType";
+$firstPageBlogsQuery = "SELECT * FROM NewsOrderbyType WHERE saveDraft = 1 LIMIT $limit";
+$insertAllNews = "SELECT * FROM NewsOrderbyType WHERE saveDraft = 1";
+$pageCountQuery = "SELECT * FROM NewsOrderbyType WHERE saveDraft = 1";
 
 class NewsModel
 {
