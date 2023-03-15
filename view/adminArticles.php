@@ -18,8 +18,8 @@ include("view/_partials/adminPanel.php");
                         <tr>
                             <th><span>Title</span></th>
                             <th><span>Author</span></th>
-                            <th class="text-center"><span>Created</span></th>
-                            <th><span>Draft</span></th>
+                            <th class="text-center"><span>Updated</span></th>
+                            <th><span>Status</span></th>
                             <th>&nbsp;</th>
                         </tr>
                         </thead>
@@ -39,7 +39,9 @@ include("view/_partials/adminPanel.php");
                                     <span class="label label-default"><?php echo $row['timeUpdated'] ?></span>
                                 </td>
                                 <td>
-                                    <a href="#"><?php echo $row['saveDraft'] ?></a>
+                                    <p>
+                                        <?php echo $row['saveDraft'] ? 'Publish' : 'Draft'; ?>
+                                    </p>
                                 </td>
                                 <td style="width: 12%;">
                                     <a href="/edit-article?newsID=<?php echo $row['newsID']; ?>" class="table-link">
@@ -48,7 +50,8 @@ include("view/_partials/adminPanel.php");
 										<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 									</span>
                                     </a>
-                                    <a href="/admin-article.php?del=1&newsID=<?= $row["newsID"] ?>" class="table-link danger">
+                                    <a href="/admin-article.php?del=1&newsID=<?= $row["newsID"] ?>"
+                                       class="table-link danger">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

@@ -12,7 +12,7 @@ function sanitize($input)
     $input = trim($input);
     $input = stripslashes($input);
     $input = htmlspecialchars($input);
-    $input = nl2br($input);
+    $input = str_replace("\n", "", $input);
 
     return $input;
 }
