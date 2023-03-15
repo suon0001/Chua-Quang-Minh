@@ -1,45 +1,56 @@
 <?php
+require("rootPath.php");
+
+require $rootPath . "model/PhotoModel.php";
+require $rootPath . "controller/PhotoController.php";
 
 include("view/_partials/adminPanel.php");
 
 ?>
-<div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-        <div class="tab-content">
-            <div class="tab-pane active" id="basic">
-                <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="inputfullname" class="col-lg-2 control-label">First Name</label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" id="inputfullname" placeholder="First Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputlastname" class="col-lg-2 control-label">Last Name</label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" id="inputlastname" placeholder="Last Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputemail" class="col-lg-2 control-label">Email</label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" id="inputemail" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputpassword" class="col-lg-2 control-label">Password</label>
-                        <div class="col-lg-10">
-                            <input type="password" class="form-control" id="inputpassword" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-lg-2 control-label">Photo</label>
-                        <div class="col-lg-10">
-                            <input type="file" class="filestyle" data-classbutton="btn btn-default btn-lg" data-input="false" id="filestyle-0" tabindex="-1" style="position: fixed; left: -500px;"><div class="bootstrap-filestyle input-group"><input type="text" class="form-control " disabled="" placeholder="Choose file"> <span class="input-group-btn" tabindex="0">  <label for="filestyle-0" class="btn btn-default btn-lg">    <span class="fa-solid fa-folder-open"></span>   </label></span></div>
-                        </div>
-                    </div>
-                </form>
+<form action="#" enctype="multipart/form-data" method="post">
+    <div class="row align-self-center">
+        <div class="col-md-4 mb-4 col align-self-center">
+            <div class="form-outline">
+                <label>Alt</label>
+                <input type="alt" name="alt" value="" class="form-control" required />
             </div>
         </div>
     </div>
+
+    <div class="input-group mb-3">
+        <div class="custom-file">
+            <input type="file" name="photo" id="image" class="form-control"/>
+        </div>
+        <div class="input-group-append">
+            <button type="submit" name="submitPhoto" class="btn btn-primary"><i class="bi bi-save"></i> <span
+                        class="text">Upload</span></button>
+        </div>
+    </div>
+</form>
+
+<div class="card">
+    <div class="container">
+        <div class="row">
+            <?php
+            foreach ($photoResult as $row) { ?>
+            <div class="col-sm-6 col-lg-3 mb-2-6">
+                <div class="card-wrapper mb-4">
+                    <div><img class="card-img-admin" src="assets/gallery/<?php echo $row['photo'] ?>" alt="<?php echo $row['alt'] ?>"></div>
+                    <div class="card-body">
+                        <div>
+                            <a href="/admin-photo.php?del=1&photoID=<?= $row["photoID"] ?>"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <?php
+            } ?>
+        </div>
+    </div>
 </div>
+
+<style>
+    <?php include 'styles/adminPhoto.scss'; ?>
+
+</style>
+

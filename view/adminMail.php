@@ -13,154 +13,69 @@ include("view/_partials/adminPanel.php");
 <table class="table table-hover mails">
     <tbody>
     <?php
-    foreach ($showAllMails as $row) {
+    foreach ($showAllMails
+
+    as $row) {
     ?>
+    <form method="post" action="">
+    <thead>
     <tr>
-        <td class="mail-select">
-            <label class="cr-styled">
-                <input type="checkbox"><i class="fa"></i>
-            </label>
-        </td>
+        <th scope="col">star</th>
+        <th scope="col">Name</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Time</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tr>
         <td class="mail-rateing">
             <i class="fa fa-star"></i>
         </td>
         <td>
-            <a href="/mail?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?>  <?php echo $row['lastName']; ?></a>
-            <p> <?php echo $row['mailSubject']; ?></p>
+            <a href="/mail?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?>
+                <?php echo $row['lastName']; ?></a>
+
         </td>
         <td>
-            <a href="##email-read.html"><i class="fa fa-circle text-info m-r-15"></i> <?php echo $row['message']; ?></a>
+            <a href="##email-read.html"><p class="block text-truncate"> <?php echo $row['mailSubject']; ?></p>
+            </a>
         </td>
 
-        <td class="text-right">
-            07:23 AM
+        <td>
+            <?php echo $row['timestamp']; ?>
         </td>
-        <td class="text-right">
-            delete
+        <td>
+            <div class="" onclick="openModal()">Delete</div>
+            <div id="myModal" class="modal">
+                <div class="delete-mail container bg-white">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><?php echo $row['mailSubject']; ?></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this mail?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="closeModal()">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><a
+                                    href="/admin-mail.php?del=1&mailID=<?= $row["mailID"] ?>">Delete</a></button>
+                    </div>
+                </div>
+            </div>
         </td>
     </tr>
-        <?php
+    </form>
+    <?php
     } ?>
-
-
-
 
     </tbody>
 </table>
 
-<style>
-    .text-danger {
-        color: #cb2a2a;
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
     }
 
-    .text-muted {
-        color: #98a6ad;
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
     }
-
-    .text-primary {
-        color: #3bc0c3;
-    }
-
-    .text-warning {
-        color: #ebc142;
-    }
-
-    .text-success {
-        color: #33b86c;
-    }
-
-    .text-info {
-        color: #1ca8dd;
-    }
-
-    .text-inverse {
-        color: #14082d;
-    }
-
-    .text-pink {
-        color: #F13C6E;
-    }
-    .text-purple {
-        color: #615ca8;
-    }
-    /* text-color */
-    .text-dark {
-        color: #797979;
-    }
-
-
-    .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-        background-color: #ddd;
-        border-color: #ddd;
-        color: #444;
-        z-index: 2;
-    }
-
-    .list-group-item,.list-group-item:first-child ,.list-group-item:last-child  {
-        border-radius: 0px;
-        padding: 12px 20px;
-    }
-
-    .list-group-item-heading {
-        font-weight: 300;
-    }
-    .list-group-item.active>.badge, .nav-pills>.active>a>.badge {
-        color: #3bc0c3;
-    }
-    .list-group-item.active .list-group-item-text, .list-group-item.active:focus .list-group-item-text, .list-group-item.active:hover .list-group-item-text {
-        color: #3bc0c3;
-    }
-    .m-t-40 {
-        margin-top: 40px !important;
-    }
-    .panel{
-        padding: 20px 30px;
-        border: none;
-        border-top: 1px solid #ddd;
-        margin-bottom: 20px;
-        box-shadow: none;
-    }
-    .panel .panel-body{
-        padding: 0px;
-        padding-top: 20px;
-    }
-    .panel .panel-body p{
-        margin: 0px;
-    }
-    .panel .panel-body p+p {
-        margin-top: 15px;
-    }
-    .panel-default > .panel-heading {
-        background-color: #FFFFFF;
-        border-color: #DDDDDD;
-        color: #797979;
-    }
-    .panel-heading {
-        border-color:#eff2f7 ;
-        font-size: 16px;
-        padding: 0;
-        padding-bottom: 15px;
-    }
-    .panel-title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 0;
-        margin-top: 0;
-    }
-    .panel-footer {
-        margin: 0px -30px -30px;
-        background: #eee;
-        border-top: 0px;
-    }
-    .panel-group .panel .panel-heading {
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
-    .panel-group .panel {
-        margin-bottom: 0;
-        border-radius: 0;
-    }
-    .m-t-20 {
-        margin-top: 20px;
-    }
-</style>
+</script>

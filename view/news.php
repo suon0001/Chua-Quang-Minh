@@ -1,3 +1,4 @@
+
 <?php
 require("rootPath.php");
 
@@ -126,14 +127,14 @@ require $rootPath . "controller/NewsController.php";
                             <p class="m-b-0">Apple Introduces Search Ads Basic</p>
                             <span>jun 22, 2018</span>
                             <div class="img-post">
-                                <img src="assets/image5.jpg" alt="Awesome Image">
+                                <img src="../assets/gallery/image5.jpg" alt="Awesome Image">
                             </div>
                         </div>
                         <div class="single_post">
                             <p class="m-b-0">new rules, more cars, more races</p>
                             <span>jun 8, 2018</span>
                             <div class="img-post">
-                                <img src="assets/image2.jpg" alt="Awesome Image">
+                                <img src="../assets/gallery/image2.jpg" alt="Awesome Image">
                             </div>
                         </div>
                     </div>

@@ -8,14 +8,14 @@ require $rootPath . "controller/ArticleController.php";
 
 <div class="container-fluid">
     <?php
-    while ($row = $allActicles->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $articleResult->fetch(PDO::FETCH_ASSOC)) {
     ?>
 
     <div class="row">
         <div class="col-9">
             <br>
             <div class="bg-image"
-                 style="background-image: url('/Chua/assets/<?php echo $row['photo'] ?>');">
+                 style="background-image: url('assets/banner/<?php echo $row['banner'] ?>');">
             </div>
             <blockquote class="blockquote">
                 <h2 class="mb-0"><?php echo $row['title'] ?></h2>
@@ -41,7 +41,7 @@ require $rootPath . "controller/ArticleController.php";
                     </div>
                     <div class="row">
                         <?php
-                        while ($row = $AllActicles->fetch(PDO::FETCH_ASSOC)) {
+                        while ($row = $allActicles->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                             <div class="row mb-3">
                                 <div class="col-6">
@@ -60,7 +60,7 @@ require $rootPath . "controller/ArticleController.php";
                             <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                 <h4><?php echo $row['title'] ?></h4>
 
-                                <p class="text-truncate"><?php echo $row['paragraph'] ?></p>
+                                <p class="text-truncate"><?php echo $row['description'] ?></p>
                             </a>
 
                             <hr/>

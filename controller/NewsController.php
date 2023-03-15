@@ -53,3 +53,4 @@ if (isset($_GET["action"])) {
         $pageCount = count($pageCountResult);
     }
 }
+

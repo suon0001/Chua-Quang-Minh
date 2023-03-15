@@ -25,7 +25,7 @@ require $rootPath . "controller/HomeController.php";
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="assets/image7.jpg" alt="Second slide">
+                        <img class="d-block w-100" src="../assets/gallery/image7.jpg" alt="Second slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>some text </h5>
                             <p>more text</p>
@@ -33,7 +33,7 @@ require $rootPath . "controller/HomeController.php";
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="assets/image3.jpg" alt="Third slide">
+                        <img class="d-block w-100" src="../assets/gallery/image3.jpg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -85,9 +85,9 @@ require $rootPath . "controller/HomeController.php";
                                         <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                             <div class="row mb-4 border-bottom pb-2">
                                                 <div class="col-3">
-                                                    <img src="/Chua/assets/<?php echo $row['photo'] ?>"
+                                                    <img src="assets/banner/<?php echo $row['banner'] ?>"
                                                          class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
-                                                         alt="<?php echo $row['photo'] ?>"/>
+                                                         alt=""/>
                                                 </div>
 
                                                 <div class="col-9">
@@ -136,9 +136,9 @@ require $rootPath . "controller/HomeController.php";
                                         <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                             <div class="row mb-4 border-bottom pb-2">
                                                 <div class="col-3">
-                                                    <img src="/Chua/assets/<?php echo $row['photo'] ?>"
+                                                    <img src="assets/banner/<?php echo $row['banner'] ?>"
                                                          class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
-                                                         alt="<?php echo $row['photo'] ?>"/>
+                                                         alt=""/>
                                                 </div>
 
                                                 <div class="col-9">
@@ -187,9 +187,9 @@ require $rootPath . "controller/HomeController.php";
                                         <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                             <div class="row mb-4 border-bottom pb-2">
                                                 <div class="col-3">
-                                                    <img src="/Chua/assets/<?php echo $row['photo'] ?>"
+                                                    <img src="assets/banner/<?php echo $row['banner'] ?>"
                                                          class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
-                                                         alt="<?php echo $row['photo'] ?>"/>
+                                                         alt=""/>
                                                 </div>
 
                                                 <div class="col-9">

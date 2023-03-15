@@ -21,7 +21,7 @@ require $rootPath . "controller/PhotoController.php";
             <div class="col-12 col-sm-6 col-lg-3 mt-4">
                 <form method="post" action="/photo?action=photos&photoID=&photoID=<?php echo $row['photoID'] ?>"
                       target="photo">
-                    <img class="img-fluid img-thumbnail" src="/Chua/assets/<?php echo $row['photo'] ?>"
+                    <img class="img-fluid img-thumbnail" src="assets/gallery/<?php echo $row['photo'] ?>"
                          style="height: 100%" alt="" onclick="openModal();currentSlide(<?php echo $i; ?>)"
                          class="hover-shadow">
                 </form>
@@ -33,20 +33,22 @@ require $rootPath . "controller/PhotoController.php";
 
 <div id="myModal" class="modal">
     <span class="close cursor" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <?php
-        $i = 1;
-        foreach ($photoResult as $row) { ?>
-            <div class="mySlides">
-                <div class="numbertext"><?php echo $row['photoID'] ?> / 8</div>
-                <img src="/Chua/assets/<?php echo $row['photo'] ?>" style="width:100%">
-            </div>
-            <?php $i++;
-        } ?>
-        <!-- Next/previous controls -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="gallery-modal container">
+        <div class="modal-content">
+            <?php
+            $i = 1;
+            foreach ($photoResult as $row) { ?>
+                <div class="mySlides">
+                    <div class="numbertext"><?php echo $row['photoID'] ?> / 8</div>
+                    <img src="assets/<?php echo $row['photo'] ?>" style="width:100%">
+                </div>
+                <?php $i++;
+            } ?>
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
+        </div>
     </div>
 </div>
 <br>
@@ -102,49 +104,7 @@ require $rootPath . "controller/PhotoController.php";
 
 
 <script>
-    // Open the Modal
-    function openModal() {
-        document.getElementById("myModal").style.display = "block";
-    }
-
-    // Close the Modal
-    function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-    }
-
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        if (n > slides.length) {
-            slideIndex = 1
-        }
-        if (n < 1) {
-            slideIndex = slides.length
-        }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
-    }
+    <?php include 'javascript/slider.js'; ?>
 </script>
 
 <style>

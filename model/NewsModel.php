@@ -1,3 +1,4 @@
+
 <?php
 
 // set default values
@@ -27,4 +28,3 @@ class NewsModel
     public $newsType = "SELECT * FROM newsType";
 }
 $NewsModel = new NewsModel();
-
