@@ -15,7 +15,7 @@ require $rootPath . "controller/ArticleController.php";
         <div class="col-9">
             <br>
             <div class="bg-image"
-                 style="background-image: url('assets/<?php echo $row['photo'] ?>');">
+                 style="background-image: url('assets/banner/<?php echo $row['banner'] ?>');">
             </div>
             <blockquote class="blockquote">
                 <h2 class="mb-0"><?php echo $row['title'] ?></h2>

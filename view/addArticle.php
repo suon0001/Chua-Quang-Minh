@@ -48,13 +48,9 @@ include("view/_partials/adminPanel.php");
                         }
                         ?>
                         <div class="form-group">
-                            <select type="category" name="photoID" class="form-control" required>
-                                <?php
-                                while ($row = $imageOption->fetch(PDO::FETCH_ASSOC)) { ?>
-                                    <option value="<?php echo $row["photoID"]; ?>"><?php echo $row["alt"]; ?><img
-                                                src="<?php echo $row["photo"]; ?>" alt=""></option>
-                                <?php  } ?>
-                            </select>
+                            <div class="custom-file">
+                                <input type="file" name="banner" id="image" class="form-control"/>
+                            </div>
                         </div>
                         <div class="form-group">
                             <button type="submit" name="save" class="btn btn-primary">Save Draft</button>
@@ -62,6 +58,11 @@ include("view/_partials/adminPanel.php");
                         </div>
                     </div>
                 </div>
+
         </form>
     </div>
 </div>
+
+<script>
+    $("select").imagepicker()
+</script>

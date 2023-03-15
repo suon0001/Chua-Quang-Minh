@@ -21,7 +21,7 @@ require $rootPath . "controller/PhotoController.php";
             <div class="col-12 col-sm-6 col-lg-3 mt-4">
                 <form method="post" action="/photo?action=photos&photoID=&photoID=<?php echo $row['photoID'] ?>"
                       target="photo">
-                    <img class="img-fluid img-thumbnail" src="assets/<?php echo $row['photo'] ?>"
+                    <img class="img-fluid img-thumbnail" src="assets/gallery/<?php echo $row['photo'] ?>"
                          style="height: 100%" alt="" onclick="openModal();currentSlide(<?php echo $i; ?>)"
                          class="hover-shadow">
                 </form>
