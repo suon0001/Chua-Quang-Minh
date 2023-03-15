@@ -1,3 +1,4 @@
+
 <?php
 
 // set default values
@@ -18,13 +19,12 @@ if (isset($_GET["newsTypeID"])) {
 } else {
     $newsTypeID = null;
 }
-$firstPageBlogsQuery = "SELECT * FROM NewsOrderbyType WHERE saveDraft = 1 LIMIT $limit";
-$insertAllNews = "SELECT * FROM NewsOrderbyType WHERE saveDraft = 1";
-$pageCountQuery = "SELECT * FROM NewsOrderbyType WHERE saveDraft = 1";
+$firstPageBlogsQuery = "SELECT * FROM NewsOrderbyType LIMIT $limit";
+$insertAllNews = "SELECT * FROM NewsOrderbyType";
+$pageCountQuery = "SELECT * FROM NewsOrderbyType";
 
 class NewsModel
 {
     public $newsType = "SELECT * FROM newsType";
 }
 $NewsModel = new NewsModel();
-

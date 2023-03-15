@@ -10,7 +10,7 @@ $pageCountResult = $pageCountStmt->fetchAll(PDO::FETCH_ASSOC);
 $pageCount = count($pageCountResult);
 
 //Categories
-$newsTypeResultStmt =  $conn->query($NewsModel->    newsType);
+$newsTypeResultStmt =  $conn->query($NewsModel->newsType);
 $newsTypeResult = $newsTypeResultStmt->fetchAll(PDO::FETCH_ASSOC);
 
 
