@@ -35,6 +35,7 @@ $view = match ($toCheck) {
     '/admin-photo' => '/view/adminPhoto.php',
     '/admin-article' => '/view/adminArticles.php',
     '/add-article' => '/view/addArticle.php',
+    '/edit-article' => '/view/editArticle.php',
     '/admin-mail' => '/view/adminMail.php',
     '/mail' => '/view/mail.php',
 

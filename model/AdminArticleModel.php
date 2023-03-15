@@ -3,7 +3,6 @@
 class AdminArticleModel
 {
     public $newsType = "SELECT * FROM NewsType";
-    public $photoType = "SELECT * FROM Photo";
     public $saveArticle = "INSERT INTO News (title, author, description, paragraph, timeUpdated, saveDraft, banner, newsTypeID)
                           VALUE (:title, :author, :description, :paragraph, CURRENT_TIMESTAMP, false, :banner, :newsTypeID )";
     public $publishArticle = "INSERT INTO News (title, author, description, paragraph, timeUpdated, saveDraft, banner, newsTypeID)

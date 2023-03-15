@@ -1,8 +1,8 @@
 <?php
 require("rootPath.php");
 
-require $rootPath . "model/AdminArticleModel.php";
-require $rootPath . "controller/AdminArticleController.php";
+require $rootPath . "model/ArticleModel.php";
+require $rootPath . "controller/ArticleController.php";
 
 include("view/_partials/adminPanel.php");
 
@@ -13,24 +13,28 @@ include("view/_partials/adminPanel.php");
     <h3>Article</h3>
     <hr>
     <div class="row">
+        <?php
+
+        while ($row = $articleResult->fetch(PDO::FETCH_ASSOC)) { ?>
         <form action="" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="newsID" value="<?php echo $row['newsID']; ?>">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                <input type="text" id="textAreaExample1" name="title" class="form-control" value="<?php echo $row['title']; ?>" required>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-7 col-md-9">
                     <div class="form-group">
                         <label for="title">Author</label>
-                        <input type="text" name="author" class="form-control" id="author" placeholder="Author">
+                        <input type="text" id="textAreaExample1" name="author" class="form-control" value="<?php echo $row['author']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Description</label>
-                        <textarea class="form-control" name="description" id="textAreaExample1" rows="4"></textarea>
+                        <input type="text" id="textAreaExample1" name="description" class="form-control" rows="4" value="<?php echo $row['description']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Paragraph</label>
-                        <textarea class="form-control" name="paragraph" id="textAreaExample1" rows="20"></textarea>
+                        <textarea class="form-control" name="paragraph" id="textAreaExample1" rows="20"><?php echo $row['paragraph']; ?></textarea>
                     </div>
                 </div>
                 <div class="col-xs-5 col-md-3">
@@ -49,7 +53,7 @@ include("view/_partials/adminPanel.php");
                         ?>
                         <div class="form-group">
                             <div class="custom-file">
-                                <input type="file" name="banner" id="image" class="form-control"/>
+                                <input type="file" name="banner" id="image" class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -58,8 +62,7 @@ include("view/_partials/adminPanel.php");
                         </div>
                     </div>
                 </div>
-
+                <?php  } ?>
         </form>
     </div>
 </div>
-
