@@ -57,8 +57,8 @@ include("view/_partials/adminPanel.php");
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="save" class="btn btn-primary">Save Draft</button>
-                            <button type="submit" name="publish" class="btn btn-primary">Publish</button>
+                            <button type="submit" name="editSave" class="btn btn-primary">Save Draft</button>
+                            <button type="submit" name="editPublish" class="btn btn-primary">Publish</button>
                         </div>
                     </div>
                 </div>

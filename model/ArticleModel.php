@@ -9,6 +9,9 @@ class ArticleModel
     public $editSave = " UPDATE News SET `title` = :title, `author` = :author, `description` = :description, `paragraph` = :paragraph, 
                             `timeUpdated` = CURRENT_TIMESTAMP, `saveDraft` = false, `banner` = :banner, `newsTypeID` = :newsTypeID
                             WHERE News.`newsID` = :newsID";
+    public $editPublish = " UPDATE News SET `title` = :title, `author` = :author, `description` = :description, `paragraph` = :paragraph, 
+                            `timeUpdated` = CURRENT_TIMESTAMP, `saveDraft` = true, `banner` = :banner, `newsTypeID` = :newsTypeID
+                            WHERE News.`newsID` = :newsID";
 }
 
 $ArticleModel = new ArticleModel();
