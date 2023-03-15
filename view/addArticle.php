@@ -1,8 +1,8 @@
 <?php
 require("rootPath.php");
 
-require $rootPath . "model/ArticleModel.php";
-require $rootPath . "controller/ArticleController.php";
+require $rootPath . "model/AdminArticleModel.php";
+require $rootPath . "controller/AdminArticleController.php";
 
 include("view/_partials/adminPanel.php");
 

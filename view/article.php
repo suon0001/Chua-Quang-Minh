@@ -60,7 +60,7 @@ require $rootPath . "controller/ArticleController.php";
                             <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                 <h4><?php echo $row['title'] ?></h4>
 
-                                <p class="text-truncate"><?php echo $row['paragraph'] ?></p>
+                                <p class="text-truncate"><?php echo $row['description'] ?></p>
                             </a>
 
                             <hr/>

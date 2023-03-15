@@ -18,10 +18,9 @@ while ($row = $viewMessageResult->fetch(PDO::FETCH_ASSOC)) {
 <div class="mail-view d-none d-md-block col-md-9 col-lg-7 bg-white">
     <div class="message-body">
         <div class="sender-details">
-
             <div class="details">
                 <p class="msg-subject">
-                    Weekly Update - Week 19 (May 8, 2017 - May 14, 2017)
+                    <?php echo $row['mailSubject'] ?>
                 </p>
                 <p class="sender-email">
                     <?php echo $row['firstName'] ?> <?php echo $row['lastName'] ?>
