@@ -1,7 +1,7 @@
 <?php
 $articleResult = $conn->query($getArticle);
 
-$allActicles = $conn->query($ArticleModel->allArticles);
+$allActicles = $conn->query($allArticles);
 
 $newsOption = $conn->query($ArticleModel->newsType);
 
@@ -11,7 +11,7 @@ if (isset($_POST['editSave'])) {
     $title = $sanitized['title'];
     $author = $sanitized['author'];
     $description = $sanitized['description'];
-    $paragraph = $sanitized['paragraph'];
+    $paragraph = trim($_POST['paragraph']);
 
 
     $banner = $_FILES["banner"]["name"];
@@ -57,7 +57,7 @@ if (isset($_POST['editPublish'])) {
     $title = $sanitized['title'];
     $author = $sanitized['author'];
     $description = $sanitized['description'];
-    $paragraph = $sanitized['paragraph'];
+    $paragraph = trim($_POST['paragraph']);
 
 
     $banner = $_FILES["banner"]["name"];

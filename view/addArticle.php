@@ -30,7 +30,8 @@ include("view/_partials/adminPanel.php");
                     </div>
                     <div class="form-group">
                         <label for="title">Paragraph</label>
-                        <textarea class="form-control" name="paragraph" id="textAreaExample1" rows="20"></textarea>
+                        <textarea class="form-control" name="paragraph" id="content" rows="20"></textarea>
+                        <script>CKEDITOR.replace('content');</script>
                     </div>
                 </div>
                 <div class="col-xs-5 col-md-3">
