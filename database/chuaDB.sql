@@ -23,7 +23,7 @@ CREATE TABLE News
     newsID      INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     title       VARCHAR(255),
     author      VARCHAR(255),
-    description VARCHAR(500),
+    description VARCHAR(255),
     paragraph   TEXT,
     timeUpdated TIMESTAMP,
     saveDraft   BOOLEAN,

@@ -26,7 +26,7 @@ include("view/_partials/adminPanel.php");
                     </div>
                     <div class="form-group">
                         <label for="title">Description</label>
-                        <textarea class="form-control" name="description" id="textAreaExample1" rows="4"></textarea>
+                        <textarea class="form-control" name="description" id="textAreaExample1" rows="2"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="title">Paragraph</label>

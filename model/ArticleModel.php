@@ -1,6 +1,6 @@
 <?php
 $newsID = $_GET['newsID'];
-$getArticle = "SELECT * FROM News WHERE newsID = $newsID";
+$getArticle = "SELECT * FROM News n, newsType nt WHERE n.newsTypeID = nt.newsTypeID AND  newsID = $newsID";
 $allArticles = "SELECT * FROM News n, newsType nt WHERE n.newsTypeID = nt.newsTypeID AND NOT newsID = $newsID ORDER BY RAND() LIMIT 5 ";
 class ArticleModel
 {

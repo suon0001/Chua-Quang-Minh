@@ -10,7 +10,7 @@ if (isset($_POST['save'])) {
     $title = $sanitized['title'];
     $author = $sanitized['author'];
     $description = $sanitized['description'];
-    $paragraph = $sanitized['paragraph'];
+    $paragraph = trim($_POST['paragraph']);
     $banner = $_FILES["banner"]["name"];
     $newsTypeID = $sanitized['newsTypeID'];
 
@@ -56,7 +56,7 @@ if (isset($_POST['publish'])) {
     $title = $sanitized['title'];
     $author = $sanitized['author'];
     $description = $sanitized['description'];
-    $paragraph = $sanitized['paragraph'];
+    $paragraph = trim($_POST['paragraph']);
     $banner = $_FILES["banner"]["name"];
     $newsTypeID = $sanitized['newsTypeID'];
 

@@ -12,8 +12,6 @@ if (isset($_POST['editSave'])) {
     $author = $sanitized['author'];
     $description = $sanitized['description'];
     $paragraph = trim($_POST['paragraph']);
-
-
     $banner = $_FILES["banner"]["name"];
     $newsTypeID = $sanitized['newsTypeID'];
     $newsID = $sanitized['newsID'];
@@ -58,8 +56,6 @@ if (isset($_POST['editPublish'])) {
     $author = $sanitized['author'];
     $description = $sanitized['description'];
     $paragraph = trim($_POST['paragraph']);
-
-
     $banner = $_FILES["banner"]["name"];
     $newsTypeID = $sanitized['newsTypeID'];
     $newsID = $sanitized['newsID'];

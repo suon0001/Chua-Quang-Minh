@@ -45,7 +45,7 @@ include("view/_partials/adminPanel.php");
                         while ($row = $newsOption->fetch(PDO::FETCH_ASSOC)) { ?>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="newsTypeID" value="<?php echo $row["newsTypeID"]; ?>">
+                                    <input type="checkbox" name="newsTypeID" checked value="<?php echo $row["newsTypeID"]; ?>">
                                     <?php echo $row['typeName'] ?>
                                 </label>
                             </div>
