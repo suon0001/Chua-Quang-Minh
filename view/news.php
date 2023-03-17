@@ -8,11 +8,14 @@ require $rootPath . "controller/NewsController.php";
 ?>
 
 <div class="row clearfix">
-    <div class="col-lg-8 col-md-12 left-box">
+    <div class="col-lg-9 col-md-12 left-box">
         <?php
         foreach ($blogResult as $row) { ?>
             <div class="card single_post">
                 <div class="body">
+                    <div class="img-post">
+                        <img class="d-block img-fluid banner" src="https://www.bootdey.com/image/800x280/FFB6C1/000000" alt="First slide">
+                    </div>
                     <h3><?php echo $row['title'] ?></h3>
                     <small><?php echo $row['timeUpdated'] ?></small>
                     <p><?php echo $row['description'] ?></p>
@@ -85,7 +88,7 @@ require $rootPath . "controller/NewsController.php";
 
         </nav>
     </div>
-    <div class="col-lg-4 col-md-12 right-box">
+    <div class="col-lg-3 col-md-12 right-box">
         <div class="card">
             <div class="body search">
                 <div class="input-group m-b-0">
@@ -171,5 +174,6 @@ require $rootPath . "controller/NewsController.php";
     </div>
 </div>
 <style>
+
     <?php include 'styles/index.css'; ?>
 </style>

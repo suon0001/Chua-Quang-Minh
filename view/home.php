@@ -213,9 +213,7 @@ require $rootPath . "controller/HomeController.php";
 
             <aside class="col-3 blog-sidebar">
                 <div class="p-3 mb-3 bg-light rounded">
-                    <h4 class="font-italic">About</h4>
-                    <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur
-                        purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <div id='calendar'></div>
                 </div>
 
                 <div class="p-3">
@@ -248,6 +246,66 @@ require $rootPath . "controller/HomeController.php";
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },events: [
+
+                {
+                    title: 'All Day Event',
+                    start: '2023-03-02'
+                },
+                {
+                    title: 'Long Event',
+                    start: '2023-03-07',
+                    end: '2023-03-10'
+                },
+                {
+                    groupId: '999',
+                    title: 'Repeating Event',
+                    start: '2023-03-09T16:00:00'
+                },
+                {
+                    groupId: '999',
+                    title: 'Repeating Event',
+                    start: '2023-03-16T16:00:00'
+                },
+                {
+                    title: 'Conference',
+                    start: '2023-03-11',
+                    end: '2023-03-13'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2023-03-12T10:30:00',
+                    end: '2023-03-12T12:30:00'
+                },
+                {
+                    title: 'Lunch',
+                    start: '2023-03-12T12:00:00'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2023-03-12T14:30:00'
+                },
+                {
+                    title: 'Birthday Party',
+                    start: '2023-03-13T07:00:00'
+                },
+
+            ]
+        });
+        calendar.render();
+    });
+
+</script>
 
 <style>
     <?php include 'styles/index.css'; ?>

@@ -1,6 +1,6 @@
 <?php
 class EventModel
 {
-    public $insertAllEvents = "SELECT * FROM Event";
+    public $insertAllEvents = "SELECT * FROM Event ORDER BY date";
 }
 $EventModel = new EventModel();

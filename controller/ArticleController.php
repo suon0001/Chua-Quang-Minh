@@ -13,13 +13,12 @@ if (isset($_POST['editSave'])) {
     $description = $sanitized['description'];
     $paragraph = trim($_POST['paragraph']);
     $banner = $_FILES["banner"]["name"];
-    $newsTypeID = $sanitized['newsTypeID'];
     $newsID = $sanitized['newsID'];
 
 
     if (
         !empty($_POST['title']) || !empty($_POST['author']) || !empty($_POST['description']) ||
-        !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft']) || !empty($_POST['banner']) || !empty($_POST['newsTypeID'])
+        !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft']) || !empty($_POST['banner'])
     ) {
         $file = $_FILES["banner"]["name"];
         $filename = strtolower($file);
@@ -39,7 +38,6 @@ if (isset($_POST['editSave'])) {
             $editArticle->bindParam(':description', $description, PDO::PARAM_STR);
             $editArticle->bindParam(':paragraph', $paragraph, PDO::PARAM_STR);
             $editArticle->bindParam(':banner', $banner, PDO::PARAM_STR);
-            $editArticle->bindParam(':newsTypeID', $newsTypeID, PDO::PARAM_INT);
 
             $editArticleResult = $editArticle->execute();
             $conn->commit();
@@ -57,13 +55,12 @@ if (isset($_POST['editPublish'])) {
     $description = $sanitized['description'];
     $paragraph = trim($_POST['paragraph']);
     $banner = $_FILES["banner"]["name"];
-    $newsTypeID = $sanitized['newsTypeID'];
     $newsID = $sanitized['newsID'];
 
 
     if (
         !empty($_POST['title']) || !empty($_POST['author']) || !empty($_POST['description']) ||
-        !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft']) || !empty($_POST['banner']) || !empty($_POST['newsTypeID'])
+        !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft']) || !empty($_POST['banner'])
     ) {
         $file = $_FILES["banner"]["name"];
         $filename = strtolower($file);
@@ -83,7 +80,6 @@ if (isset($_POST['editPublish'])) {
             $editArticle->bindParam(':description', $description, PDO::PARAM_STR);
             $editArticle->bindParam(':paragraph', $paragraph, PDO::PARAM_STR);
             $editArticle->bindParam(':banner', $banner, PDO::PARAM_STR);
-            $editArticle->bindParam(':newsTypeID', $newsTypeID, PDO::PARAM_INT);
 
             $editArticleResult = $editArticle->execute();
             $conn->commit();

@@ -31,7 +31,6 @@ include("view/_partials/adminPanel.php");
                     <div class="form-group">
                         <label for="title">Paragraph</label>
                         <textarea class="form-control" name="paragraph" id="content" rows="20"></textarea>
-                        <script>CKEDITOR.replace('content');</script>
                     </div>
                 </div>
                 <div class="col-xs-5 col-md-3">
@@ -39,10 +38,14 @@ include("view/_partials/adminPanel.php");
                         <label for="category_id">Category</label>
                         <?php
                         while ($row = $newsOption->fetch(PDO::FETCH_ASSOC)) { ?>
-                            <div class="checkbox">
+                            <div class="radio">
                                 <label>
-                                    <input type="checkbox" name="newsTypeID" value="<?php echo $row["newsTypeID"]; ?>">
-                                    <?php echo $row['typeName'] ?>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="newsTypeID" id="inlineRadio1"
+                                               value="<?php echo $row["newsTypeID"]; ?>">
+                                        <label class="form-check-label"
+                                               for="inlineRadio1"><?php echo $row['typeName'] ?></label>
+                                    </div>
                                 </label>
                             </div>
                             <?php
@@ -64,3 +67,6 @@ include("view/_partials/adminPanel.php");
     </div>
 </div>
 
+<script>
+    CKEDITOR.replace('content');
+</script>

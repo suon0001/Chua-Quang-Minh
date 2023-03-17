@@ -36,13 +36,13 @@ CREATE TABLE Event
 (
     eventID     INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     eventName   VARCHAR(255),
-    description VARCHAR(255),
-    startTime   VARCHAR(30),
-    endTime     VARCHAR(30),
-    date        INT(2),
-    day         VARCHAR(10),
-    month       VARCHAR(10),
-    year        INT(4)
+    host        VARCHAR(255),
+    address     VARCHAR(255),
+    description TEXT,
+    start       VARCHAR(30),
+    end         VARCHAR(30),
+    date        DATE
+
 ) ENGINE = InnoDB;
 
 CREATE TABLE Mail
@@ -687,4 +687,100 @@ Suspendisse potenti. In eleifend quam a  odio. In hac habitasse platea dictumst.
 
 Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', '2022-05-25 01:03:41',
         false, 'image1.jpg', 1);
-# Rows:
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Zeitgeist: Moving Forward', 'Marchelle', '7th Floor', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+
+Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
+        '23:07', '7:04', '2023-02-07');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Melbourne', 'Berthe', 'Suite 50', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.', '1:06', '16:05', '2023-06-22');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Hi-Life', 'Lauren', '9th Floor', 'In congue. Etiam justo. Etiam pretium iaculis justo.', '4:28', '14:36',
+        '2022-06-27');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Lie, The', 'Estell', '20th Floor',
+        'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '13:48', '1:22',
+        '2022-08-05');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Blue and the Gray, The', 'Nefen', 'PO Box 6243', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
+        '9:18', '13:27', '2023-01-26');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Brown of Harvard', 'Doralyn', 'Room 181', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.', '3:42', '3:18', '2023-02-17');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'America''s Heart and Soul', 'Colver', 'PO Box 43180', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '10:16',
+        '6:16', '2022-07-10');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Ace of Hearts', 'Genni', '16th Floor', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
+        '2:55', '22:48', '2022-09-03');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Seraphim Falls', 'Eolande', 'Suite 87', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.',
+        '23:14', '3:52', '2024-02-18');
+insert into Event (eventID, eventName, host, address, description, start, end, date)
+values (null, 'Ran', 'Gavin', 'Room 1370', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
+        '9:21', '15:23', '2023-11-30');
