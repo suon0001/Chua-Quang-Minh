@@ -32,6 +32,7 @@ $view = match ($toCheck) {
 
     '/admin-panel' => '/view/adminPanel.php',
     '/admin-profile' => '/view/adminProfile.php',
+    '/admin-event' => '/view/adminEvent.php',
     '/admin-photo' => '/view/adminPhoto.php',
     '/admin-article' => '/view/adminArticles.php',
     '/add-article' => '/view/addArticle.php',
