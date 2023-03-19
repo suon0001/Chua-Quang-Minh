@@ -1,6 +1,6 @@
 <?php
-class SignupModel
+class SettingModel
 {
     public $userInsert = "INSERT INTO Admin (email, password, phone) VALUES (:email, :password, :phone)";
 }
-$SignupModel = new SignupModel();
+$SettingModel = new SettingModel();

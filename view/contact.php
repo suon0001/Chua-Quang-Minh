@@ -65,7 +65,7 @@ require $rootPath . "controller/ContactController.php";
                         <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
                         <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                     </div>
-                    <button name="send_email" type="submit" class="btn btn-dark">Send Message</button>
+                    <button name="send_email" type="submit" class="btn">Send Message</button>
                 </div>
             </form>
         </div>
