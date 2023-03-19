@@ -16,6 +16,7 @@
                             <li><a href="/admin-article"><span class="fa-solid fa-newspaper"></span> Articles</a></li>
                             <li><a href="/admin-photo"><span class="fa-solid fa-photo-film"></span> Photos</a></li>
                             <li><a href="#"><span class="fa fa-cog"></span> Settings</a></li>
+                            <li><a href="/logout">Log out</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -2,6 +2,15 @@ DROP DATABASE IF EXISTS chuaDB;
 CREATE DATABASE chuaDB;
 USE chuaDB;
 
+CREATE TABLE Admin
+(
+    adminID  INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    email    VARCHAR(50)        NOT NULL,
+    password VARCHAR(150)       NOT NUll,
+    phone VARCHAR(150) NOT NUll
+) ENGINE = InnoDB;
+
+
 CREATE TABLE Photo
 (
     photoID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -56,12 +65,7 @@ CREATE TABLE Mail
     timestamp   TIMESTAMP
 ) ENGINE = InnoDB;
 
-CREATE TABLE Admin
-(
-    adminID  INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    email    VARCHAR(50)        NOT NULL,
-    password VARCHAR(150)       NOT NUll
-) ENGINE = InnoDB;
+
 
 CREATE VIEW NewsOrderbyType AS
 SELECT n.newsID,

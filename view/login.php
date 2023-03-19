@@ -4,7 +4,13 @@ require("rootPath.php");
 require $rootPath . "Model/LoginModel.php";
 require $rootPath . "Controller/LoginController.php";
 ?>
-
+<head>
+    <?php if ($errorPassword) { ?>
+        <div class="alert alert-danger text-center" role="alert">
+            <strong>Error:</strong> Wrong email or password!
+        </div>
+    <?php } ?>
+</head>
 
 <div class="container">
     <form method="POST">

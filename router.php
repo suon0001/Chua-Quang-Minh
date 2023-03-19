@@ -15,7 +15,7 @@ if (isset($parsedRequest[0])) {
     $toCheck = $urlpath;
 }
 
-$isAdmin = isset($_SESSION['userID']);
+$isAdmin = isset($_SESSION['adminID']);
 
 $view = match ($toCheck) {
     '' => '/view/home.php',
@@ -27,25 +27,23 @@ $view = match ($toCheck) {
     '/contact' => '/view/contact.php',
     '/article' => '/view/article.php',
     '/login' => '/view/login.php',
-
-//admin
-
-    '/admin-panel' => '/view/adminPanel.php',
-    '/admin-profile' => '/view/adminProfile.php',
-    '/admin-event' => '/view/adminEvent.php',
-    '/admin-photo' => '/view/adminPhoto.php',
-    '/admin-article' => '/view/adminArticles.php',
-    '/add-article' => '/view/addArticle.php',
-    '/edit-article' => '/view/editArticle.php',
-    '/admin-mail' => '/view/adminMail.php',
-    '/mail' => '/view/mail.php',
-
+    '/logout' => '/View/_partials/logout.php',
 
     default => null
 };
 
 if ($view == null && $isAdmin) {
     $view = match ($toCheck) {
+        '/admin-panel' => '/view/adminPanel.php',
+        '/admin-profile' => '/view/adminProfile.php',
+        '/admin-event' => '/view/adminEvent.php',
+        '/admin-photo' => '/view/adminPhoto.php',
+        '/admin-article' => '/view/adminArticles.php',
+        '/add-article' => '/view/addArticle.php',
+        '/edit-article' => '/view/editArticle.php',
+        '/admin-mail' => '/view/adminMail.php',
+        '/mail' => '/view/mail.php',
+        '/signup' => '/view/signup.php',
 
         default => null
     };
