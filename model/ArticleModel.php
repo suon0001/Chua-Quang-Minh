@@ -11,6 +11,12 @@ class ArticleModel
     public $editPublish = " UPDATE News SET `title` = :title, `author` = :author, `description` = :description, `paragraph` = :paragraph, 
                             `timeUpdated` = CURRENT_TIMESTAMP, `saveDraft` = true, `banner` = :banner
                             WHERE News.`newsID` = :newsID";
+
+    public $counterUpdate = "UPDATE Counter SET visits = visits+1 WHERE id = 1";
+
+    public $counterInsert = "SELECT visits FROM Counter WHERE id = 1";
+
+
 }
 
 $ArticleModel = new ArticleModel();

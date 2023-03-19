@@ -4,6 +4,8 @@ require("rootPath.php");
 require $rootPath . "model/ArticleModel.php";
 require $rootPath . "controller/ArticleController.php";
 
+
+
 ?>
 
 <div class="container-fluid">

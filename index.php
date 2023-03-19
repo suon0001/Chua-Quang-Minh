@@ -2,7 +2,7 @@
 
 require_once("database/conn.php");
 if (!isset($_SESSION)) {
-session_start();
+    session_start();
 
 }
 
@@ -16,6 +16,7 @@ function sanitize($input)
 
     return $input;
 }
+
 // Here we sanitize all the incoming data
 $sanitized = array_map('sanitize', $_POST);
 

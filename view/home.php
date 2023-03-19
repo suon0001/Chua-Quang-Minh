@@ -3,7 +3,11 @@ require("rootPath.php");
 
 require $rootPath . "model/HomeModel.php";
 require $rootPath . "controller/HomeController.php";
-
+if (isset($_SESSION['visitCount'])) {
+    $_SESSION['visitCount']++;
+} else {
+    $_SESSION['visitCount'] = 1;
+}
 ?>
 
 <div class="container-fluid">
