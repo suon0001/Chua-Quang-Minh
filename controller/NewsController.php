@@ -1,5 +1,6 @@
 <?php
 
+
 $blogResultStmt =  $conn->query($firstPageBlogsQuery);
 $blogResult = $blogResultStmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -50,4 +51,3 @@ if (isset($_GET["action"])) {
         $pageCount = count($pageCountResult);
     }
 }
-
