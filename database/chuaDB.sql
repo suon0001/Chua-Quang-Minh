@@ -66,7 +66,6 @@ CREATE TABLE Mail
 ) ENGINE = InnoDB;
 
 
-
 CREATE VIEW NewsOrderbyType AS
 SELECT n.newsID,
        n.title,
@@ -82,7 +81,7 @@ SELECT n.newsID,
 FROM news n,
      newsType nt
 WHERE n.newsTypeID = nt.newsTypeID
-ORDER BY n.newsID ASC;
+ORDER BY n.timeUpdated DESC ;
 
 
 INSERT INTO `newstype` (`newsTypeID`, `typeName`, `icon`)

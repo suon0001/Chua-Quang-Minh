@@ -35,7 +35,12 @@ require $rootPath . "controller/NewsController.php";
                             </a>
                             <div class="details">
                                 <div class="user">
-                                    <div class="name"><?php echo $row['timeUpdated'] ?></div>
+                                    <div class="name"><?php
+                                        $today = date("F j, Y, g:i a", strtotime($row['timeUpdated']));
+                                        echo $today;
+
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="numbers"><i
                                             class="<?php echo $row['icon'] ?>"></i> <?php echo $row['typeName'] ?>

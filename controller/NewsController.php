@@ -1,6 +1,5 @@
 <?php
 
-
 $blogResultStmt =  $conn->query($firstPageBlogsQuery);
 $blogResult = $blogResultStmt->fetchAll(PDO::FETCH_ASSOC);
 
