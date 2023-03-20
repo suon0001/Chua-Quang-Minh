@@ -1,11 +1,10 @@
 
 <?php
 
-// set default values
 if (isset($_GET["limit"])) {
     $limit = $_GET["limit"];
 } else {
-    $limit = 8;
+    $limit = 12;
 }
 
 if (isset($_GET["skip"])) {

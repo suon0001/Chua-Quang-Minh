@@ -40,11 +40,11 @@ require $rootPath . "controller/PhotoController.php";
             foreach ($photoResult as $row) { ?>
                 <div class="mySlides">
                     <div class="numbertext"><?php echo $row['photoID'] ?> / 8</div>
-                    <img src="assets/<?php echo $row['photo'] ?>" style="width:100%">
+                    <img src="assets/gallery/<?php echo $row['photo'] ?>" style="width:100%">
                 </div>
                 <?php $i++;
             } ?>
-            <!-- Next/previous controls -->
+
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
 

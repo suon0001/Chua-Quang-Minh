@@ -11,20 +11,18 @@ require $rootPath . "controller/EventController.php";
 <div class="row">
     <div class="col-9 blog-main">
         <div class="event-schedule-area-two bg-color pad100">
-            <div class="col-lg-12">
+            <div class="[ col-12 col-sm-offset-2 ]">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade active show" id="home" role="tabpanel">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
-
                                 <tr>
                                     <th class="text-center" scope="col">Date</th>
+                                    <th></th>
                                     <th scope="col">Event</th>
-                                    <th scope="col">Host</th>
-                                    <th scope="col">Time</th>
                                     <th scope="col">Venue</th>
-
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -32,73 +30,84 @@ require $rootPath . "controller/EventController.php";
                                 <?php
                                 foreach ($allEventsResult
 
-                                as $row) {
-                                ?>
-                                <tr class="inner-box">
-                                    <th scope="row">
-                                        <div class="event-date">
+                                         as $row) {
+                                    ?>
+                                    <tr class="inner-box">
+                                        <th scope="row">
+                                            <div class="event-date">
                                                         <span>  <?php
                                                             $today = date("j", strtotime($row['date']));
                                                             echo $today;
 
                                                             ?></span>
-                                            <p>  <?php
-                                                $today = date("F", strtotime($row['date']));
-                                                echo $today;
+                                                <p>  <?php
+                                                    $today = date("F", strtotime($row['date']));
+                                                    echo $today;
 
-                                                ?></p>
-                                        </div>
-                                    </th>
-                                    <td>
-                                        <h4><?php echo $row['eventName'] ?></h4>
-                                    </td>
-                                    <td>
-                                        <p><?php echo $row['host'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?php
-                                            echo date('h:i A', strtotime($row['start'])); ?>
-                                                -
-                                                <?php
-                                                echo date('h:i A', strtotime($row['end'])); ?></p>
-                                    </td>
-                                    <td>
-                                        <div class="r-no">
-                                                        <span><?php echo $row['address'] ?>
-                                                </a></p></span>
-                                        </div>
-                                    </td>
-                                <tr>
-                                    <td colspan="5">
-                                        <div class="accordion" id="accordionExample">
-                                            <div class="card ">
-                                                <div class="card-header" style="background-color: tan" id="heading<?php echo $row['eventID'] ?>">
-                                                    <h2 class="mb-0">
-                                                        <button class="btn btn-block text-center"
-                                                                type="button" data-toggle="collapse"
-                                                                data-target="#collapse<?php echo $row['eventID'] ?>"
-                                                                aria-expanded="false"
-                                                                aria-controls="collapse<?php echo $row['eventID'] ?>">
-                                                            <h4 class="fieldset-title">Read more</h4>
-                                                        </button>
-                                                    </h2>
-                                                </div>
-                                                <div id="collapse<?php echo $row['eventID'] ?>" class="collapse"
-                                                     aria-labelledby="heading<?php echo $row['eventID'] ?>"
-                                                     data-parent="#accordionExample">
-                                                    <div class="card-body">
-                                                        <p><?php echo $row['description'] ?></p>
+                                                    ?></p>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <div class="event-img">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""/>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="event-wrap">
+                                                <h3><a href="#"><?php echo $row['eventName'] ?></a></h3>
+                                                <div class="meta">
+                                                    <div class="organizers">
+                                                        <a href="#"><?php echo $row['host'] ?></a>
+                                                    </div>
+                                                    <div class="categories">
+                                                        <a href="#">Inspire</a>
+                                                    </div>
+                                                    <div class="time">
+                                                        <span><?php
+                                                            echo date('h:i A', strtotime($row['start'])); ?>
+                                                            -
+                                                            <?php
+                                                            echo date('h:i A', strtotime($row['end'])); ?></span>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </td>
+                                        <td>
+                                            <div class="r-no">
+                                                <span><?php echo $row['address'] ?></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="primary-btn">
+                                                    <div class="accordion" id="accordionExample">
+                                                        <div class="card-header" id="heading<?php echo $row['eventID'] ?>">
+                                                            <h2 class="mb-0">
+                                                                <button class="btn btn-link" type="button"
+                                                                        data-toggle="collapse"
+                                                                        data-target="#collapse<?php echo $row['eventID'] ?>" aria-expanded="true"
+                                                                        aria-controls="collapse<?php echo $row['eventID'] ?>">
+                                                                    Read more
+                                                                </button>
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+                                            </div>
 
-                                    </td>
-                                </tr>
-
-
-                                </tbody> <?php
-                                } ?>
+                                        </td>
+                                    <tr>
+                                        <td colspan="5">
+                                            <div id="collapse<?php echo $row['eventID'] ?>" class="collapse"
+                                                 aria-labelledby="heading<?php echo $row['eventID'] ?>"
+                                                 data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    <?php echo $row['description'] ?>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
 
                             </table>
                         </div>
@@ -131,18 +140,16 @@ require $rootPath . "controller/EventController.php";
 
 </div>
 
-<script>
-    $(function () {
-        $('.panel-heading').click(function (e) {
-            $('.panel-heading').removeClass('tab-collapsed');
-            var collapsCrnt = $(this).find('.collapse-controle').attr('aria-expanded');
-            if (collapsCrnt != 'true') {
-                $(this).addClass('tab-collapsed');
-            }
-        });
-    })
-</script>
 
 <style>
     <?php include 'styles/index.css'; ?>
+    .card-header {
+        height: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .accordion {
+        margin-top: 0;
+    }
 </style>

@@ -1,4 +1,3 @@
-
 <?php
 require("rootPath.php");
 
@@ -9,32 +8,46 @@ require $rootPath . "controller/NewsController.php";
 
 <div class="row clearfix">
     <div class="col-lg-9 col-md-12 left-box">
-        <?php
-        foreach ($blogResult as $row) { ?>
-            <div class="card single_post">
-                <div class="body">
-                    <div class="img-post">
-                        <img class="d-block img-fluid banner" src="https://www.bootdey.com/image/800x280/FFB6C1/000000" alt="First slide">
-                    </div>
-                    <h3><?php echo $row['title'] ?></h3>
-                    <small><?php echo $row['timeUpdated'] ?></small>
-                    <p><?php echo $row['description'] ?></p>
-                </div>
-                <div class="footer">
-                    <div class="actions">
-                        <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="btn btn-outline-secondary">Continue
-                            Reading</a>
-                    </div>
-                    <ul class="stats">
-                        <li><a href="javascript:void(0);"><i
-                                        class="<?php echo $row['icon'] ?>"></i><?php echo $row['typeName'] ?></a></li>
-                        <li><a href="javascript:void(0);" class="fa fa-heart">28</a></li>
-                        <li><a href="javascript:void(0);" class="fa fa-comment">128</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="row">
             <?php
-        } ?>
+            foreach ($blogResult as $row) { ?>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="card card-small">
+                        <div class="thumbnail">
+                            <img class="d-block img-fluid banner" src="assets/banner/<?php echo $row['banner'] ?>">
+                            <a href="#/product/awesome-landing-page">
+                                <div class="thumb-cover"></div>
+                            </a>
+                            <div class="details">
+                                <div class="user">
+                                    <div class="name"><?php echo $row['timeUpdated'] ?></div>
+                                </div>
+                                <div class="numbers"><i
+                                            class="<?php echo $row['icon'] ?>"></i> <?php echo $row['typeName'] ?>
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="moving">
+                                <a href="#/product/awesome-landing-page">
+                                    <h3>
+                                        <a href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
+                                    </h3>
+                                    <div class="text"><?php echo $row['description']; ?></div>
+                                </a>
+                                <b class="actions">
+                                    <a href="/article?newsID=<?php echo $row['newsID']; ?>">Details</a>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            } ?>
+        </div>
+
         <nav class="d-flex justify-content-center">
             <?php
 
@@ -84,21 +97,9 @@ require $rootPath . "controller/NewsController.php";
                                          }
                                          ?>">Next</a></li>
             </ul>
-
-
         </nav>
     </div>
     <div class="col-lg-3 col-md-12 right-box">
-        <div class="card">
-            <div class="body search">
-                <div class="input-group m-b-0">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fa fa-search"></i></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Search...">
-                </div>
-            </div>
-        </div>
         <div class="card">
             <div class="header">
                 <h2>Categories</h2>
@@ -119,61 +120,8 @@ require $rootPath . "controller/NewsController.php";
                 </ul>
             </div>
         </div>
-        <div class="card">
-            <div class="header">
-                <h2>Popular Posts</h2>
-            </div>
-            <div class="body widget popular-post">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="single_post">
-                            <p class="m-b-0">Apple Introduces Search Ads Basic</p>
-                            <span>jun 22, 2018</span>
-                            <div class="img-post">
-                                <img src="../assets/gallery/image5.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                        <div class="single_post">
-                            <p class="m-b-0">new rules, more cars, more races</p>
-                            <span>jun 8, 2018</span>
-                            <div class="img-post">
-                                <img src="../assets/gallery/image2.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="header">
-                <h2>Instagram Post</h2>
-            </div>
-            <div class="body widget">
-                <ul class="list-unstyled instagram-plugin m-b-0">
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                    <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000"
-                                                           alt="image description"></a></li>
-                </ul>
-            </div>
-        </div>
     </div>
 </div>
 <style>
-
-    <?php include 'styles/index.css'; ?>
+    <?php include 'styles/news.css'; ?>
 </style>
