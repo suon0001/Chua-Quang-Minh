@@ -9,7 +9,6 @@ require $rootPath . "controller/EventController.php";
 
 </table>
 <div class="row">
-    <div class="col-9 blog-main">
         <div class="event-schedule-area-two bg-color pad100">
             <div class="[ col-12 col-sm-offset-2 ]">
                 <div class="tab-content" id="myTabContent">
@@ -117,27 +116,6 @@ require $rootPath . "controller/EventController.php";
             </div><!-- /col end-->
         </div>
     </div>
-    <aside class="col-3 blog-sidebar">
-        <div class="p-3">
-            <h4 class="font-italic">Archives</h4>
-            <ol class="list-unstyled mb-0">
-                <li><a href="#">March 2014</a></li>
-                <li><a href="#">February 2014</a></li>
-                <li><a href="#">January 2014</a></li>
-                <li><a href="#">December 2013</a></li>
-                <li><a href="#">November 2013</a></li>
-                <li><a href="#">October 2013</a></li>
-                <li><a href="#">September 2013</a></li>
-                <li><a href="#">August 2013</a></li>
-                <li><a href="#">July 2013</a></li>
-                <li><a href="#">June 2013</a></li>
-                <li><a href="#">May 2013</a></li>
-                <li><a href="#">April 2013</a></li>
-            </ol>
-        </div>
-
-    </aside>
-
 </div>
 
 

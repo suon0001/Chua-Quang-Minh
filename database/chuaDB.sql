@@ -75,6 +75,7 @@ SELECT n.newsID,
        n.paragraph,
        n.timeUpdated,
        n.saveDraft,
+       n.banner,
        n.newsTypeID,
        nt.typeName,
        nt.icon
