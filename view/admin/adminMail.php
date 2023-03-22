@@ -50,7 +50,7 @@ include("view/_partials/adminPanel.php");
                 <i class="fa fa-star"></i>
             </td>
             <td>
-                <a href="/mail?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?>
+                <a href="../../index.php"> <?php echo $row['firstName']; ?>
                     <?php echo $row['lastName']; ?></a>
 
             </td>
@@ -85,7 +85,7 @@ include("view/_partials/adminPanel.php");
                              aria-labelledby="headingOne" aria-expanded="true">
                             <div>
                                 Are you sure you want to delete? <a
-                                        href="/admin-mail.php?del=1&mailID=<?= $row["mailID"] ?>">Delete</a></a>
+                                        href="../../index.php">Delete</a></a>
                             </div>
                         </div>
                     </div>

@@ -34,16 +34,16 @@ $view = match ($toCheck) {
 
 if ($view == null && $isAdmin) {
     $view = match ($toCheck) {
-        '/admin-panel' => '/view/adminPanel.php',
-        '/admin-profile' => '/view/adminProfile.php',
-        '/admin-event' => '/view/adminEvent.php',
-        '/admin-photo' => '/view/adminPhoto.php',
-        '/admin-article' => '/view/adminArticles.php',
-        '/add-article' => '/view/addArticle.php',
-        '/edit-article' => '/view/editArticle.php',
-        '/admin-mail' => '/view/adminMail.php',
-        '/mail' => '/view/mail.php',
-        '/admin-setting' => '/view/setting.php',
+        '/admin-panel' => '/view/admin/adminPanel.php',
+        '/admin-profile' => '/view/admin/adminProfile.php',
+        '/admin-event' => '/view/admin/adminEvent.php',
+        '/admin-photo' => '/view/admin/adminPhoto.php',
+        '/admin-article' => '/view/admin/adminArticles.php',
+        '/add-article' => '/view/admin/addArticle.php',
+        '/edit-article' => '/view/admin/editArticle.php',
+        '/admin-mail' => '/view/admin/adminMail.php',
+        '/mail' => '/view/admin/mail.php',
+        '/admin-setting' => '/view/admin/setting.php',
 
         default => null
     };

@@ -5,6 +5,10 @@
 @import "event";
 @import "admin";
 
+body {
+    background-color: $secondary;
+}
+
 .carousel .carousel-item {
     height: 35rem;
 }

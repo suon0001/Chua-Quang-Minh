@@ -9,7 +9,7 @@ include("view/_partials/adminPanel.php");
 ?>
 <div class="container">
     <div class="row">
-        <button type="submit" class="btn btn-primary"><a href="/add-article">Add</a></button>
+        <button type="submit" class="btn btn-primary"><a href="../../index.php">Add</a></button>
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
@@ -50,13 +50,13 @@ include("view/_partials/adminPanel.php");
                                     <span><?php echo $row['date'] ?></span>
                                 </td>
                                 <td style="width: 12%;">
-                                    <a href="/edit-article?newsID=<?php echo $row['eventID']; ?>" class="table-link">
+                                    <a href="../../index.php" class="table-link">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 									</span>
                                     </a>
-                                    <a href="/admin-article.php?del=1&newsID=<?= $row["eventID"] ?>"
+                                    <a href="../../index.php"
                                        class="table-link danger">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>

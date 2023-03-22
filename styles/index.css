@@ -1,6 +1,6 @@
 @charset "UTF-8";
 h1 {
-  color: tan;
+  color: #310c0c;
   text-align: center;
 }
 
@@ -85,15 +85,6 @@ img.hover-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1 {
-  color: tan;
-  text-align: center;
-}
-
-textarea {
-  resize: none;
-}
-
 .form-control {
   box-shadow: none !important;
   outline: none !important;
@@ -119,7 +110,7 @@ textarea {
 
 .title-box .border, .btn-primary, .back-to-top,
 .logo i, .question-q-box, .social-circle li a:hover {
-  background-color: tan;
+  background-color: #310c0c;
 }
 
 .title-box .title-alt, .text-colored, .footer a:hover,
@@ -127,30 +118,11 @@ textarea {
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active,
 .navbar-custom .navbar-nav li.active a {
-  color: tan;
+  color: #310c0c;
 }
 
 .btn-primary {
-  border: 1px solid tan;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary.focus,
-.btn-primary:active,
-.btn-primary:focus,
-.btn-primary:hover,
-.open > .dropdown-toggle.btn-primary,
-.btn-primary.active.focus, .btn-primary.active:focus,
-.btn-primary.active:hover, .btn-primary:active.focus,
-.btn-primary:active:focus, .btn-primary:active:hover,
-.open > .dropdown-toggle.btn-primary.focus,
-.open > .dropdown-toggle.btn-primary:focus,
-.open > .dropdown-toggle.btn-primary:hover {
-  background-color: tan;
-  border: 1px solid tan;
+  border: 1px solid #310c0c;
 }
 
 .btn-shadow.btn-primary {
@@ -212,7 +184,6 @@ textarea {
   overflow: hidden;
   border-radius: 6px;
   position: relative;
-  background-color: #FFFFFF;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   margin-bottom: 30px;
 }
@@ -234,8 +205,9 @@ textarea {
   border: 0 none;
   padding: 0;
   margin: 0;
-  min-height: 270px;
+  min-height: 170px;
   position: relative;
+  background-color: #b9afa2;
 }
 
 .card .thumbnail img {
@@ -250,7 +222,7 @@ textarea {
   bottom: 0;
   opacity: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  color: #b9afa2;
 }
 
 .thumb-cover {
@@ -331,7 +303,7 @@ textarea {
 }
 
 .card-info {
-  background-color: #FFFFFF;
+  background-color: #b9afa2;
   position: relative;
   height: 150px;
 }
@@ -343,7 +315,7 @@ textarea {
 
 .card-info .moving {
   padding: 15px;
-  background-color: #FFFFFF;
+  background-color: #b9afa2;
   position: relative;
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
@@ -392,7 +364,7 @@ textarea {
 }
 
 .card .actions {
-  background-color: #FFFFFF;
+  background-color: #b9afa2;
   bottom: -80px;
   color: rgba(33, 33, 33, 0.79);
   display: block;
@@ -406,7 +378,7 @@ textarea {
 }
 
 .card-info .actions a {
-  color: #777777;
+  color: #ffffff;
 }
 
 .card .actions a {
@@ -416,7 +388,7 @@ textarea {
 .card .separator {
   padding: 0 7px;
   font-weight: 400;
-  color: #CCCCCC;
+  color: #b9afa2;
 }
 
 .card-info .actions .blue-text {
@@ -431,7 +403,7 @@ a, a:hover, a:focus, .btn:focus, .btn:hover, .btn:active, .btn:active:focus, .bt
 }
 
 .event-schedule-area-two .tab-content .table thead {
-  background-color: tan;
+  background-color: #310c0c;
   color: #fff;
   font-size: 20px;
 }
@@ -442,7 +414,7 @@ a, a:hover, a:focus, .btn:focus, .btn:hover, .btn:active, .btn:active:focus, .bt
 }
 
 .event-schedule-area-two .tab-content .table tbody {
-  background: #fff;
+  background: #b9afa2;
 }
 
 .event-schedule-area-two .tab-content .table tbody tr.inner-box {
@@ -1129,12 +1101,16 @@ a, a:hover, a:focus, .btn:focus, .btn:hover, .btn:active, .btn:active:focus, .bt
     display: inline-block;
   }
 }
+body {
+  background-color: #fff0db;
+}
+
 .carousel .carousel-item {
   height: 35rem;
 }
 
 .carousel-deco {
-  background-color: tan;
+  background-color: #310c0c;
   padding: 10px;
 }
 

@@ -124,5 +124,5 @@ require $rootPath . "controller/NewsController.php";
     </div>
 </div>
 <style>
-    <?php include 'styles/news.css'; ?>
+    <?php include 'styles/index.scss'; ?>
 </style>

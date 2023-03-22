@@ -1,6 +1,20 @@
 <div class="wrap">
     <header role="banner">
-        <div class="headline" style="height: 40px; background-color: #b6b9bb">
+        <div class="headline">
+            <div class="row">
+                <div class="col flagOne" style="background-color: blue"></div>
+                <div class="col flagOne" style="background-color: yellow"></div>
+                <div class="col flagOne" style="background-color: red"></div>
+                <div class="col flagOne" style="background-color: white"></div>
+                <div class="col flagOne" style="background-color: orange"></div>
+                <div class="col flagOne">
+                    <div class="flagTwo" style="background-color: blue"></div>
+                    <div class="flagTwo" style="background-color: yellow"></div>
+                    <div class="flagTwo" style="background-color: red"></div>
+                    <div class="flagTwo" style="background-color: white"></div>
+                    <div class="flagTwo" style="background-color: orange"></div>
+                </div>
+            </div>
         </div>
         <div class="nav-border border-bottom .navbar-expand" style="margin: 0px 100px 0px 100px;">
             <div class="col-sm">
@@ -43,3 +57,14 @@
     </header>
 </div>
 
+<style>
+    .flagOne {
+        height: 50px;
+        width: 100%;
+        margin: 0;
+    }
+    .flagTwo {
+        height: 10px;
+        width: 100%;
+    }
+</style>
