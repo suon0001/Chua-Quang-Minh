@@ -17,7 +17,6 @@ function sanitize($input)
     return $input;
 }
 
-// Here we sanitize all the incoming data
 $sanitized = array_map('sanitize', $_POST);
 
 

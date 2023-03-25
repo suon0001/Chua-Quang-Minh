@@ -3,7 +3,10 @@ $secondary: #fff0db;
 $tertiary: #b9afa2;
 
 
-
+.btn {
+  background-color: $primary;
+  color: white;
+}
 
 h1 {
   color: $primary;
@@ -13,3 +16,4 @@ h1 {
 textarea {
   resize: none;
 }
+

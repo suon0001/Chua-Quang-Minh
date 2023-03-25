@@ -19,7 +19,6 @@ if (isset($_POST['CreateProfile'])) {
 
         $iterations = ['cost' => 6];
         $hashed_password = password_hash($password, PASSWORD_BCRYPT, $iterations);
-
         $handle = $conn->prepare($SettingModel->userInsert);
         $handle->bindParam(':email', $email, PDO::PARAM_STR);
         $handle->bindParam(':password', $hashed_password, PDO::PARAM_STR);

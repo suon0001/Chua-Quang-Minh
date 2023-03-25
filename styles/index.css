@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.btn {
+  background-color: #310c0c;
+  color: white;
+}
+
 h1 {
   color: #310c0c;
   text-align: center;
@@ -119,14 +124,6 @@ img.hover-shadow {
 .navbar-custom .navbar-nav li a:active,
 .navbar-custom .navbar-nav li.active a {
   color: #310c0c;
-}
-
-.btn-primary {
-  border: 1px solid #310c0c;
-}
-
-.btn-shadow.btn-primary {
-  box-shadow: 1px 5px 9px rgba(241, 96, 1, 0.32);
 }
 
 @media (min-width: 768px) {
@@ -414,7 +411,7 @@ a, a:hover, a:focus, .btn:focus, .btn:hover, .btn:active, .btn:active:focus, .bt
 }
 
 .event-schedule-area-two .tab-content .table tbody {
-  background: #b9afa2;
+  background: #fff0db;
 }
 
 .event-schedule-area-two .tab-content .table tbody tr.inner-box {
@@ -520,6 +517,16 @@ a, a:hover, a:focus, .btn:focus, .btn:hover, .btn:active, .btn:active:focus, .bt
   width: 100px;
   height: 100px;
   border-radius: 8px;
+}
+
+.card-header {
+  height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.accordion {
+  margin-top: 0;
 }
 
 .view-account {

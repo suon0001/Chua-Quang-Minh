@@ -12,8 +12,8 @@ include("view/_partials/adminPanel.php");
 <div class="accordion" id="accordionExample">
     <div class="card">
         <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+            <h2>
+                <button class="btn bg-transparent btn-block text-left" type="button" data-toggle="collapse"
                         data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <h3 class="fieldset-title">Personal Info</h3>
                 </button>
@@ -47,24 +47,10 @@ include("view/_partials/adminPanel.php");
         </div>
     </div>
     <div class="card">
-        <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Collapsible Group Item #2
-                </button>
-            </h2>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-                Some placeholder content for the second accordion panel. This panel is hidden by default.
-            </div>
-        </div>
-    </div>
-    <div class="card">
         <div class="card-header" id="headingThree">
             <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                <button class="btn bg-transparent btn-link btn-block text-left collapsed" type="button"
+                        data-toggle="collapse"
                         data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     <h3 class="fieldset-title">Create Profile</h3>
                 </button>
@@ -100,7 +86,6 @@ include("view/_partials/adminPanel.php");
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

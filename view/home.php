@@ -171,7 +171,7 @@ if (isset($_SESSION['visitCount'])) {
                                     </div>
 
                                     <a href="" class="text-dark">
-                                        <h5>This is title of the news</h5>
+                                        <h5>About charity</h5>
 
                                         <p>
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid.
@@ -215,10 +215,7 @@ if (isset($_SESSION['visitCount'])) {
                 </div>
             </div>
 
-            <aside class="col-3 blog-sidebar">
-                <div class="p-3 mb-3 bg-light rounded">
-                    <div id='calendar'></div>
-                </div>
+            <div class="col-3 blog-sidebar">
 
                 <div class="p-3">
                     <h4 class="font-italic">Archives</h4>
@@ -237,7 +234,11 @@ if (isset($_SESSION['visitCount'])) {
                         <li><a href="#">April 2013</a></li>
                     </ol>
                 </div>
-                <div id="calendar"></div>
+                <audio controls>
+                    <source src="Ellie Goulding - Burn - YouTube.mp3" autoplay />
+                    Your browser does not support the audio tag.
+                </audio>
+
 
                 <div class="p-3">
                     <h4 class="font-italic">Social Media</h4>
@@ -245,20 +246,19 @@ if (isset($_SESSION['visitCount'])) {
                         <li><a href="#">Facebook</a></li>
                     </ol>
                 </div>
-            </aside>
+            </div>
 
         </div>
     </div>
 </div>
 
 <script>
+
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             },events: [
 

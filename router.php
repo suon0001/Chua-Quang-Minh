@@ -43,6 +43,8 @@ if ($view == null && $isAdmin) {
         '/edit-article' => '/view/admin/editArticle.php',
         '/admin-mail' => '/view/admin/adminMail.php',
         '/mail' => '/view/admin/mail.php',
+        '/admin-donation' => '/view/admin/adminDonation.php',
+        '/admin-member' => '/view/admin/member.php',
         '/admin-setting' => '/view/admin/setting.php',
 
         default => null

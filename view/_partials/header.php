@@ -7,7 +7,7 @@
                 <div class="col flagOne" style="background-color: red"></div>
                 <div class="col flagOne" style="background-color: white"></div>
                 <div class="col flagOne" style="background-color: orange"></div>
-                <div class="col flagOne">
+                <div class="col">
                     <div class="flagTwo" style="background-color: blue"></div>
                     <div class="flagTwo" style="background-color: yellow"></div>
                     <div class="flagTwo" style="background-color: red"></div>
@@ -59,12 +59,12 @@
 
 <style>
     .flagOne {
-        height: 50px;
+        height: 30px;
         width: 100%;
         margin: 0;
     }
     .flagTwo {
-        height: 10px;
+        height: 6px;
         width: 100%;
     }
 </style>
