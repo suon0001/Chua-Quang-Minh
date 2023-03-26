@@ -4,9 +4,13 @@
 @import "news";
 @import "event";
 @import "admin";
-
+@import "article";
+@import "setting";
 body {
     background-color: $secondary;
+}
+nav {
+    margin-bottom: 40px;
 }
 
 .carousel .carousel-item {

@@ -108,3 +108,84 @@
 .accordion {
   margin-top: 0;
 }
+
+idance {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.idance .timetable-item {
+  border: 1px solid #d8e3eb;
+  padding: 15px;
+  margin-top: 20px;
+  position: relative;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .idance .timetable-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.idance .timetable-item-img {
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+  display: none;
+}
+
+.idance .timetable-item-img img {
+  height: 100%;
+}
+
+
+.idance .schedule .nav-tabs {
+  border-bottom: 2px solid $primary;
+}
+
+.idance .schedule .nav-link {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #3d3d3d;
+  font-weight: 500;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  border-radius: 2px 2px 0 0;
+  padding-left: 0;
+  padding-right: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .idance .schedule .nav-link {
+    font-size: 16px;
+  }
+}
+
+.idance .schedule .nav-link.active {
+  background: $primary;
+  border-color: $primary;
+  color: #fff;
+}
+
+.idance .schedule .nav-link.active:focus {
+  border-color: $primary;
+}
+
+.idance .schedule .nav-link:hover:not(.active) {
+  background: #702525;
+  border-color: #702525;
+  color: #fff;
+}
+
+.idance .schedule .tab-pane {
+  padding-top: 10px;
+}

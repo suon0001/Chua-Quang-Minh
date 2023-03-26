@@ -37,6 +37,8 @@ if ($view == null && $isAdmin) {
         '/admin-panel' => '/view/admin/adminPanel.php',
         '/admin-profile' => '/view/admin/adminProfile.php',
         '/admin-event' => '/view/admin/adminEvent.php',
+        '/add-event' => '/view/admin/addEvent.php',
+        '/edit-event' => '/view/admin/editEvent.php',
         '/admin-photo' => '/view/admin/adminPhoto.php',
         '/admin-article' => '/view/admin/adminArticles.php',
         '/add-article' => '/view/admin/addArticle.php',
