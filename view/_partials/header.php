@@ -26,42 +26,31 @@
                             <h1 class="site-logo">Chua Quang Minh</h1>
                         </div>
                     </div>
-                </div>
-                <nav class="navbar  navbar-expand-md bg-transparent">
-                    <div class="container">
-                        <div class="collapse navbar-collapse" id="navbarMenu">
+                    <nav class="navbar navbar-expand-lg rounded">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarsExample09">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="/home">HOME</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/event">EVENT</a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/news">NEWS</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/photo">PHOTO</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item dropdown">
                                     <a class="nav-link" href="/contact">CONTACT</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-sm">
+                    </nav>
             </div>
         </div>
     </header>
 </div>
-
-<style>
-    .flagOne {
-        height: 30px;
-    }
-    .flagTwo {
-        height: 2px;
-    }
-</style>

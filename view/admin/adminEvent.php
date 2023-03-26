@@ -50,19 +50,19 @@ include("view/_partials/adminPanel.php");
                                     <span><?php echo $row['date'] ?></span>
                                 </td>
                                 <td style="width: 12%;">
-                                    <a href="../../index.php" class="table-link">
+                                    <a href="/edit-event?eventID=<?php echo $row['eventID']; ?>" class="table-link">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 									</span>
                                     </a>
-                                    <a href="../../index.php"
-                                       class="table-link danger">
+                                    <a href="#" class="table-link danger">
+                                    </a>
+                                    <a href="/admin-article.php?del=1&newsID=<?= $row["eventID"] ?>" class="table-link danger">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
 									</span>
-                                    </a>
                                 </td>
                             </tr>
                             <?php

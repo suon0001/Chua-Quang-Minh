@@ -8,7 +8,6 @@
   border-color: #97a0af;
 }
 
-
 .contact-detail-box {
   margin-bottom: 50px;
 }
@@ -24,14 +23,13 @@
 .logo i,.question-q-box,.social-circle li a:hover {
   background-color: $primary;
 }
-.title-box .title-alt,.text-colored,.footer a:hover,
+.title-box .title-alt,.text-colored, a:hover,
 .navbar-custom .navbar-nav li a:hover,
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active,
 .navbar-custom .navbar-nav li.active a {
   color: $primary;
 }
-
 
 
 @media (min-width: 768px) {
@@ -59,9 +57,6 @@
   }
   .feature-detail {
     padding: 0px 0px 50px 30px !important;
-  }
-  .footer h5 {
-    margin-top: 30px;
   }
 }
 

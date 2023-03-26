@@ -103,7 +103,7 @@ include("view/_partials/adminPanel.php");
                     <tr>
                         <td>#<?php echo $row['donationID']; ?></td>
                         <td><?php echo $row['project']; ?></td>
-                        <td><?php echo $row['latestDonation']; ?></td>
+                        <td><?php echo $row['timestamp']; ?></td>
                         <td><?php echo $row['amount']; ?> DKK</td>
                     </tr>
                         <?php

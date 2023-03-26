@@ -65,6 +65,22 @@ CREATE TABLE Mail
     timestamp   TIMESTAMP
 ) ENGINE = InnoDB;
 
+CREATE TABLE Donation
+(
+    memberID      INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    firstName   VARCHAR(255),
+    lastName    VARCHAR(255),
+    phone       VARCHAR(255)
+) ENGINE = InnoDB;
+
+CREATE TABLE Amount
+(
+    donationID      INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    charity   VARCHAR(255),
+    amount    VARCHAR(255),
+    timestamp   TIMESTAMP
+) ENGINE = InnoDB;
+
 
 CREATE VIEW NewsOrderbyType AS
 SELECT n.newsID,
