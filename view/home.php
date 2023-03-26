@@ -20,7 +20,7 @@ if (isset($_SESSION['visitCount'])) {
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/gallery/image7.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="assets/gallery/image3.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption text-left">
                             <h1>Example headline.</h1>
@@ -31,7 +31,7 @@ if (isset($_SESSION['visitCount'])) {
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="second-slide" src="assets/banner/image3.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="assets/banner/image5.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Another example headline.</h1>
@@ -248,7 +248,8 @@ if (isset($_SESSION['visitCount'])) {
                 </ol>
             </div>
             <audio controls>
-                <source src="Ellie Goulding - Burn - YouTube.mp3" autoplay/>
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="horse.mp3" type="audio/mpeg">
                 Your browser does not support the audio tag.
             </audio>
 
