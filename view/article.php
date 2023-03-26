@@ -64,7 +64,7 @@ while ($row = $articleResult->fetch(PDO::FETCH_ASSOC)) {
                 </div>
                 <div class="widget-body">
                     <?php
-                    while ($row = $allActicles->fetch(PDO::FETCH_ASSOC)) {
+                    while ($row = $allArcticles->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                         <div class="latest-post-aside media">
                             <div class="lpa-left media-body">

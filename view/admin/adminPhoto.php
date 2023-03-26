@@ -33,12 +33,12 @@ include("view/_partials/adminPanel.php");
         <div class="row">
             <?php
             foreach ($photoResult as $row) { ?>
-            <div class="col-sm-6 col-lg-3 mb-2-6">
+            <div class="col-sm-12 col-lg-2">
                 <div class="card-wrapper mb-4">
                     <div><img class="card-img-admin" src="assets/gallery/<?php echo $row['photo'] ?>" alt="<?php echo $row['alt'] ?>"></div>
                     <div class="card-body">
                         <div>
-                            <a href="../../index.php"><i class="fa-solid fa-trash"></i></a>
+                            <a href="/admin-photo.php?del=1&photoID=<?= $row["photoID"] ?>"><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>

@@ -9,66 +9,51 @@ include("view/_partials/adminPanel.php");
 ?>
 
 
-<div class="container-fluid">
-    <h3>Event</h3>
-    <hr>
-    <div class="row">
-        <?php
+<h3>Event</h3>
+<hr>
+<div class="row">
+    <?php
 
-        while ($row = $allEvent->fetch(PDO::FETCH_ASSOC)) { ?>
+    while ($row = $allEvent->fetch(PDO::FETCH_ASSOC)) { ?>
         <form action="" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="newsID" value="<?php echo $row['eventID']; ?>">
             <div class="form-group">
-                <label for="title">Event Name</label>
-                <input type="text" id="textAreaExample1" name="eventName" class="form-control"
-                       value="<?php echo $row['eventName']; ?>" required>
+                <label for="eventName">Event</label>
+                <input type="hidden" name="eventID" value="<?php echo $row['eventID']; ?>">
+                <input type="text" name="eventName" class="form-control" id="eventName"  value="<?php echo $row['eventName']; ?>">
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-7 col-md-9">
                     <div class="form-group">
-                        <label for="title">Host</label>
-                        <input type="text" id="textAreaExample1" name="host" class="form-control"
-                               value="<?php echo $row['host']; ?>" required>
+                        <label for="host">Host</label>
+                        <input type="text" name="host" class="form-control" id="host" value="<?php echo $row['host']; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="title">Address</label>
-                        <input type="text" id="textAreaExample1" name="address" class="form-control" rows="4"
-                               value="<?php echo $row['address']; ?>" required>
+                        <label for="address">Address</label>
+                        <input class="form-control" name="address" id="address" value="<?php echo $row['address']; ?>"">
                     </div>
                     <div class="form-group">
-                        <label for="title">Description</label>
-                        <textarea class="form-control" name="description" id="content"
-                                  rows="20"><?php echo $row['description']; ?></textarea>
+                        <label for="description">Description</label>
+                        <textarea class="form-control" name="description" id="content" rows="20"><?php echo $row['description']; ?></textarea>
                     </div>
                 </div>
                 <div class="col-xs-5 col-md-3">
                     <div class="form-group">
-                        <label for="category_id">Category</label>
-
-
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="newsTypeID" value="<?php echo $row["start"]; ?>">
-                                    <?php echo $row['end'] ?>
-                                </label>
-                            </div>
-
+                        <label for="start">Start time</label>
+                        <input type="time" value="<?php echo $row['start']; ?>" name="start" class="form-control">
+                        <label for="end">End time</label>
+                        <input type="time" value="<?php echo $row['end']; ?>" name="end" class="form-control">
+                        <label for="date">Date</label>
+                        <input type="date" value="<?php echo $row['date']; ?>" name="date" class="form-control">
+                        <br>
                         <div class="form-group">
-                            <div class="custom-file">
-                                <input type="file" name="banner" id="image" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" name="editSave" class="btn btn-primary">Save Draft</button>
-                            <button type="submit" name="editPublish" class="btn btn-primary">Publish</button>
+                            <button type="submit" name="edit" class="btn btn-primary">Edit</button>
                         </div>
                     </div>
                 </div>
-                <?php } ?>
         </form>
+    <?php } ?>
     </div>
-</div>
 
-<script>
-    CKEDITOR.replace('content');
-</script>
+    <script>
+        CKEDITOR.replace('content');
+    </script>

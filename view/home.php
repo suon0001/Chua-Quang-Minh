@@ -67,7 +67,7 @@ if (isset($_SESSION['visitCount'])) {
 <br>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-9 blog-main">
+        <div class="col-lg-9 m-15px-tb">
             <div class="row">
                 <section>
                     <div class="row gx-lg-5">
@@ -101,17 +101,21 @@ if (isset($_SESSION['visitCount'])) {
 
                                     <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                         <div class="row mb-4 border-bottom pb-2">
-                                            <div class="col-3">
+                                            <div class="col-2">
                                                 <img src="assets/banner/<?php echo $row['banner'] ?>"
                                                      class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
                                                      alt=""/>
                                             </div>
 
-                                            <div class="col-9">
+                                            <div class="col-10">
                                                 <p class="mb-2 block text-truncate">
                                                     <strong><?php echo $row['title'] ?></strong></p>
                                                 <p>
-                                                    <small> <?php echo $row['timeUpdated'] ?></small>
+                                                    <small><?php
+                                                        $today = date("F j, g:i a", strtotime($row['timeUpdated']));
+                                                        echo $today;
+
+                                                        ?></small>
                                                 </p>
                                             </div>
                                         </div>
@@ -121,7 +125,7 @@ if (isset($_SESSION['visitCount'])) {
                                 ?>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <div class="col-lg-4 col-md-2 mb-4 mb-lg-0">
                             <div>
                                 <div class="row mb-3">
                                     <div class="col-6">
@@ -152,17 +156,21 @@ if (isset($_SESSION['visitCount'])) {
 
                                     <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                         <div class="row mb-4 border-bottom pb-2">
-                                            <div class="col-3">
+                                            <div class="col-2">
                                                 <img src="assets/banner/<?php echo $row['banner'] ?>"
                                                      class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
                                                      alt=""/>
                                             </div>
 
-                                            <div class="col-9">
+                                            <div class="col-10">
                                                 <p class="mb-2 block text-truncate">
                                                     <strong><?php echo $row['title'] ?></strong></p>
                                                 <p>
-                                                    <small> <?php echo $row['timeUpdated'] ?></small>
+                                                    <small> <?php
+                                                        $today = date("F j, g:i a", strtotime($row['timeUpdated']));
+                                                        echo $today;
+
+                                                        ?></small>
                                                 </p>
                                             </div>
                                         </div>
@@ -203,17 +211,21 @@ if (isset($_SESSION['visitCount'])) {
 
                                     <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
                                         <div class="row mb-4 border-bottom pb-2">
-                                            <div class="col-3">
+                                            <div class="col-2">
                                                 <img src="assets/banner/<?php echo $row['banner'] ?>"
                                                      class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
                                                      alt=""/>
                                             </div>
 
-                                            <div class="col-9">
+                                            <div class="col-10">
                                                 <p class="mb-2 block text-truncate">
                                                     <strong><?php echo $row['title'] ?></strong></p>
                                                 <p>
-                                                    <small> <?php echo $row['timeUpdated'] ?></small>
+                                                    <small> <?php
+                                                        $today = date("F j, g:i a", strtotime($row['timeUpdated']));
+                                                        echo $today;
+
+                                                        ?></small>
                                                 </p>
                                             </div>
                                         </div>
@@ -224,46 +236,19 @@ if (isset($_SESSION['visitCount'])) {
                             </div>
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>
 
-        <div class="col-3 blog-sidebar">
-
-            <div class="p-3">
-                <h4 class="font-italic">Archives</h4>
-                <ol class="list-unstyled mb-0">
-                    <li><a href="#">March 2014</a></li>
-                    <li><a href="#">February 2014</a></li>
-                    <li><a href="#">January 2014</a></li>
-                    <li><a href="#">December 2013</a></li>
-                    <li><a href="#">November 2013</a></li>
-                    <li><a href="#">October 2013</a></li>
-                    <li><a href="#">September 2013</a></li>
-                    <li><a href="#">August 2013</a></li>
-                    <li><a href="#">July 2013</a></li>
-                    <li><a href="#">June 2013</a></li>
-                    <li><a href="#">May 2013</a></li>
-                    <li><a href="#">April 2013</a></li>
-                </ol>
-            </div>
-            <audio controls>
-                <source src="horse.ogg" type="audio/ogg">
-                <source src="horse.mp3" type="audio/mpeg">
-                Your browser does not support the audio tag.
-            </audio>
-
-
-            <div class="p-3">
-                <h4 class="font-italic">Social Media</h4>
-                <ol class="list-unstyled">
-                    <li><a href="#">Facebook</a></li>
-                </ol>
+        <div class="col-lg-3 m-15px-tb blog-aside">
+            <div class="widget-latest-post">
+                <div class="widget-body bg-transparent">
+                    <div id="calendar"></div>
+                </div>
             </div>
         </div>
-
     </div>
-</div>
 </div>
 
 <script>
@@ -281,18 +266,18 @@ if (isset($_SESSION['visitCount'])) {
                     start: '2023-03-02'
                 },
                 {
-                    title: 'Long Event',
+                    title: 'test',
                     start: '2023-03-07',
                     end: '2023-03-10'
                 },
                 {
                     groupId: '999',
-                    title: 'Repeating Event',
-                    start: '2023-03-09T16:00:00'
+                    title: 'test',
+                    start: '2023-03-26T16:00:00'
                 },
                 {
                     groupId: '999',
-                    title: 'Repeating Event',
+                    title: 'test',
                     start: '2023-03-16T16:00:00'
                 },
                 {

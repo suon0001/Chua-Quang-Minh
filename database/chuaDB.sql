@@ -48,8 +48,8 @@ CREATE TABLE Event
     host        VARCHAR(255),
     address     VARCHAR(255),
     description TEXT,
-    start       VARCHAR(30),
-    end         VARCHAR(30),
+    start       TIME,
+    end         TIME,
     date        DATE
 
 ) ENGINE = InnoDB;

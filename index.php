@@ -25,7 +25,7 @@ include("view/_partials/links.php");
 include("view/_partials/header.php");
 ?>
 
-<div class="main mx-5">
+<div class="main-page mx-5">
     <br>
     <?php
     require("router.php");

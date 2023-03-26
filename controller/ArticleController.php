@@ -1,7 +1,7 @@
 <?php
 $articleResult = $conn->query($getArticle);
 
-$allActicles = $conn->query($allArticles);
+$allArcticles = $conn->query($allArticles);
 
 $newsOption = $conn->query($ArticleModel->newsType);
 
