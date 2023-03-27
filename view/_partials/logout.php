@@ -1,6 +1,5 @@
 <?php
-$_SESSION = array();
-
+//$_SESSION = array();
 if (isset($_COOKIE[session_name()])) {
     setcookie(session_name(), '', time() - 40000, '/');
 }

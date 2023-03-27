@@ -1,6 +1,5 @@
 <?php
 require("rootPath.php");
-
 require $rootPath . "model/HomeModel.php";
 require $rootPath . "controller/HomeController.php";
 if (isset($_SESSION['visitCount'])) {
@@ -9,7 +8,6 @@ if (isset($_SESSION['visitCount'])) {
     $_SESSION['visitCount'] = 1;
 }
 ?>
-
 <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="carousel slide col-12 carousel-deco" id="myCarousel" data-ride="carousel">
@@ -313,5 +311,3 @@ if (isset($_SESSION['visitCount'])) {
 <style>
     <?php include 'styles/index.css'; ?>
 </style>
-
-

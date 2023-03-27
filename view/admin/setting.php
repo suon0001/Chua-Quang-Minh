@@ -149,8 +149,3 @@ include("view/_partials/adminPanel.php");
             });
         })
     </script>
-
-
-    <style>
-
-    </style>

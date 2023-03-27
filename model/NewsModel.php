@@ -1,11 +1,6 @@
 
 <?php
 
-if (isset($_GET["limit"])) {
-    $limit = $_GET["limit"];
-} else {
-    $limit = 12;
-}
 
 if (isset($_GET["skip"])) {
     $skip = $_GET["skip"];
@@ -18,7 +13,7 @@ if (isset($_GET["newsTypeID"])) {
 } else {
     $newsTypeID = null;
 }
-$firstPageBlogsQuery = "SELECT * FROM NewsOrderbyType LIMIT $limit";
+$firstPageBlogsQuery = "SELECT * FROM NewsOrderbyType ";
 $insertAllNews = "SELECT * FROM NewsOrderbyType";
 $pageCountQuery = "SELECT * FROM NewsOrderbyType";
 

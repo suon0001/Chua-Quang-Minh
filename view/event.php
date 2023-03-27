@@ -61,27 +61,24 @@ require $rootPath . "controller/EventController.php";
                                     </th>
                                     <td>
                                         <div class="event-wrap">
-                                            <h3><a href="#"><?php echo $row['eventName'] ?></a></h3>
+                                            <h3><?php echo $row['eventName'] ?></h3>
                                             <div class="meta">
                                                 <div class="organizers">
-                                                    <a href="#"><?php echo $row['host'] ?></a>
-                                                </div>
-                                                <div class="categories">
-                                                    <a href="#">Inspire</a>
+                                                    <p><i class="fa-solid fa-user"></i> <?php echo $row['host'] ?></p>
                                                 </div>
                                                 <div class="time">
-                                                        <span><?php
+                                                        <p><i class="fa-solid fa-calendar-days"></i> <?php
                                                             echo date('h:i A', strtotime($row['start'])); ?>
                                                             -
                                                             <?php
-                                                            echo date('h:i A', strtotime($row['end'])); ?></span>
+                                                            echo date('h:i A', strtotime($row['end'])); ?></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="r-no">
-                                            <span><?php echo $row['address'] ?></span>
+                                            <span><i class="fa-solid fa-location-dot"></i> <?php echo $row['address'] ?></span>
                                         </div>
                                     </td>
                                     <td>

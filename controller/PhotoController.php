@@ -83,7 +83,6 @@ if (isset($_REQUEST['del'])) {
     $setPhoto = $_REQUEST['photoID'];
     $handle = $conn->prepare($PhotoModel->deletePhoto);
     $handle->execute(array(":photoID" => $setPhoto));
-    //unlink($filename);
     header("Location:admin-photo");
 }
 

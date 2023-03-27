@@ -21,7 +21,6 @@ $sanitized = array_map('sanitize', $_POST);
 
 
 include("view/_partials/links.php");
-
 include("view/_partials/header.php");
 ?>
 
