@@ -27,8 +27,8 @@ $view = match ($toCheck) {
     '/contact' => '/view/contact.php',
     '/article' => '/view/article.php',
     '/login' => '/view/login.php',
-    '/logout' => '/View/_partials/logout.php',
-
+    '/logout' => '/view/_partials/logout.php',
+    '/testing' => '/view/test.php',
     default => null
 };
 

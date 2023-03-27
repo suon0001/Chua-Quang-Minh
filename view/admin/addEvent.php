@@ -37,7 +37,7 @@ include("view/_partials/adminPanel.php");
                     <label for="start">Start time</label>
                     <input type="time" value="00:00" name="start" class="form-control">
                     <label for="end">End time</label>
-                    <input type="time" value="00:00" name="end" class="form-control">
+                    <input type="time" value="23:59" name="end" class="form-control">
                     <label for="date">Date</label>
                     <input type="date" value="0000-00-00" name="date" class="form-control">
                     <div class="form-group">

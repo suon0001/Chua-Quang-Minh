@@ -29,11 +29,11 @@ include("view/_partials/adminPanel.php");
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <input class="form-control" name="address" id="address" value="<?php echo $row['address']; ?>"">
+                        <input class="form-control" name="address" id="address" value="<?php echo $row['address']; ?>">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" name="description" id="content" rows="20"><?php echo $row['description']; ?></textarea>
+                        <textarea class="form-control" name="description" id="description" rows="20"><?php echo $row['description']; ?></textarea>
                     </div>
                 </div>
                 <div class="col-xs-5 col-md-3">
@@ -55,5 +55,5 @@ include("view/_partials/adminPanel.php");
     </div>
 
     <script>
-        CKEDITOR.replace('content');
+        CKEDITOR.replace('description');
     </script>

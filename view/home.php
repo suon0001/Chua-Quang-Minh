@@ -2,11 +2,9 @@
 require("rootPath.php");
 require $rootPath . "model/HomeModel.php";
 require $rootPath . "controller/HomeController.php";
-if (isset($_SESSION['visitCount'])) {
-    $_SESSION['visitCount']++;
-} else {
-    $_SESSION['visitCount'] = 1;
-}
+require $rootPath . "model/TestModel.php";
+require $rootPath . "controller/TestController.php";
+
 ?>
 <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center">
@@ -250,57 +248,34 @@ if (isset($_SESSION['visitCount'])) {
 </div>
 
 <script>
-
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             }, events: [
+                <?php  foreach ($allEventsResult as $row) {
+
+                $title = $row['eventName'];
+                $myJSONTitle = json_encode($title);
+                $dateDate = date("Y-m-d", strtotime($row['date']));
+                $dateStart = date("H:i:s", strtotime($row['start']));
+                $dateEnd = date("H:i:s", strtotime($row['end']));
+
+                ?>
+
 
                 {
-                    title: 'All Day Event',
-                    start: '2023-03-02'
+                    title: '<?php echo $myJSONTitle ?>',
+                    start: '<?php echo $dateDate ?>T<?php echo $dateStart ?>',
+                    end: '<?php echo $dateDate ?>T<?php echo $dateEnd ?>'
                 },
-                {
-                    title: 'test',
-                    start: '2023-03-07',
-                    end: '2023-03-10'
-                },
-                {
-                    groupId: '999',
-                    title: 'test',
-                    start: '2023-03-26T16:00:00'
-                },
-                {
-                    groupId: '999',
-                    title: 'test',
-                    start: '2023-03-16T16:00:00'
-                },
-                {
-                    title: 'Conference',
-                    start: '2023-03-11',
-                    end: '2023-03-13'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2023-03-12T10:30:00',
-                    end: '2023-03-12T12:30:00'
-                },
-                {
-                    title: 'Lunch',
-                    start: '2023-03-12T12:00:00'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2023-03-12T14:30:00'
-                },
-                {
-                    title: 'Birthday Party',
-                    start: '2023-03-13T07:00:00'
-                },
-
+                <?php
+                }
+                ?>
             ]
         });
         calendar.render();

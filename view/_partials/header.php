@@ -1,7 +1,5 @@
 <div class="nav-border border-bottom .navbar-expand" style="margin: 0px 100px 0px 100px;">
     <div class="col-sm">
-    </div>
-    <div class="col-sm">
         <div class="container logo-wrap">
             <div class="row pt-5">
                 <div class="col-12 text-center">
@@ -36,3 +34,7 @@
         </div>
     </div>
 </div>
+
+<style>
+
+</style>
