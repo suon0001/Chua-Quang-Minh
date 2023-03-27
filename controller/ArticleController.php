@@ -2,7 +2,8 @@
 $articleResult = $conn->query($getArticle);
 
 $allArcticles = $conn->query($allArticles);
-
+$hitCounterResult = $conn->query($hitCounter);
+$CounterResult = $conn->query($treding);
 $newsOption = $conn->query($ArticleModel->newsType);
 
 //edit article

@@ -53,7 +53,33 @@ while ($row = $articleResult->fetch(PDO::FETCH_ASSOC)) {
                     <h3>Trending Now</h3>
                 </div>
                 <div class="widget-body">
+                    <?php
+                    while ($row = $CounterResult->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                        <div class="latest-post-aside media">
+                            <div class="lpa-left media-body">
+                                <div class="lpa-title">
+                                    <h5><a href="/article?newsID=<?php echo $row['newsID']; ?>"><i
+                                                    class="<?php echo $row['icon'] ?>"></i>
+                                            <?php echo $row['title'] ?></a></h5>
+                                </div>
+                                <div class="lpa-meta">
+                                    <a class="date" href="#">
+                                        <?php
+                                        $today = date("F j, Y", strtotime($row['timeUpdated']));
+                                        echo $today;
 
+                                        ?>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="lpa-right">
+                                <a href="#">
+                                    <img src="assets/banner/<?php echo $row['banner'] ?>" title="" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <!-- End Trending Post -->

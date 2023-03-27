@@ -37,6 +37,7 @@ CREATE TABLE News
     timeUpdated TIMESTAMP,
     saveDraft   BOOLEAN,
     banner      VARCHAR(500),
+    hitCount INT(10),
     newsTypeID  INT                NOT NULL,
     FOREIGN KEY (newsTypeID) REFERENCES NewsType (newsTypeID)
 ) ENGINE = InnoDB;
@@ -67,18 +68,18 @@ CREATE TABLE Mail
 
 CREATE TABLE Donation
 (
-    memberID      INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    firstName   VARCHAR(255),
-    lastName    VARCHAR(255),
-    phone       VARCHAR(255)
+    memberID  INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    firstName VARCHAR(255),
+    lastName  VARCHAR(255),
+    phone     VARCHAR(255)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Amount
 (
-    donationID      INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    charity   VARCHAR(255),
-    amount    VARCHAR(255),
-    timestamp   TIMESTAMP
+    donationID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    charity    VARCHAR(255),
+    amount     VARCHAR(255),
+    timestamp  TIMESTAMP
 ) ENGINE = InnoDB;
 
 
@@ -97,7 +98,7 @@ SELECT n.newsID,
 FROM news n,
      newsType nt
 WHERE n.newsTypeID = nt.newsTypeID
-ORDER BY n.timeUpdated DESC ;
+ORDER BY n.timeUpdated DESC;
 
 
 INSERT INTO `newstype` (`newsTypeID`, `typeName`, `icon`)

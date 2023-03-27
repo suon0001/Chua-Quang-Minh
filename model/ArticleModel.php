@@ -2,6 +2,8 @@
 $newsID = $_GET['newsID'];
 $getArticle  = "SELECT * FROM News n, NewsType nt WHERE n.newsTypeID = nt.newsTypeID AND  newsID = $newsID";
 $allArticles = "SELECT * FROM News n, NewsType nt WHERE n.newsTypeID = nt.newsTypeID AND NOT newsID = $newsID ORDER BY RAND() LIMIT 5 ";
+$treding = "SELECT * FROM News n, NewsType nt WHERE n.newsTypeID = nt.newsTypeID AND NOT newsID = $newsID ORDER BY hitCount desc LIMIT 2";
+$hitCounter ="UPDATE News SET hitCount = COALESCE(hitCount, 0) + 1 WHERE newsID = $newsID";
 
 class ArticleModel
 {
