@@ -56,7 +56,7 @@ if (isset($_POST['submitPhoto'])) {
     if ($_FILES['photo']['name']) {
         move_uploaded_file(
             $_FILES['photo']['tmp_name'],
-            "assets/" . $filename
+            "assets/gallery/" . $filename
         );
     }
     try {
