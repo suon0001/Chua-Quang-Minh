@@ -23,10 +23,12 @@ nav {
 }
 
 .img-fluid-small{
-    float: left;
-    width:  5rem;
-    height: 4rem;
-    object-fit: cover;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .pagination {
@@ -66,4 +68,16 @@ nav {
 .gallery-modal {
     width: 2300px;
     height: 1300px;
+}
+
+.paragraph {
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.md-heading {
+
 }

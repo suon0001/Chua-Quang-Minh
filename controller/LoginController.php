@@ -1,7 +1,7 @@
 <?php
-
 $errorPassword = false;
-
+$notregistered = false;
+$wrongCredentials = false;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $sanitized['email'];
@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if (!empty($email) && !empty($password)) {
 
-        $handle = $conn->prepare($LoginModel->selectQuery);
+        $handle = $conn->prepare($LoginModel->loginIn);
         $handle->bindParam(':email', $email, PDO::PARAM_STR);
         $handle->execute();
         $result = $handle->fetchAll();
@@ -34,5 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         } else {
             $notregistered = true;
         }
+    } else {
+        $wrongCredentials = true;
     }
 }

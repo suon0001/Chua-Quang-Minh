@@ -10,8 +10,12 @@ require $rootPath . "Controller/LoginController.php";
             <strong>Error:</strong> Wrong email or password!
         </div>
     <?php } ?>
+    <?php if ($notregistered) { ?>
+        <div class="alert alert-danger text-center" role="alert">
+            <strong>Invalid login:</strong> Please try again or sign up!
+        </div>
+    <?php } ?>
 </head>
-
 <div class="container">
     <form method="POST">
         <!-- Email input -->

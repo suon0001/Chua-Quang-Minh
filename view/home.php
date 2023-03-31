@@ -2,6 +2,8 @@
 require("rootPath.php");
 require $rootPath . "model/HomeModel.php";
 require $rootPath . "controller/HomeController.php";
+require $rootPath . "model/EventModel.php";
+require $rootPath . "controller/EventController.php";
 
 ?>
 <div class="container-fluid">
@@ -67,7 +69,7 @@ require $rootPath . "controller/HomeController.php";
                     <div class="row gx-lg-5">
                         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
                             <div>
-                                <div class="row mb-3">
+                                <div class="col-md-12 items blog-home5">
                                     <div class="col-6">
                                         <a href="" class="text-info">
                                             <i class="fa-solid fa-vihara"></i>
@@ -76,44 +78,77 @@ require $rootPath . "controller/HomeController.php";
                                     </div>
                                 </div>
 
-                                <a href="" class="text-dark">
-                                    <h5>This is title of the news</h5>
+                                <?php
+                                foreach ($chuaOneResult as $row) {
+                                    ?>
+                                    <div class="col-md-12 items blog-home5">
+                                        <div class="card b-h-box position-relative font-14 border-0 mb-4">
+                                            <img class="card-img d-block img-fluid banner"
+                                                 src="assets/banner/<?php echo $row['banner'] ?>"
+                                                 alt="Card image">
+                                            <div class="card-img-overlay overflow-hidden">
+                                                <div class="d-flex align-items-center">
+                            <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal"><i
+                                        class="<?php echo $row['icon'] ?>"> </i> <?php echo $row['typeName'] ?></span>
+                                                    <div class="ml-2">
+                                <span class="ml-2"><?php
+                                    $today = date("F j", strtotime($row['timeUpdated']));
+                                    echo $today;
 
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid.
-                                        Sed
-                                        id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-                                        adipisci iusto nam temporibus modi animi laboriosam?
-                                    </p>
-                                </a>
+                                    ?></span>
+                                                    </div>
+                                                </div>
+                                                <h5 class="card-title my-3 font-weight-normal"><a
+                                                            href="/article?newsID=<?php echo $row['newsID']; ?>"
+                                                            class="link-light"><?php echo $row['title']; ?></a></h5>
+                                                <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                   class="link-light">
+                                                    <p class="card-text"><?php echo $row['description']; ?></p>
+                                                </a>
+                                                <br>
+                                                <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                   class="link-light">
+                                                    <p class="card-text">READ MORE</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
 
                                 <hr/>
                                 <!--  Chua -->
                                 <?php
                                 foreach ($chuaResult as $row) {
                                     ?>
-
-                                    <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
-                                        <div class="row mb-4 border-bottom pb-2">
-                                            <div class="col-2">
-                                                <img src="assets/banner/<?php echo $row['banner'] ?>"
-                                                     class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
-                                                     alt=""/>
+                                    <article class="col-md-12 items blog-home5">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                                <div class="post-type post-img">
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
+                                                                src="assets/banner/<?php echo $row['banner'] ?>"
+                                                                class="img-responsive" alt="image post"></a>
+                                                </div>
                                             </div>
-
-                                            <div class="col-10">
-                                                <p class="mb-2 block text-truncate">
-                                                    <strong><?php echo $row['title'] ?></strong></p>
-                                                <p>
+                                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                                <div class="author-info author-info-2">
                                                     <small><?php
                                                         $today = date("F j, g:i a", strtotime($row['timeUpdated']));
                                                         echo $today;
 
                                                         ?></small>
-                                                </p>
+                                                </div>
+                                                <div class="caption">
+                                                    <h6 class="md-heading"><a
+                                                                href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
+                                                    </h6>
+                                                    <small class="paragraph"><?php echo $row['description'] ?></small>
+                                                </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </article>
+                                    <hr>
                                     <?php
                                 }
                                 ?>
@@ -121,7 +156,7 @@ require $rootPath . "controller/HomeController.php";
                         </div>
                         <div class="col-lg-4 col-md-2 mb-4 mb-lg-0">
                             <div>
-                                <div class="row mb-3">
+                                <div class="col-md-12 items blog-home5">
                                     <div class="col-6">
                                         <a href="" class="text-danger">
                                             <i class="fa-solid fa-globe"></i>
@@ -130,16 +165,44 @@ require $rootPath . "controller/HomeController.php";
                                     </div>
                                 </div>
 
-                                <a href="" class="text-dark">
-                                    <h5>This is title of the news</h5>
+                                <?php
+                                foreach ($worldOneResult as $row) {
+                                    ?>
+                                    <div class="col-md-12 items blog-home5">
+                                        <div class="card b-h-box position-relative font-14 border-0 mb-4">
+                                            <img class="card-img d-block img-fluid banner"
+                                                 src="assets/banner/<?php echo $row['banner'] ?>"
+                                                 alt="Card image">
+                                            <div class="card-img-overlay overflow-hidden">
+                                                <div class="d-flex align-items-center">
+                            <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal"><i
+                                        class="<?php echo $row['icon'] ?>"> </i> <?php echo $row['typeName'] ?></span>
+                                                    <div class="ml-2">
+                                <span class="ml-2"><?php
+                                    $today = date("F j", strtotime($row['timeUpdated']));
+                                    echo $today;
 
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid.
-                                        Sed
-                                        id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-                                        adipisci iusto nam temporibus modi animi laboriosam?
-                                    </p>
-                                </a>
+                                    ?></span>
+                                                    </div>
+                                                </div>
+                                                <h5 class="card-title my-3 font-weight-normal"><a
+                                                            href="/article?newsID=<?php echo $row['newsID']; ?>"
+                                                            class="link-light"><?php echo $row['title']; ?></a></h5>
+                                                <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                   class="link-light">
+                                                    <p class="card-text"><?php echo $row['description']; ?></p>
+                                                </a>
+                                                <br>
+                                                <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                   class="link-light">
+                                                    <p class="card-text">READ MORE</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
 
                                 <hr/>
 
@@ -147,36 +210,42 @@ require $rootPath . "controller/HomeController.php";
                                 <?php
                                 foreach ($worldResult as $row) {
                                     ?>
-
-                                    <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
-                                        <div class="row mb-4 border-bottom pb-2">
-                                            <div class="col-2">
-                                                <img src="assets/banner/<?php echo $row['banner'] ?>"
-                                                     class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
-                                                     alt=""/>
+                                    <article class="col-md-12 items blog-home5">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                                <div class="post-type post-img">
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
+                                                                src="assets/banner/<?php echo $row['banner'] ?>"
+                                                                class="img-responsive" alt="image post"></a>
+                                                </div>
                                             </div>
-
-                                            <div class="col-10">
-                                                <p class="mb-2 block text-truncate">
-                                                    <strong><?php echo $row['title'] ?></strong></p>
-                                                <p>
-                                                    <small> <?php
+                                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                                <div class="author-info author-info-2">
+                                                    <small><?php
                                                         $today = date("F j, g:i a", strtotime($row['timeUpdated']));
                                                         echo $today;
 
                                                         ?></small>
-                                                </p>
+                                                </div>
+                                                <div class="caption">
+                                                    <h6 class="md-heading"><a
+                                                                href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
+                                                    </h6>
+                                                    <small class="paragraph"><?php echo $row['description'] ?></small>
+                                                </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </article>
+                                    <hr>
                                     <?php
                                 }
                                 ?>
                             </div>
                         </div>
+
                         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <div>
-                                <div class="row mb-3">
+                                <div class="col-md-12 items blog-home5">
                                     <div class="col-6">
                                         <a href="" class="text-warning">
                                             <i class="fa-solid fa-hand-holding-heart"></i>
@@ -184,46 +253,77 @@ require $rootPath . "controller/HomeController.php";
                                         </a>
                                     </div>
                                 </div>
+                                <?php
+                                foreach ($charityOneResult as $row) {
+                                    ?>
+                                    <div class="col-md-12 items blog-home5">
+                                        <div class="card b-h-box position-relative font-14 border-0 mb-4">
+                                            <img class="card-img d-block img-fluid banner"
+                                                 src="assets/banner/<?php echo $row['banner'] ?>"
+                                                 alt="Card image">
+                                            <div class="card-img-overlay overflow-hidden">
+                                                <div class="d-flex align-items-center">
+                            <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal"><i
+                                        class="<?php echo $row['icon'] ?>"> </i> <?php echo $row['typeName'] ?></span>
+                                                    <div class="ml-2">
+                                <span class="ml-2"><?php
+                                    $today = date("F j", strtotime($row['timeUpdated']));
+                                    echo $today;
 
-                                <a href="" class="text-dark">
-                                    <h5>About charity</h5>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid.
-                                        Sed
-                                        id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-                                        adipisci iusto nam temporibus modi animi laboriosam?
-                                    </p>
-                                </a>
-
+                                    ?></span>
+                                                    </div>
+                                                </div>
+                                                <h5 class="card-title my-3 font-weight-normal"><a
+                                                            href="/article?newsID=<?php echo $row['newsID']; ?>"
+                                                            class="link-light"><?php echo $row['title']; ?></a></h5>
+                                                <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                   class="link-light">
+                                                    <p class="card-text"><?php echo $row['description']; ?></p>
+                                                </a>
+                                                <br>
+                                                <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                   class="link-light">
+                                                    <p class="card-text">READ MORE</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
                                 <hr/>
 
                                 <!-- charity -->
                                 <?php
                                 foreach ($charityResult as $row) {
                                     ?>
-
-                                    <a href="/article?newsID=<?php echo $row['newsID']; ?>" class="text-dark">
-                                        <div class="row mb-4 border-bottom pb-2">
-                                            <div class="col-2">
-                                                <img src="assets/banner/<?php echo $row['banner'] ?>"
-                                                     class="img-fluid-small shadow-1-strong rounded h-100 d-inline-block"
-                                                     alt=""/>
+                                    <article class="col-md-12 items blog-home5">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                                <div class="post-type post-img">
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
+                                                                src="assets/banner/<?php echo $row['banner'] ?>"
+                                                                class="img-responsive" alt="image post"></a>
+                                                </div>
                                             </div>
-
-                                            <div class="col-10">
-                                                <p class="mb-2 block text-truncate">
-                                                    <strong><?php echo $row['title'] ?></strong></p>
-                                                <p>
-                                                    <small> <?php
+                                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                                <div class="author-info author-info-2">
+                                                    <small><?php
                                                         $today = date("F j, g:i a", strtotime($row['timeUpdated']));
                                                         echo $today;
 
                                                         ?></small>
-                                                </p>
+                                                </div>
+                                                <div class="caption">
+                                                    <h6 class="md-heading"><a
+                                                                href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
+                                                    </h6>
+                                                    <small class="paragraph"><?php echo $row['description'] ?></small>
+                                                </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </article>
+                                    <hr>
                                     <?php
                                 }
                                 ?>
@@ -283,4 +383,5 @@ require $rootPath . "controller/HomeController.php";
 
 <style>
     <?php include 'styles/index.css'; ?>
+
 </style>
