@@ -95,18 +95,18 @@ SELECT n.newsID,
        n.newsTypeID,
        nt.typeName,
        nt.icon
-FROM news n,
-     newsType nt
+FROM News n,
+     NewsType nt
 WHERE n.newsTypeID = nt.newsTypeID
 ORDER BY n.timeUpdated DESC;
 
 
-INSERT INTO `newstype` (`newsTypeID`, `typeName`, `icon`)
+INSERT INTO `NewsType` (`newsTypeID`, `typeName`, `icon`)
 VALUES (NULL, 'CHUA', 'fa-solid fa-vihara'),
        (NULL, 'WORLD', 'fa-solid fa-globe'),
        (NULL, 'CHARITY', 'fa-solid fa-hand-holding-heart');
 
-INSERT INTO `photo` (`photoID`, `alt`, `photo`, `month`, `year`)
+INSERT INTO `Photo` (`photoID`, `alt`, `photo`, `month`, `year`)
 VALUES (NULL, 'test', 'image1.jpg', '08', '2022'),
        (NULL, 'test2', 'image2.jpg', '04', '2022'),
        (NULL, 'test3', 'image3.jpg', '11', '2022'),
@@ -117,7 +117,7 @@ VALUES (NULL, 'test', 'image1.jpg', '08', '2022'),
        (NULL, 'test8', 'image8.jpg', '04', '2022'),
        (NULL, 'test9', 'image9.jpg', '04', '2022');
 
-INSERT INTO `event` (`eventID`, `eventName`, `host`, `address`, `description`, `start`, `end`, `date`)
+INSERT INTO `Event` (`eventID`, `eventName`, `host`, `address`, `description`, `start`, `end`, `date`)
 VALUES (1, 'Zeitgeist: Moving Forward', 'Marchelle', '7th Floor',
         'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\r\n\r\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\r\n\r\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\r\n\r\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\r\n\r\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\r\n\r\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\r\n\r\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\r\n\r\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
         '23:07', '7:04', '2023-02-07'),
@@ -149,7 +149,7 @@ VALUES (1, 'Zeitgeist: Moving Forward', 'Marchelle', '7th Floor',
         '9:21', '15:23', '2023-11-30');
 
 
-INSERT INTO `news` (`newsID`, `title`, `author`, `description`, `paragraph`, `timeUpdated`, `saveDraft`, `banner`,
+INSERT INTO `News` (`newsID`, `title`, `author`, `description`, `paragraph`, `timeUpdated`, `saveDraft`, `banner`,
                     `newsTypeID`)
 VALUES (1, 'Way... Way Out', 'Lari',
         'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\r\n\r\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
@@ -231,5 +231,5 @@ VALUES (1, 'Way... Way Out', 'Lari',
         'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\r\n\r\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\r\n\r\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\r\n\r\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\r\n\r\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\r\n\r\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\r\n\r\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\r\n\r\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\r\n\r\nSuspendisse potenti. In eleifend quam a  odio. In hac habitasse platea dictumst.\r\n\r\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
         '2022-05-24 23:03:41', 0, 'image1.jpg', 1);
 
-INSERT INTO `admin` (`adminID`, `email`, `password`, `phone`)
+INSERT INTO `Admin` (`adminID`, `email`, `password`, `phone`)
 VALUES (1, 'test1@test.com', '$2y$06$JvBeXJ510TPSvabCZyLbYuE4pRlFiXL19J0Tx7tBUpFwLnB6bFcVa', '00000000');

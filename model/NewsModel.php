@@ -19,6 +19,6 @@ $pageCountQuery = "SELECT * FROM NewsOrderbyType";
 
 class NewsModel
 {
-    public $newsType = "SELECT * FROM newsType";
+    public $newsType = "SELECT * FROM NewsType";
 }
 $NewsModel = new NewsModel();

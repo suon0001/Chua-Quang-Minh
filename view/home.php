@@ -2,8 +2,6 @@
 require("rootPath.php");
 require $rootPath . "model/HomeModel.php";
 require $rootPath . "controller/HomeController.php";
-require $rootPath . "model/TestModel.php";
-require $rootPath . "controller/TestController.php";
 
 ?>
 <div class="container-fluid">

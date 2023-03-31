@@ -48,11 +48,8 @@ if (isset($_GET["action"])) {
 if (isset($_POST['submitPhoto'])) {
     $alt = $sanitized['alt'];
     $photo = $_FILES["photo"]["name"];
-
     if (!empty($alt) && !empty($photo))
-
         $filename = strtolower($photo);
-
     if ($_FILES['photo']['name']) {
         move_uploaded_file(
             $_FILES['photo']['tmp_name'],
@@ -68,14 +65,11 @@ if (isset($_POST['submitPhoto'])) {
         $addPhotoResult = $addPhoto->execute();
         $conn->commit();
         header("Location:admin-photo");
-
-
     } catch (Exception $err) {
         echo $err;
         $errorTransaction = true;
         $conn->rollback();
     }
-
 }
 
 //delete photo
