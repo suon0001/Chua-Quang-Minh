@@ -1,8 +1,8 @@
 <?php
 require("rootPath.php");
 
-require $rootPath . "Model/LoginModel.php";
-require $rootPath . "Controller/LoginController.php";
+require $rootPath . "model/LoginModel.php";
+require $rootPath . "controller/LoginController.php";
 ?>
 <head>
     <?php if ($errorPassword) { ?>

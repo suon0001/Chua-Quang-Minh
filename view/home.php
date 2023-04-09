@@ -128,7 +128,7 @@ require $rootPath . "controller/EventController.php";
                                                 <div class="post-type post-img">
                                                     <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
                                                                 src="assets/banner/<?php echo $row['banner'] ?>"
-                                                                class="img-responsive" alt="image post"></a>
+                                                                class="img-responsive post-img" alt="image post"></a>
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
@@ -216,7 +216,7 @@ require $rootPath . "controller/EventController.php";
                                                 <div class="post-type post-img">
                                                     <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
                                                                 src="assets/banner/<?php echo $row['banner'] ?>"
-                                                                class="img-responsive" alt="image post"></a>
+                                                                class="img-responsive post-img" alt="image post"></a>
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
@@ -303,7 +303,7 @@ require $rootPath . "controller/EventController.php";
                                                 <div class="post-type post-img">
                                                     <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
                                                                 src="assets/banner/<?php echo $row['banner'] ?>"
-                                                                class="img-responsive" alt="image post"></a>
+                                                                class="img-responsive post-img" alt="image post"></a>
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
@@ -383,5 +383,4 @@ require $rootPath . "controller/EventController.php";
 
 <style>
     <?php include 'styles/index.css'; ?>
-
 </style>

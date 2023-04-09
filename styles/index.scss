@@ -6,78 +6,87 @@
 @import "admin";
 @import "article";
 @import "setting";
+
 body {
-    background-color: $secondary;
+  background-color: $secondary;
 }
+
 nav {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .carousel .carousel-item {
-    height: 35rem;
+  height: 35rem;
 }
 
 .carousel-deco {
-    background-color: $primary;
-    padding: 10px;
+  background-color: $primary;
+  padding: 10px;
 }
 
-.img-fluid-small{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+.img-fluid-small {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .timeDate {
-    font-size: 14px;
-    color: #777;
+  font-size: 14px;
+  color: #777;
 }
 
 .blog .image img {
-    width: 100%;
+  width: 100%;
 }
 
 //article
 .bg-image {
-    height: 30rem;
-    object-fit: cover;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+  height: 30rem;
+  object-fit: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .media div.media-img img {
-    height: auto;
-    transform: scale(1, 1);
-    transition-duration: 2000ms;
-    transition-timing-function: ease-out;
-    width: 100%;
-    justify-content: center;
+  height: auto;
+  transform: scale(1, 1);
+  transition-duration: 2000ms;
+  transition-timing-function: ease-out;
+  width: 100%;
+  justify-content: center;
 }
 
 .delete-mail .gallery-modal {
-    width: 1300px;
+  width: 1300px;
 }
+
 .gallery-modal {
-    width: 2300px;
-    height: 1300px;
+  width: 2300px;
+  height: 1300px;
 }
 
 .paragraph {
-    display: -webkit-box;
-    max-width: 200px;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  display: -webkit-box;
+  max-width: 200px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .md-heading {
+  text-decoration: none;
+  color: $primary;
+}
 
+.post-img {
+  height: 100px;
+  width: 100%;
 }

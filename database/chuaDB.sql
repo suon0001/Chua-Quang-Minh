@@ -79,7 +79,9 @@ CREATE TABLE Amount
     donationID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     charity    VARCHAR(255),
     amount     VARCHAR(255),
-    timestamp  TIMESTAMP
+    timestamp  TIMESTAMP,
+    memberID  INT                NOT NULL,
+    FOREIGN KEY (memberID) REFERENCES Donation (memberID)
 ) ENGINE = InnoDB;
 
 
