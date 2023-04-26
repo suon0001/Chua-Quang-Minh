@@ -19,5 +19,6 @@
     <link rel="stylesheet" href="styles/index.css">
     <script src="http://cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
-
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link href="/assets/342550293_964009038067335_7787694622060722146_n.jpg" rel="icon" type="image/x-icon" />
 </head>
