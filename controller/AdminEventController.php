@@ -22,7 +22,7 @@ if (isset($_POST['create'])) {
             $addEvent = $conn->prepare($AdminEventModel->createEvent);
             $addEvent->bindParam(':eventName', $eventName, PDO::PARAM_STR);
             $addEvent->bindParam(':host', $host, PDO::PARAM_STR);
-            $addEvent->bindParam(':address', $description, PDO::PARAM_STR);
+            $addEvent->bindParam(':address', $address, PDO::PARAM_STR);
             $addEvent->bindParam(':description', $description, PDO::PARAM_STR);
             $addEvent->bindParam(':start', $start, PDO::PARAM_STR);
             $addEvent->bindParam(':end', $end, PDO::PARAM_STR);
@@ -30,7 +30,13 @@ if (isset($_POST['create'])) {
 
             $addEventResult = $addEvent->execute();
             $conn->commit();
-            header("Location:admin-event");
+              ?>
+
+            <script>
+                    window.location.href = "/admin-event";
+            </script>
+      
+            <?php
         } catch (Exception $err) {
             echo $err;
             $errorTransaction = true;

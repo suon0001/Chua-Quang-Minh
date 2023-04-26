@@ -5,125 +5,62 @@ require $rootPath . "model/EventModel.php";
 require $rootPath . "controller/EventController.php";
 
 ?>
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="search" class="form-control" id="input-search" placeholder="Search...">
+        </div>
+        <div class="searchable-container">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <?php
+        foreach ($allEventsResult
 
-<div class="idance">
-    <div class="schedule content-block">
+                 as $row) {
+            ?>
+            <div class="col-md-4 items">
+                <div class="card b-h-box position-relative font-14 border-0 mb-4 text-white">
+                    <div class="card-body p-4" style="background-color: #B9AFA2">
+                    <span class="badge rounded-pill bg-primary float-md-end mb-3 mb-sm-0"><?php
+                        $today = date("F j o", strtotime($row['date']));
+                        echo $today;
 
-        <div class="timetable">
-            <nav class="nav nav-tabs">
-                <a class="nav-link active">All</a>
-                <a class="nav-link">January</a>
-                <a class="nav-link">February</a>
-                <a class="nav-link">March</a>
-                <a class="nav-link">April</a>
-                <a class="nav-link">May</a>
-                <a class="nav-link">June</a>
-                <a class="nav-link">July</a>
-                <a class="nav-link">August</a>
-                <a class="nav-link">September</a>
-                <a class="nav-link">October</a>
-                <a class="nav-link">November</a>
-                <a class="nav-link">December</a>
-            </nav>
+                        ?>  </span>
+                        <h5><?php echo $row['eventName'] ?></h5>
+                        <div class="mt-3">
+                        <span class="text-muted d-block"><i class="fa-solid fa-calendar-days"></i> <?php
+                            echo date('h:i A', strtotime($row['start'])); ?>
+                                                    -
+                                                    <?php
+                                                    echo date('h:i A', strtotime($row['end'])); ?>  </span>
+                            <span class="text-muted d-block"><i class="fa fa-map-marker"
+                                                                aria-hidden="true"></i> <?php echo $row['address'] ?></span>
+                        </div>
 
-            <div class="tab-content">
-                <div class="tab-pane show active">
-                    <div class="row">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="text-center" scope="col">Date</th>
-                                <th scope="col">Event</th>
-                                <th scope="col">Venue</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($allEventsResult
-
-                                     as $row) {
-                                ?>
-                                <tr class="inner-box">
-                                    <th scope="row">
-                                        <div class="event-date">
-                                                        <span>  <?php
-                                                            $today = date("j", strtotime($row['date']));
-                                                            echo $today;
-
-                                                            ?></span>
-                                            <p>  <?php
-                                                $today = date("F", strtotime($row['date']));
-                                                echo $today;
-
-                                                ?></p>
-                                        </div>
-                                    </th>
-                                    <td>
-                                        <div class="event-wrap">
-                                            <h3><?php echo $row['eventName'] ?></h3>
-                                            <div class="meta">
-                                                <div class="organizers">
-                                                    <p><i class="fa-solid fa-user"></i> <?php echo $row['host'] ?></p>
-                                                </div>
-                                                <div class="time">
-                                                        <p><i class="fa-solid fa-calendar-days"></i> <?php
-                                                            echo date('h:i A', strtotime($row['start'])); ?>
-                                                            -
-                                                            <?php
-                                                            echo date('h:i A', strtotime($row['end'])); ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="r-no">
-                                            <span><i class="fa-solid fa-location-dot"></i> <?php echo $row['address'] ?></span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="primary-btn">
-                                            <div class="accordion" id="accordionExample">
-                                                <div class="card-header" id="heading<?php echo $row['eventID'] ?>">
-                                                    <h2 class="mb-0">
-                                                        <button class="btn btn-link" type="button"
-                                                                data-toggle="collapse"
-                                                                data-target="#collapse<?php echo $row['eventID'] ?>"
-                                                                aria-expanded="true"
-                                                                aria-controls="collapse<?php echo $row['eventID'] ?>">
-                                                            Read more
-                                                        </button>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                <tr>
-                                    <td colspan="5">
-                                        <div id="collapse<?php echo $row['eventID'] ?>" class="collapse"
-                                             aria-labelledby="heading<?php echo $row['eventID'] ?>"
-                                             data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <?php echo $row['description'] ?>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-
-                            <?php } ?>
-                            </tbody>
-
-                        </table>
+                        <div class="mt-3">
+                            <a href="page-job-detail.html" class=" btn">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        <?php } ?>
+
+
+        <div class="col-12 mt-4 pt-2 d-block d-md-none text-center">
+            <a href="#" class="btn btn-primary">View more Jobs
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="feather feather-arrow-right fea icon-sm">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
     </div>
 </div>
-
 
 <style>
     <?php include 'styles/index.css'; ?>

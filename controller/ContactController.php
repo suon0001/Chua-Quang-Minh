@@ -27,7 +27,13 @@ if (isset($_POST['send_email'])) {
 
             $mailSentResult = $mailSent->execute();
             $conn->commit();
-            header("Location:contact");
+              ?>
+
+            <script>
+                    window.location.href = "/contact";
+            </script>
+      
+            <?php
             alert("message sent");
 
 
@@ -47,5 +53,11 @@ if (isset($_REQUEST['del'])) {
     $setMail = $_REQUEST['mailID'];
     $handle = $conn->prepare($ContactModel->deleteMail);
     $handle->execute(array(":mailID" => $setMail));
-    header("Location:admin-mail");
+      ?>
+
+            <script>
+                    window.location.href = "/admin-mail";
+            </script>
+      
+            <?php
 }

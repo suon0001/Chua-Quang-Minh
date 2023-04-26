@@ -16,7 +16,7 @@ require $rootPath . "controller/ContactController.php";
     </div>
 </div>
 
-<div class="contact__wrapper shadow-lg mt-n9">
+<div class="contact__wrapper shadow-lg mt-n9 ">
     <div class="row no-gutters">
         <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-2">
             <h3 class="color--white mb-5">Get in Touch</h3>
@@ -24,16 +24,15 @@ require $rootPath . "controller/ContactController.php";
             <ul class="contact-info__list list-style--none position-relative z-index-101">
                 <li class="mb-4 pl-4">
                     <span class="position-absolute"><i class="fas fa-envelope"></i></span> <a
-                            href="mailto:email@email.com" class="text-muted link-white">email@email.com</a>
+                            href="mailto:email@email.com" class="text-muted link-white">chucthanh79@gmail.com</a>
                 </li>
                 <li class="mb-4 pl-4">
-                    <span class="position-absolute"><i class="fas fa-phone"></i></span> (021)-241454-545
+                    <span class="position-absolute"><i class="fas fa-phone"></i></span> 50553078
                 </li>
                 <li class="mb-4 pl-4">
-                    <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span> bootdey Technologies
-                    Inc.
-                    <br> 2694 Queen City Rainbow Drive
-                    <br> Florida 99161
+                    <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span> Chua Quang Minh
+                    <br> Ingemanns Alle 47
+                    <br> Esbjerg 6705
 
                     <div class="mt-3">
                         <a href="https://www.google.com/maps" target="_blank"
@@ -62,23 +61,21 @@ require $rootPath . "controller/ContactController.php";
                     <div class="col-sm-6 mb-3">
                         <div class="form-group">
                             <label class="required-field" for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Wendy">
+                            <input type="text" class="form-control" id="firstName" name="firstName">
                         </div>
                     </div>
 
                     <div class="col-sm-6 mb-3">
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName"
-                                   placeholder="Appleseed">
+                            <input type="text" class="form-control" id="lastName" name="lastName">
                         </div>
                     </div>
 
                     <div class="col-sm-12 mb-3">
                         <div class="form-group">
                             <label class="required-field" for="email">Email</label>
-                            <input type="text" class="form-control" id="email" name="email"
-                                   placeholder="wendy.apple@seed.com">
+                            <input type="text" class="form-control" id="email" name="email">
                         </div>
                     </div>
 

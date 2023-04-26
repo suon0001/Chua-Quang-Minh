@@ -7,6 +7,9 @@ $pageCountStmt = $conn->query($pageCountQuery);
 $pageCountResult = $pageCountStmt->fetchAll(PDO::FETCH_ASSOC);
 $pageCount = count($pageCountResult);
 
+$adminPhotoResult = $conn->query($PhotoModel->adminPhotos);
+
+
 if (isset($_GET["action"])) {
 
     if ($_GET["action"] == "photos") {
@@ -64,7 +67,13 @@ if (isset($_POST['submitPhoto'])) {
 
         $addPhotoResult = $addPhoto->execute();
         $conn->commit();
-        header("Location:admin-photo");
+          ?>
+
+            <script>
+                    window.location.href = "/admin-photo";
+            </script>
+      
+            <?php
     } catch (Exception $err) {
         echo $err;
         $errorTransaction = true;
@@ -77,7 +86,13 @@ if (isset($_REQUEST['del'])) {
     $setPhoto = $_REQUEST['photoID'];
     $handle = $conn->prepare($PhotoModel->deletePhoto);
     $handle->execute(array(":photoID" => $setPhoto));
-    header("Location:admin-photo");
+      ?>
+
+            <script>
+                    window.location.href = "/admin-photo";
+            </script>
+      
+            <?php
 }
 
 

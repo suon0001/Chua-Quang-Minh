@@ -37,7 +37,13 @@ if (isset($_POST['editSave'])) {
 
             $editEventResult = $editEvent->execute();
             $conn->commit();
-            header("Location:admin-event");
+              ?>
+
+            <script>
+                    window.location.href = "/admin-article";
+            </script>
+      
+            <?php
         } catch (Exception $err) {
             $errorTransaction = true;
             $conn->rollback();
@@ -79,7 +85,13 @@ if (isset($_POST['editPublish'])) {
 
             $editArticleResult = $editArticle->execute();
             $conn->commit();
-            header("Location:admin-article");
+              ?>
+
+            <script>
+                    window.location.href = "/admin-article";
+            </script>
+      
+            <?php
         } catch (Exception $err) {
             $errorTransaction = true;
             $conn->rollback();

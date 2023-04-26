@@ -25,7 +25,7 @@ include("view/_partials/adminPanel.php");
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input class="form-control" name="address" id="address">
+                    <input type="text" name="address" class="form-control" id="address" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>

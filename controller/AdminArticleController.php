@@ -41,7 +41,13 @@ if (isset($_POST['save'])) {
 
             $addArticleResult = $addArticle->execute();
             $conn->commit();
-            header("Location:admin-article");
+             ?>
+
+            <script>
+                    window.location.href = "/admin-article";
+            </script>
+      
+            <?php
         } catch (Exception $err) {
             echo $err;
             $errorTransaction = true;
@@ -87,7 +93,13 @@ if (isset($_POST['publish'])) {
 
             $addArticleResult = $addArticle->execute();
             $conn->commit();
-            header("Location:admin-article");
+             ?>
+
+            <script>
+                    window.location.href = "/admin-article";
+            </script>
+      
+            <?php
         } catch (Exception $err) {
             echo $err;
             $errorTransaction = true;
@@ -102,5 +114,11 @@ if (isset($_REQUEST['del'])) {
     $setArticle = $_REQUEST['newsID'];
     $handle = $conn->prepare($AdminArticleModel->deleteArticle);
     $handle->execute(array(":newsID" => $setArticle));
-    header("Location:admin-article");
+      ?>
+
+            <script>
+                    window.location.href = "/admin-article";
+            </script>
+      
+            <?php
 }

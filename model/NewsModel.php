@@ -1,7 +1,5 @@
 
 <?php
-
-
 if (isset($_GET["skip"])) {
     $skip = $_GET["skip"];
 } else {

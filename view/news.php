@@ -8,9 +8,7 @@ require $rootPath . "controller/NewsController.php";
 
 <div class="blog-home5 py-5">
     <div class="container">
-        <!-- Row  -->
         <div class="row justify-content-center">
-            <!-- Column -->
             <div class="col-md-8 text-center">
                 <div class="mb-2" align="center">
                     <?php
@@ -35,13 +33,12 @@ require $rootPath . "controller/NewsController.php";
             </div>
         </div>
         <div class="row mt-4 searchable-container">
-
             <?php
             foreach ($blogResult as $row) { ?>
                 <div class="col-md-4 items">
                     <div class="card b-h-box position-relative font-14 border-0 mb-4">
                         <img class="card-img d-block img-fluid banner" src="assets/banner/<?php echo $row['banner'] ?>"
-                             alt="Card image">
+                             alt="card image">
                         <div class="card-img-overlay overflow-hidden">
                             <div class="d-flex align-items-center">
                             <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal"><i

@@ -50,7 +50,7 @@ include("view/_partials/adminPanel.php");
                 <i class="fa fa-star"></i>
             </td>
             <td>
-                <a href="/message?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?>
+                <a href="/mail?mailID=<?php echo $row['mailID']; ?>"> <?php echo $row['firstName']; ?>
                     <?php echo $row['lastName']; ?></a>
 
             </td>

@@ -18,7 +18,7 @@ require $rootPath . "controller/PhotoController.php";
         <?php
         $i = 1;
         foreach ($photoResult as $row) { ?>
-            <div class="col-12 col-sm-6 col-lg-3 mt-4">
+            <div class="col-12 col-sm-6 col-lg-2 mt-4">
                 <form method="post" action="/photo?action=photos&photoID=&photoID=<?php echo $row['photoID'] ?>"
                       target="photo">
                     <img class="img-responsive img-thumbnail" src="assets/gallery/<?php echo $row['photo'] ?>" alt="" onclick="openModal();currentSlide(<?php echo $i; ?>)"

@@ -12,7 +12,22 @@ include("view/_partials/adminPanel.php");
         <div class="col-md-4 mb-4 col align-self-center">
             <div class="form-outline">
                 <label>Alt</label>
-                <input type="alt" name="alt" value="" class="form-control" required/>
+                <?php
+                $n=10;
+                function getName($n) {
+                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    $randomString = '';
+
+                    for ($i = 0; $i < $n; $i++) {
+                        $index = rand(0, strlen($characters) - 1);
+                        $randomString .= $characters[$index];
+                    }
+
+                    return $randomString;
+                }
+
+                ?>
+                <input type="alt" name="alt" value="<?php echo getName($n);  ?>" class="form-control"/>
             </div>
         </div>
     </div>
@@ -32,7 +47,7 @@ include("view/_partials/adminPanel.php");
     <div class="container">
         <div class="row">
             <?php
-            foreach ($photoResult as $row) { ?>
+            foreach ($adminPhotoResult as $row) { ?>
                 <div class="col-sm-12 col-lg-2">
                     <div class="card-wrapper mb-4">
                         <div><img class="card-img-admin" src="assets/gallery/<?php echo $row['photo'] ?>"

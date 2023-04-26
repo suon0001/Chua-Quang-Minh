@@ -2,7 +2,7 @@
 if (isset($_GET["limit"])) {
     $limit = $_GET["limit"];
 } else {
-    $limit = 16;
+    $limit = 18;
 }
 
 if (isset($_GET["skip"])) {
@@ -22,5 +22,7 @@ class PhotoModel
                 VALUES (:alt, :photo, MONTH(CURRENT_TIMESTAMP), YEAR(CURRENT_TIMESTAMP))";
 
     public $deletePhoto = "DELETE FROM Photo WHERE photoID = :photoID";
+    
+    public $adminPhotos = "SELECT * FROM Photo ORDER BY photoID DESC";
 }
 $PhotoModel = new PhotoModel();
