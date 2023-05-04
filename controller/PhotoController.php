@@ -48,37 +48,45 @@ if (isset($_GET["action"])) {
 
 
 //add photo
-if (isset($_POST['submitPhoto'])) {
-    $alt = $sanitized['alt'];
-    $photo = $_FILES["photo"]["name"];
-    if (!empty($alt) && !empty($photo))
-        $filename = strtolower($photo);
-    if ($_FILES['photo']['name']) {
-        move_uploaded_file(
-            $_FILES['photo']['tmp_name'],
-            "assets/gallery/" . $filename
-        );
-    }
-    try {
-        $conn->beginTransaction();
-        $addPhoto = $conn->prepare($PhotoModel->insertPhoto);
-        $addPhoto->bindParam(':alt', $alt, PDO::PARAM_STR);
-        $addPhoto->bindParam(':photo', $photo, PDO::PARAM_STR);
+if(isset($_POST['submit'])){
 
-        $addPhotoResult = $addPhoto->execute();
-        $conn->commit();
-          ?>
+    // Count total files
+    $countfiles = count($_FILES['files']['name']);
 
-            <script>
-                    window.location.href = "/admin-photo";
-            </script>
-      
-            <?php
-    } catch (Exception $err) {
-        echo $err;
-        $errorTransaction = true;
-        $conn->rollback();
+    // Prepared statement
+    $query = "INSERT INTO Photo (alt,photo,month,year) VALUES(?,?,MONTH(CURRENT_TIMESTAMP), YEAR(CURRENT_TIMESTAMP))";
+
+    $statement = $conn->prepare($query);
+
+    // Loop all files
+    for($i=0;$i<$countfiles;$i++){
+
+        // File name
+        $filename = $_FILES['files']['name'][$i];
+
+        // Location
+        $target_file = 'assets/gallery/'.$filename;
+
+        // file extension
+        $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
+        $file_extension = strtolower($file_extension);
+
+        // Valid image extension
+        $valid_extension = array("png","jpeg","jpg");
+
+        if(in_array($file_extension, $valid_extension)){
+
+            // Upload file
+            if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
+
+                // Execute query
+                $statement->execute(array($filename,$target_file));
+
+            }
+        }
+
     }
+    echo "File upload successfully";
 }
 
 //delete photo
