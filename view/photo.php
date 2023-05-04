@@ -21,7 +21,8 @@ require $rootPath . "controller/PhotoController.php";
             <div class="col-12 col-sm-6 col-lg-2 mt-4">
                 <form method="post" action="/photo?action=photos&photoID=&photoID=<?php echo $row['photoID'] ?>"
                       target="photo">
-                    <img class="img-responsive img-thumbnail" src="assets/gallery/<?php echo $row['photo'] ?>" alt="" onclick="openModal();currentSlide(<?php echo $i; ?>)"
+                    <img class="img-responsive img-thumbnail" src="<?php echo $row['photo'] ?>" alt=""
+                         onclick="openModal();currentSlide(<?php echo $i; ?>)"
                          class="hover-shadow">
                 </form>
             </div>
@@ -29,27 +30,35 @@ require $rootPath . "controller/PhotoController.php";
         } ?>
     </div>
 </div>
-
-<div id="myModal" class="modal">
-    <span class="close cursor" onclick="closeModal()">&times;</span>
-    <div class="gallery-modal container">
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
         <div class="modal-content">
-            <?php
-            $i = 1;
-            foreach ($photoResult as $row) { ?>
-                <div class="mySlides">
-                    <div class="numbertext"><?php echo $row['alt'] ?></div>
-                    <img class="slider-image" src="assets/gallery/<?php echo $row['photo'] ?>">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+                <div id="modalCarousel" class="carousel">
+                    <div class="carousel-inner">         <?php
+                        $i = 1;
+                        foreach ($photoResult as $row) { ?>
+                            <div class="mySlides">
+                                <div class="numbertext text-dark"><?php echo $row['alt'] ?></div>
+                                <img class="slider-image" src="<?php echo $row['photo'] ?>">
+                            </div>
+                            <?php $i++;
+                        } ?></div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-                <?php $i++;
-            } ?>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" onclick="closeModal()">Close</button>
+            </div>
         </div>
     </div>
 </div>
+
+
 <br>
 <nav class="d-flex justify-content-center">
     <?php
