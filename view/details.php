@@ -1,0 +1,1 @@
+<img src="assets/event/sakura_wallpaper.jpg" alt="">
