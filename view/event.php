@@ -8,21 +8,6 @@ require $rootPath . "controller/EventController.php";
 <div class="blog-home5 py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <div class="mb-2" align="center">
-                    <?php
-                    foreach ($newsTypeResult as $row) {
-                        ?>
-                        <div class="btn filter-button" data-filter="<?php echo $row['typeName']; ?>">
-                            <a class="nav-link categories-text"
-                               href="/event?action=news&newsTypeID=<?php echo $row['newsTypeID'] ?>">
-                                <?php echo $row['typeName']; ?>
-                            </a>
-                        </div>
-                        <?php
-                    } ?>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <input type="search" class="form-control" id="input-search" placeholder="Search...">
@@ -53,7 +38,7 @@ require $rootPath . "controller/EventController.php";
                         </div>
 
                         <div class="mt-3">
-                            <a href="page-job-detail.html" class=" btn">View Details</a>
+                            <a href="/details?eventID=<?php echo $row['eventID']; ?> " class="link-light">View Details</a>
                         </div>
                     </div>
                 </div>

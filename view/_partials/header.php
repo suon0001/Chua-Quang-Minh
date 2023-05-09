@@ -3,6 +3,7 @@
         <div class="container logo-wrap">
             <div class="row pt-5">
                 <div class="col-12 text-center">
+                    <img class="rounded-circle" src="assets/342550293_964009038067335_7787694622060722146_n.jpg" alt="" style="width: 100px">
                     <h1 class="site-logo">Chua Quang Minh</h1>
                 </div>
             </div>
