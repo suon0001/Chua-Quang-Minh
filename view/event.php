@@ -45,18 +45,6 @@ require $rootPath . "controller/EventController.php";
             </div>
 
         <?php } ?>
-
-
-        <div class="col-12 mt-4 pt-2 d-block d-md-none text-center">
-            <a href="#" class="btn btn-primary">View more Jobs
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     class="feather feather-arrow-right fea icon-sm">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </a>
-        </div>
     </div>
 </div>
 

@@ -2,7 +2,7 @@
 if (isset($_GET["limit"])) {
     $limit = $_GET["limit"];
 } else {
-    $limit = 18;
+    $limit = 48;
 }
 
 if (isset($_GET["skip"])) {
@@ -11,9 +11,9 @@ if (isset($_GET["skip"])) {
     $skip = 0;
 }
 
-$firstPageQuery = "SELECT * FROM Photo LIMIT $limit";
-$currentPagePhotoQuery = "SELECT * FROM Photo ORDER BY photoID ASC";
-$pageCountQuery = "SELECT * FROM Photo";
+$firstPageQuery = "SELECT * FROM Photo ORDER BY photoID DESC LIMIT $limit";
+$currentPagePhotoQuery = "SELECT * FROM Photo ORDER BY photoID DESC";
+$pageCountQuery = "SELECT * FROM Photo ORDER BY photoID DESC";
 
 
 class PhotoModel

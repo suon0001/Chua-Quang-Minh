@@ -77,7 +77,13 @@ if(isset($_POST['submit'])){
         }
 
     }
-    echo "File upload successfully";
+    ?>
+
+    <script>
+        window.location.href = "/admin-photo";
+    </script>
+
+    <?php
 }
 
 //delete photo

@@ -16,7 +16,7 @@ include("view/_partials/adminPanel.php");
     <div class="container">
         <div class="row">
             <?php
-            foreach ($adminPhotoResult as $row) { ?>
+            foreach ($photoResult as $row) { ?>
                 <div class="col-sm-12 col-lg-2">
                     <div class="card-wrapper mb-4">
                         <div><img class="card-img-admin" src="<?php echo $row['photo'] ?>"
@@ -32,6 +32,55 @@ include("view/_partials/adminPanel.php");
                 <?php
             } ?>
         </div>
+        <nav class="d-flex justify-content-center">
+            <?php
+            $photoID = null;
+
+            if (isset($_GET['limit']) && $_GET['limit']) {
+                $limit = $_GET['limit'];
+            }
+
+            if (isset($_GET['skip']) && $_GET['skip']) {
+                $skip = $_GET['skip'];
+            }
+
+            if (isset($_GET['photoID']) && $_GET['photoID']) {
+                $photoID = $_GET['photoID'];
+            }
+            ?>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link text-secondary"
+                                         href="/photo?action=photos&photoID=<?php echo($photoID); ?>&limit=<?php echo($limit) ?>&skip=
+                            <?php
+                                         if (($skip - $limit) >= 0) {
+                                             echo($skip - $limit);
+                                         } else {
+                                             echo($skip);
+                                         }
+                                         ?>">Previous</a></li>
+                <?php
+                $pages = ceil($pageCount / $limit);
+                for ($i = 0; $i < $pages; $i++) {
+                    ?>
+                    <li class="page-item">
+                        <a class="page-link text-secondary"
+                           href="/photo?action=photos&photoID=<?php echo($photoID); ?>&limit=<?php echo($limit) ?>&skip=<?php echo($limit * $i) ?>">
+                            <?php echo($i + 1); ?>
+                        </a>
+                    </li>
+                    <?php
+                }
+                ?>
+                <li class="page-item"><a class="page-link text-secondary"
+                                         href="/photo?action=photos&photoID=<?php echo($photoID); ?>&limit=<?php echo($limit) ?>&skip=<?php
+                                         if (($skip + $limit) <= ($pageCount)) {
+                                             echo($skip + $limit);
+                                         } else {
+                                             echo($skip);
+                                         }
+                                         ?>">Next</a></li>
+            </ul>
+        </nav>
     </div>
 </div>
 

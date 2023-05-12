@@ -20,14 +20,6 @@ if (isset($_POST['save'])) {
         !empty($_POST['banner']) || !empty($_POST['newsTypeID'])
     ) {
 
-        $file = $_FILES["banner"]["name"];
-        $filename = strtolower($file);
-        if ($_FILES['banner']['name']) {
-            move_uploaded_file(
-                $_FILES['banner']['tmp_name'],
-                "assets/banner/" . $filename
-            );
-        }
 
         try {
             $conn->beginTransaction();
@@ -38,6 +30,24 @@ if (isset($_POST['save'])) {
             $addArticle->bindParam(':paragraph', $paragraph, PDO::PARAM_STR);
             $addArticle->bindParam(':banner', $banner, PDO::PARAM_STR);
             $addArticle->bindParam(':newsTypeID', $newsTypeID, PDO::PARAM_INT);
+
+            $filename = $_FILES['files']['name'];
+
+            $target_file = 'assets/gallery/'.$filename;
+
+            $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
+            $file_extension = strtolower($file_extension);
+
+            $valid_extension = array("png","jpeg","jpg");
+
+            if(in_array($file_extension, $valid_extension)){
+
+                if(move_uploaded_file($_FILES['files']['tmp_name'],$target_file)){
+
+                    $addArticle->execute(array($filename,$target_file));
+
+                }
+            }
 
             $addArticleResult = $addArticle->execute();
             $conn->commit();
@@ -72,15 +82,6 @@ if (isset($_POST['publish'])) {
         !empty($_POST['banner']) || !empty($_POST['newsTypeID'])
     ) {
 
-        $file = $_FILES["banner"]["name"];
-        $filename = strtolower($file);
-        if ($_FILES['banner']['name']) {
-            move_uploaded_file(
-                $_FILES['banner']['tmp_name'],
-                "assets/banner/" . $filename
-            );
-        }
-
         try {
             $conn->beginTransaction();
             $addArticle = $conn->prepare($AdminArticleModel->publishArticle);
@@ -91,14 +92,32 @@ if (isset($_POST['publish'])) {
             $addArticle->bindParam(':banner', $banner, PDO::PARAM_STR);
             $addArticle->bindParam(':newsTypeID', $newsTypeID, PDO::PARAM_INT);
 
+            $filename = $_FILES['files']['name'];
+
+            $target_file = 'assets/gallery/'.$filename;
+
+            $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
+            $file_extension = strtolower($file_extension);
+
+            $valid_extension = array("png","jpeg","jpg");
+
+            if(in_array($file_extension, $valid_extension)){
+
+                if(move_uploaded_file($_FILES['files']['tmp_name'],$target_file)){
+
+                    $addArticle->execute(array($filename,$target_file));
+
+                }
+            }
+
             $addArticleResult = $addArticle->execute();
             $conn->commit();
-             ?>
+            ?>
 
             <script>
-                    window.location.href = "/admin-article";
+                window.location.href = "/admin-article";
             </script>
-      
+
             <?php
         } catch (Exception $err) {
             echo $err;

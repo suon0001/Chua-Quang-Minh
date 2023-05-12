@@ -16,18 +16,18 @@
                 <div class="collapse navbar-collapse" id="navbarsExample09">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/home">HOME</a>
+                            <a class="nav-link" href="/home">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/event">EVENT</a>
+                            <a class="nav-link" href="/event">SINH HOẠT</a>
                         <li class="nav-item">
-                            <a class="nav-link" href="/news">NEWS</a>
+                            <a class="nav-link" href="/news">TIN TỨC</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/photo">PHOTO</a>
+                            <a class="nav-link" href="/photo">HÌNH ẢNH</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="/contact">CONTACT</a>
+                            <a class="nav-link" href="/contact">LIÊN LẠC</a>
                         </li>
                     </ul>
                 </div>

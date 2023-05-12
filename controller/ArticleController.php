@@ -9,42 +9,41 @@ $newsOption = $conn->query($ArticleModel->newsType);
 //edit article
 
 if (isset($_POST['editSave'])) {
-    $eventName= $sanitized['eventName'];
-    $host = $sanitized['host'];
-    $address = $sanitized['address'];
-    $description = trim($_POST['description']);
-    $start = $sanitized['start'];
-    $end = $sanitized['end'];
-    $date = $sanitized['date'];
-    $eventID = $sanitized['eventID'];
+    $title = $sanitized['title'];
+    $author = $sanitized['author'];
+    $description = $sanitized['description'];
+    $paragraph = trim($_POST['paragraph']);
+    $timeUpdated = $sanitized['timeUpdated'];
+    $newsID = $sanitized['newsID'];
 
 
     if (
-        !empty($_POST['eventName']) || !empty($_POST['host']) || !empty($_POST['address']) ||
-        !empty($_POST['description']) || !empty($_POST['start']) || !empty($_POST['end']) || !empty($_POST['date'])
+        !empty($_POST['title']) || !empty($_POST['author']) || !empty($_POST['description']) ||
+        !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft'])
     ) {
         try {
             $conn->beginTransaction();
-            $editEvent = $conn->prepare($EditEventModel->editEvent);
-            $editEvent->bindParam(':eventID', $eventID, PDO::PARAM_INT);
-            $editEvent->bindParam(':eventName', $eventName, PDO::PARAM_STR);
-            $editEvent->bindParam(':host', $host, PDO::PARAM_STR);
-            $editEvent->bindParam(':address', $address, PDO::PARAM_STR);
-            $editEvent->bindParam(':start', $start, PDO::PARAM_STR);
-            $editEvent->bindParam(':end', $end, PDO::PARAM_STR);
-            $editEvent->bindParam(':end', $end, PDO::PARAM_STR);
-            $editEvent->bindParam(':date', $end, PDO::PARAM_STR);
+            $addArticle = $conn->prepare($ArticleModel->editSave);
+            $addArticle->bindParam(':newsID', $newsID, PDO::PARAM_INT);
+            $addArticle->bindParam(':title', $title, PDO::PARAM_STR);
+            $addArticle->bindParam(':author', $author, PDO::PARAM_STR);
+            $addArticle->bindParam(':description', $description, PDO::PARAM_STR);
+            $addArticle->bindParam(':paragraph', $paragraph, PDO::PARAM_STR);
+            $addArticle->bindParam(':timeUpdated', $timeUpdated, PDO::PARAM_STR);
+            $addArticle->bindParam(':newsTypeID', $newsTypeID, PDO::PARAM_INT);
 
-            $editEventResult = $editEvent->execute();
+
+            $addArticleResult = $addArticle->execute();
             $conn->commit();
-              ?>
+            ?>
 
             <script>
-                    window.location.href = "/admin-article";
+                window.location.href = "/admin-article";
             </script>
-      
+
             <?php
         } catch (Exception $err) {
+            echo $err;
             $errorTransaction = true;
             $conn->rollback();
         }
@@ -56,43 +55,36 @@ if (isset($_POST['editPublish'])) {
     $author = $sanitized['author'];
     $description = $sanitized['description'];
     $paragraph = trim($_POST['paragraph']);
-    $banner = $_FILES["banner"]["name"];
+    $timeUpdated = $sanitized['timeUpdated'];
     $newsID = $sanitized['newsID'];
 
 
     if (
         !empty($_POST['title']) || !empty($_POST['author']) || !empty($_POST['description']) ||
-        !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft']) || !empty($_POST['banner'])
+        !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft'])
     ) {
-        $file = $_FILES["banner"]["name"];
-        $filename = strtolower($file);
-        if ($_FILES['banner']['name']) {
-            move_uploaded_file(
-                $_FILES['banner']['tmp_name'],
-                "assets/banner/" . $filename
-            );
-        }
-
         try {
             $conn->beginTransaction();
-            $editArticle = $conn->prepare($ArticleModel->editPublish);
-            $editArticle->bindParam(':newsID', $newsID, PDO::PARAM_INT);
-            $editArticle->bindParam(':title', $title, PDO::PARAM_STR);
-            $editArticle->bindParam(':author', $author, PDO::PARAM_STR);
-            $editArticle->bindParam(':description', $description, PDO::PARAM_STR);
-            $editArticle->bindParam(':paragraph', $paragraph, PDO::PARAM_STR);
-            $editArticle->bindParam(':banner', $banner, PDO::PARAM_STR);
+            $addArticle = $conn->prepare($ArticleModel->editPublish);
+            $addArticle->bindParam(':newsID', $newsID, PDO::PARAM_INT);
+            $addArticle->bindParam(':title', $title, PDO::PARAM_STR);
+            $addArticle->bindParam(':author', $author, PDO::PARAM_STR);
+            $addArticle->bindParam(':description', $description, PDO::PARAM_STR);
+            $addArticle->bindParam(':paragraph', $paragraph, PDO::PARAM_STR);
+            $addArticle->bindParam(':timeUpdated', $timeUpdated, PDO::PARAM_STR);
+            $addArticle->bindParam(':newsTypeID', $newsTypeID, PDO::PARAM_INT);
 
-            $editArticleResult = $editArticle->execute();
+            $addArticleResult = $addArticle->execute();
             $conn->commit();
-              ?>
+            ?>
 
             <script>
-                    window.location.href = "/admin-article";
+                window.location.href = "/admin-article";
             </script>
-      
+
             <?php
         } catch (Exception $err) {
+            echo $err;
             $errorTransaction = true;
             $conn->rollback();
         }

@@ -8,7 +8,6 @@ require $rootPath . "controller/PhotoController.php";
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-8 col-lg-6">
-            <!-- Section Heading-->
             <div class="text-center py-3">
                 <h1>Gallery</h1>
             </div>
@@ -17,8 +16,11 @@ require $rootPath . "controller/PhotoController.php";
     <div class="row">
         <?php
         $i = 1;
-        foreach ($photoResult as $row) { ?>
-            <div class="col-12 col-sm-6 col-lg-2 mt-4">
+        foreach ($photoResult
+
+        as $row) { ?>
+        <div class="col-sm-12 col-lg-2">
+            <div class="card-wrapper mb-4">
                 <form method="post" action="/photo?action=photos&photoID=&photoID=<?php echo $row['photoID'] ?>"
                       target="photo">
                     <img class="img-responsive img-thumbnail" src="<?php echo $row['photo'] ?>" alt=""
@@ -26,33 +28,36 @@ require $rootPath . "controller/PhotoController.php";
                          class="hover-shadow">
                 </form>
             </div>
+
+        </div>
             <?php $i++;
         } ?>
     </div>
-</div>
-<div class="modal" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title"></h3>
-            </div>
-            <div class="modal-body">
-                <div id="modalCarousel" class="carousel">
-                    <div class="carousel-inner">         <?php
-                        $i = 1;
-                        foreach ($photoResult as $row) { ?>
-                            <div class="mySlides">
-                                <div class="numbertext text-dark"><?php echo $row['alt'] ?></div>
-                                <img class="slider-image" src="<?php echo $row['photo'] ?>">
-                            </div>
-                            <?php $i++;
-                        } ?></div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="modal" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">
+                        <div class="numbertext text-dark"><?php echo $row['alt'] ?></div>
+                    </h3>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default" data-dismiss="modal" onclick="closeModal()">Close</button>
+                <div class="modal-body">
+                    <div id="modalCarousel" class="carousel">
+                        <div class="carousel-inner">         <?php
+                            $i = 1;
+                            foreach ($photoResult as $row) { ?>
+                                <div class="mySlides">
+                                    <img class="slider-image" src="<?php echo $row['photo'] ?>">
+                                </div>
+                                <?php $i++;
+                            } ?></div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" onclick="closeModal()">Close</button>
+                </div>
             </div>
         </div>
     </div>

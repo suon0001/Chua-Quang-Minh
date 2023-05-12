@@ -9,10 +9,10 @@ class ArticleModel
 {
     public $newsType = "SELECT * FROM NewsType";
     public $editSave = " UPDATE News SET `title` = :title, `author` = :author, `description` = :description, `paragraph` = :paragraph, 
-                            `timeUpdated` = CURRENT_TIMESTAMP, `saveDraft` = false, `banner` = :banner
+                            `timeUpdated` = CURRENT_TIMESTAMP, `saveDraft` = false
                             WHERE News.`newsID` = :newsID";
     public $editPublish = " UPDATE News SET `title` = :title, `author` = :author, `description` = :description, `paragraph` = :paragraph, 
-                            `timeUpdated` = CURRENT_TIMESTAMP, `saveDraft` = true, `banner` = :banner
+                            `timeUpdated` = CURRENT_TIMESTAMP, `saveDraft` = true
                             WHERE News.`newsID` = :newsID";
 }
 

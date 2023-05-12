@@ -90,7 +90,8 @@ img.hover-shadow {
 }
 
 .img-thumbnail {
-  height: 3 0px;
+  height: 200px;
+  width: 200px;
 }
 
 .slider-image {
