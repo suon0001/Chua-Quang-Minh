@@ -110,18 +110,6 @@ VALUES (NULL, 'CHUA', 'fa-solid fa-vihara'),
        (NULL, 'WORLD', 'fa-solid fa-globe'),
        (NULL, 'CHARITY', 'fa-solid fa-hand-holding-heart');
 
-INSERT INTO `Photo` (`photoID`, `alt`, `photo`, `month`, `year`)
-VALUES (NULL, 'test', 'image1.jpg', '08', '2022'),
-       (NULL, 'test2', 'image2.jpg', '04', '2022'),
-       (NULL, 'test3', 'image3.jpg', '11', '2022'),
-       (NULL, 'test4', 'image4.jpg', '04', '2022'),
-       (NULL, 'test5', 'image5.jpg', '04', '2022'),
-       (NULL, 'test6', 'image6.jpg', '04', '2022'),
-       (NULL, 'test7', 'image7.jpg', '04', '2022'),
-       (NULL, 'test8', 'image8.jpg', '04', '2022'),
-       (NULL, 'test9', 'image9.jpg', '04', '2022');
-
-
 
 INSERT INTO `News` (`newsID`, `title`, `author`, `description`, `paragraph`, `timeUpdated`, `saveDraft`, `banner`,
                     `newsTypeID`)
