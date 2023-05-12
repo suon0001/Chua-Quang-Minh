@@ -54,11 +54,6 @@ include("view/_partials/adminPanel.php");
                     }
                     ?>
                     <div class="form-group">
-                        <div class="custom-file">
-                            <input type="file" name="banner" id="image" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <button type="submit" name="editSave" class="btn btn-primary">Save Draft</button>
                         <button type="submit" name="editPublish" class="btn btn-primary">Publish</button>
                     </div>
