@@ -2,6 +2,13 @@ DROP DATABASE IF EXISTS chuaDB;
 CREATE DATABASE chuaDB;
 USE chuaDB;
 
+CREATE TABLE Visit
+(
+    visitID  INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    countVisit INT
+
+) ENGINE = InnoDB;
+
 CREATE TABLE Admin
 (
     adminID  INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -18,6 +25,13 @@ CREATE TABLE Photo
     photo   VARCHAR(500),
     month   TINYINT,
     year    INT
+) ENGINE = InnoDB;
+
+CREATE TABLE Video
+(
+    videoID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    alt     VARCHAR(255),
+    video   VARCHAR(500)
 ) ENGINE = InnoDB;
 
 CREATE TABLE NewsType
