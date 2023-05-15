@@ -14,7 +14,7 @@ include("view/_partials/adminPanel.php");
     <?php
 
     while ($row = $articleResult->fetch(PDO::FETCH_ASSOC)) { ?>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="#" enctype="multipart/form-data" method="post">
         <input type="hidden" name="newsID" value="<?php echo $row['newsID']; ?>">
         <div class="form-group">
             <label for="title">Title</label>
@@ -50,6 +50,7 @@ include("view/_partials/adminPanel.php");
                                 <?php echo $row['typeName'] ?>
                             </label>
                         </div>
+
                         <?php
                     }
                     ?>

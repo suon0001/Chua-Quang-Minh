@@ -9,12 +9,17 @@ $newsOption = $conn->query($ArticleModel->newsType);
 //edit article
 
 if (isset($_POST['editSave'])) {
+
+}
+
+if (isset($_POST['editSave'])) {
+    $newsID = $sanitized['newsID'];
     $title = $sanitized['title'];
     $author = $sanitized['author'];
     $description = $sanitized['description'];
     $paragraph = $sanitized['paragraph'];
     $newsTypeID = $sanitized['newsTypeID'];
-    $newsID = $sanitized['newsID'];
+
     if (
         !empty($_POST['title']) || !empty($_POST['author']) || !empty($_POST['description']) ||
         !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft']) || !empty($_POST['newsTypeID'])
@@ -31,8 +36,9 @@ if (isset($_POST['editSave'])) {
             $editArticle->bindParam(':timeUpdated', $timeUpdated, PDO::PARAM_STR);
             $editArticle->bindParam(':saveDraft', $saveDraft, PDO::PARAM_STR);
             $editArticle->bindParam(':newsTypeID', $newsTypeID, PDO::PARAM_INT);
-            $editArticleResult = $editArticle->execute();
+            $addArticleResult = $editArticle->execute();
             $conn->commit();
+
             ?>
 
             <script>
@@ -49,12 +55,13 @@ if (isset($_POST['editSave'])) {
 
 
 if (isset($_POST['editPublish'])) {
+    $newsID = $sanitized['newsID'];
     $title = $sanitized['title'];
     $author = $sanitized['author'];
     $description = $sanitized['description'];
     $paragraph = $sanitized['paragraph'];
     $newsTypeID = $sanitized['newsTypeID'];
-    $newsID = $sanitized['newsID'];
+
     if (
         !empty($_POST['title']) || !empty($_POST['author']) || !empty($_POST['description']) ||
         !empty($_POST['paragraph']) || !empty($_POST['timeUpdated']) || !empty($_POST['saveDraft']) || !empty($_POST['newsTypeID'])
