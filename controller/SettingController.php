@@ -5,40 +5,6 @@ $signupSucess = false;
 $error = false;
 
 
-<<<<<<< HEAD
-if (isset($_POST['UpdateEmail'])) {
-    $email = $sanitized['email'];
-    $phone = $sanitized['phone'];
-    $address = $sanitized['address'];
-    $newsID = $sanitized['adminID'];
-    if (
-        !empty($_POST['email'])  || !empty($_POST['phone']) || !empty($_POST['address'])
-    ) {
-
-        try {
-            $conn->beginTransaction();
-            $editProfile = $conn->prepare($SettingModel->editProfile);
-            $editProfile->bindParam(':adminID', $adminID, PDO::PARAM_INT);
-            $editProfile->bindParam(':email', $email, PDO::PARAM_STR);
-            $editProfile->bindParam(':phone', $phone, PDO::PARAM_STR);
-            $editProfile->bindParam(':address', $address, PDO::PARAM_STR);
-            $editProfileResult = $editProfile->execute();
-            $conn->commit();
-            ?>
-
-            <script>
-                window.location.href = "/admin-setting";
-            </script>
-
-            <?php
-        } catch (Exception $err) {
-            $errorTransaction = true;
-            $conn->rollback();
-        }
-    }
-}
-=======
->>>>>>> parent of b918697 (save)
 
 if (isset($_POST['CreateProfile'])) {
 

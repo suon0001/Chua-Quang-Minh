@@ -12,400 +12,324 @@ require $rootPath . "controller/EventController.php";
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/gallery/325979929_533713618736227_5279754271781109303_n.jpg" alt="Second slide">
+                    <div class="bg-image d-flex justify-content-center align-items-center"
+                         style="background-image: url('assets/342550293_964009038067335_7787694622060722146_n.jpg');
+                            height: 100vh;">
+                    </div>
                     <div class="container">
-                        <div class="carousel-caption text-left">
+                        <div class="carousel-caption text-center">
                             <h1>Example headline.</h1>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/banner/image5.jpg" alt="Second slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                    <div class="bg-image"
+                         style="background-image: url('assets/banner/image5.jpg');
+                         height: 100vh;">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>One more for good measure.</h1>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi
+                                    porta
+                                    gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id
+                                    elit.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/gallery/315790185_820936902219817_5533801929519476714_n.jpg" alt="Second slide">
-                    <div class="container">
-                        <div class="carousel-caption text-right">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                        </div>
-                    </div>
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-    </div>
-</div>
-<br>
-<div class="container-fluid">
-    <div class="row">
+        <div class="container-fluid">
+            <div class="row">
 
-        <div class="row">
-            <section>
-                <div class="row gx-lg-5">
-                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                        <div>
-                            <div class="col-md-12 items blog-home5">
-                                <div class="col-6">
-                                    <a href="" class="text-info">
-                                        <i class="fa-solid fa-vihara"></i>
-                                        CHUA
-                                    </a>
-                                </div>
-                            </div>
+                <div class="row">
+                    <section>
+                        <div class="row gx-lg-5">
+                            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                                <div>
+                                    <div class="col-md-12 items blog-home5">
+                                        <div class="col-6">
 
-                            <?php
-                            foreach ($chuaOneResult as $row) {
-                                ?>
-                                <div class="col-md-12 items blog-home5">
-                                    <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                                        <img class="card-img d-block img-fluid banner"
-                                             src="assets/banner/<?php echo $row['banner'] ?>"
-                                             alt="Card image">
-                                        <div class="card-img-overlay overflow-hidden">
-                                            <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-vihara"></i>
+                                            CHUA
+
+                                        </div>
+                                    </div>
+
+                                    <?php
+                                    foreach ($chuaOneResult as $row) {
+                                        ?>
+                                        <div class="col-md-12 items blog-home5">
+                                            <div class="card b-h-box position-relative font-14 border-0 mb-4">
+                                                <img class="card-img d-block img-fluid banner"
+                                                     src="assets/banner/<?php echo $row['banner'] ?>"
+                                                     alt="Card image">
+                                                <div class="card-img-overlay overflow-hidden">
+                                                    <div class="d-flex align-items-center">
                             <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal"><i
                                         class="<?php echo $row['icon'] ?>"> </i> <?php echo $row['typeName'] ?></span>
-                                                <div class="ml-2">
+                                                        <div class="ml-2">
                                 <span class="ml-2"><?php
                                     $today = date("F j", strtotime($row['timeUpdated']));
                                     echo $today;
 
                                     ?></span>
+                                                        </div>
+                                                    </div>
+                                                    <h5 class="card-title my-3 font-weight-normal"><a
+                                                                href="/article?newsID=<?php echo $row['newsID']; ?>"
+                                                                class="link-light"><?php echo $row['title']; ?></a></h5>
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                       class="link-light">
+                                                        <p class="card-text"><?php echo $row['description']; ?></p>
+                                                    </a>
+                                                    <br>
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                       class="link-light">
+                                                        <p class="card-text">READ MORE</p>
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <h5 class="card-title my-3 font-weight-normal"><a
-                                                        href="/article?newsID=<?php echo $row['newsID']; ?>"
-                                                        class="link-light"><?php echo $row['title']; ?></a></h5>
-                                            <a href="/article?newsID=<?php echo $row['newsID']; ?> "
-                                               class="link-light">
-                                                <p class="card-text"><?php echo $row['description']; ?></p>
-                                            </a>
-                                            <br>
-                                            <a href="/article?newsID=<?php echo $row['newsID']; ?> "
-                                               class="link-light">
-                                                <p class="card-text">READ MORE</p>
-                                            </a>
                                         </div>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                            ?>
+                                        <?php
+                                    }
+                                    ?>
 
-                            <hr/>
-                            <!--  Chua -->
-                            <?php
-                            foreach ($chuaResult as $row) {
-                                ?>
-                                <article class="col-md-12 items blog-home5">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
-                                            <div class="post-type post-img">
-                                                <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
-                                                            src="assets/banner/<?php echo $row['banner'] ?>"
-                                                            class="img-responsive post-img" alt="image post"></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
-                                            <div class="author-info author-info-2">
-                                                <small><?php
-                                                    $today = date("F j, g:i a", strtotime($row['timeUpdated']));
-                                                    echo $today;
+                                    <hr/>
+                                    <!--  Chua -->
+                                    <?php
+                                    foreach ($chuaResult as $row) {
+                                        ?>
+                                        <article class="col-md-12 items blog-home5">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                                    <div class="post-type post-img">
+                                                        <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
+                                                                    src="assets/banner/<?php echo $row['banner'] ?>"
+                                                                    class="img-responsive post-img"
+                                                                    alt="image post"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                                    <div class="author-info author-info-2">
+                                                        <small><?php
+                                                            $today = date("F j, g:i a", strtotime($row['timeUpdated']));
+                                                            echo $today;
 
-                                                    ?></small>
+                                                            ?></small>
+                                                    </div>
+                                                    <div class="caption">
+                                                        <h6 class="md-heading"><a
+                                                                    href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
+                                                        </h6>
+                                                        <small class="paragraph"><?php echo $row['description'] ?></small>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="caption">
-                                                <h6 class="md-heading"><a
-                                                            href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
-                                                </h6>
-                                                <small class="paragraph"><?php echo $row['description'] ?></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <hr>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-2 mb-4 mb-lg-0">
-                        <div>
-                            <div class="col-md-12 items blog-home5">
-                                <div class="col-6">
-                                    <a href="" class="text-danger">
-                                        <i class="fa-solid fa-globe"></i>
-                                        WORLD
-                                    </a>
+                                        </article>
+                                        <hr>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
+                            <div class="col-lg-4 col-md-2 mb-4 mb-lg-0">
+                                <div>
+                                    <div class="col-md-12 items blog-home5">
+                                        <div class="col-6">
 
-                            <?php
-                            foreach ($worldOneResult as $row) {
-                                ?>
-                                <div class="col-md-12 items blog-home5">
-                                    <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                                        <img class="card-img d-block img-fluid banner"
-                                             src="assets/banner/<?php echo $row['banner'] ?>"
-                                             alt="Card image">
-                                        <div class="card-img-overlay overflow-hidden">
-                                            <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-globe"></i>
+                                            WORLD
+
+                                        </div>
+                                    </div>
+
+                                    <?php
+                                    foreach ($worldOneResult as $row) {
+                                        ?>
+                                        <div class="col-md-12 items blog-home5">
+                                            <div class="card b-h-box position-relative font-14 border-0 mb-4">
+                                                <img class="card-img d-block img-fluid banner"
+                                                     src="assets/banner/<?php echo $row['banner'] ?>"
+                                                     alt="Card image">
+                                                <div class="card-img-overlay overflow-hidden">
+                                                    <div class="d-flex align-items-center">
                             <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal"><i
                                         class="<?php echo $row['icon'] ?>"> </i> <?php echo $row['typeName'] ?></span>
-                                                <div class="ml-2">
+                                                        <div class="ml-2">
                                 <span class="ml-2"><?php
                                     $today = date("F j", strtotime($row['timeUpdated']));
                                     echo $today;
 
                                     ?></span>
+                                                        </div>
+                                                    </div>
+                                                    <h5 class="card-title my-3 font-weight-normal"><a
+                                                                href="/article?newsID=<?php echo $row['newsID']; ?>"
+                                                                class="link-light"><?php echo $row['title']; ?></a></h5>
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                       class="link-light">
+                                                        <p class="card-text"><?php echo $row['description']; ?></p>
+                                                    </a>
+                                                    <br>
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                       class="link-light">
+                                                        <p class="card-text">READ MORE</p>
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <h5 class="card-title my-3 font-weight-normal"><a
-                                                        href="/article?newsID=<?php echo $row['newsID']; ?>"
-                                                        class="link-light"><?php echo $row['title']; ?></a></h5>
-                                            <a href="/article?newsID=<?php echo $row['newsID']; ?> "
-                                               class="link-light">
-                                                <p class="card-text"><?php echo $row['description']; ?></p>
-                                            </a>
-                                            <br>
-                                            <a href="/article?newsID=<?php echo $row['newsID']; ?> "
-                                               class="link-light">
-                                                <p class="card-text">READ MORE</p>
-                                            </a>
                                         </div>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                            ?>
+                                        <?php
+                                    }
+                                    ?>
 
-                            <hr/>
+                                    <hr/>
 
-                            <!-- World -->
-                            <?php
-                            foreach ($worldResult as $row) {
-                                ?>
-                                <article class="col-md-12 items blog-home5">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
-                                            <div class="post-type post-img">
-                                                <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
-                                                            src="assets/banner/<?php echo $row['banner'] ?>"
-                                                            class="img-responsive post-img" alt="image post"></a>
+                                    <!-- World -->
+                                    <?php
+                                    foreach ($worldResult as $row) {
+                                        ?>
+                                        <article class="col-md-12 items blog-home5">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                                    <div class="post-type post-img">
+                                                        <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
+                                                                    src="assets/banner/<?php echo $row['banner'] ?>"
+                                                                    class="img-responsive post-img"
+                                                                    alt="image post"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                                    <div class="author-info author-info-2">
+                                                        <small><?php
+                                                            $today = date("F j, g:i a", strtotime($row['timeUpdated']));
+                                                            echo $today;
+
+                                                            ?></small>
+                                                    </div>
+                                                    <div class="caption">
+                                                        <h6 class="md-heading"><a
+                                                                    href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
+                                                        </h6>
+                                                        <small class="paragraph"><?php echo $row['description'] ?></small>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
-                                            <div class="author-info author-info-2">
-                                                <small><?php
-                                                    $today = date("F j, g:i a", strtotime($row['timeUpdated']));
-                                                    echo $today;
-
-                                                    ?></small>
-                                            </div>
-                                            <div class="caption">
-                                                <h6 class="md-heading"><a
-                                                            href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
-                                                </h6>
-                                                <small class="paragraph"><?php echo $row['description'] ?></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <hr>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                        <div>
-                            <div class="col-md-12 items blog-home5">
-                                <div class="col-6">
-                                    <a href="" class="text-warning">
-                                        <i class="fa-solid fa-hand-holding-heart"></i>
-                                        CHARITY
-                                    </a>
+                                        </article>
+                                        <hr>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
-                            <?php
-                            foreach ($charityOneResult as $row) {
-                                ?>
-                                <div class="col-md-12 items blog-home5">
-                                    <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                                        <img class="card-img d-block img-fluid banner"
-                                             src="assets/banner/<?php echo $row['banner'] ?>"
-                                             alt="Card image">
-                                        <div class="card-img-overlay overflow-hidden">
-                                            <div class="d-flex align-items-center">
+
+                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <div>
+                                    <div class="col-md-12 items blog-home5">
+                                        <div class="col-6">
+                                            <i class="fa-solid fa-hand-holding-heart"></i>
+                                            CHARITY
+                                        </div>
+                                    </div>
+                                    <?php
+                                    foreach ($charityOneResult as $row) {
+                                        ?>
+                                        <div class="col-md-12 items blog-home5">
+                                            <div class="card b-h-box position-relative font-14 border-0 mb-4">
+                                                <img class="card-img d-block img-fluid banner"
+                                                     src="assets/banner/<?php echo $row['banner'] ?>"
+                                                     alt="Card image">
+                                                <div class="card-img-overlay overflow-hidden">
+                                                    <div class="d-flex align-items-center">
                             <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal"><i
                                         class="<?php echo $row['icon'] ?>"> </i> <?php echo $row['typeName'] ?></span>
-                                                <div class="ml-2">
+                                                        <div class="ml-2">
                                 <span class="ml-2"><?php
                                     $today = date("F j", strtotime($row['timeUpdated']));
                                     echo $today;
 
                                     ?></span>
+                                                        </div>
+                                                    </div>
+                                                    <h5 class="card-title my-3 font-weight-normal"><a
+                                                                href="/article?newsID=<?php echo $row['newsID']; ?>"
+                                                                class="link-light"><?php echo $row['title']; ?></a></h5>
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                       class="link-light">
+                                                        <p class="card-text"><?php echo $row['description']; ?></p>
+                                                    </a>
+                                                    <br>
+                                                    <a href="/article?newsID=<?php echo $row['newsID']; ?> "
+                                                       class="link-light">
+                                                        <p class="card-text">READ MORE</p>
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <h5 class="card-title my-3 font-weight-normal"><a
-                                                        href="/article?newsID=<?php echo $row['newsID']; ?>"
-                                                        class="link-light"><?php echo $row['title']; ?></a></h5>
-                                            <a href="/article?newsID=<?php echo $row['newsID']; ?> "
-                                               class="link-light">
-                                                <p class="card-text"><?php echo $row['description']; ?></p>
-                                            </a>
-                                            <br>
-                                            <a href="/article?newsID=<?php echo $row['newsID']; ?> "
-                                               class="link-light">
-                                                <p class="card-text">READ MORE</p>
-                                            </a>
                                         </div>
-                                    </div>
+                                        <?php
+                                    }
+                                    ?>
+                                    <hr/>
+
+                                    <!-- charity -->
+                                    <?php
+                                    foreach ($charityResult as $row) {
+                                        ?>
+                                        <article class="col-md-12 items blog-home5">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                                    <div class="post-type post-img">
+                                                        <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
+                                                                    src="assets/banner/<?php echo $row['banner'] ?>"
+                                                                    class="img-responsive post-img"
+                                                                    alt="image post"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                                    <div class="author-info author-info-2">
+                                                        <small><?php
+                                                            $today = date("F j, g:i a", strtotime($row['timeUpdated']));
+                                                            echo $today;
+
+                                                            ?></small>
+                                                    </div>
+                                                    <div class="caption">
+                                                        <h6 class="md-heading"><a
+                                                                    href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
+                                                        </h6>
+                                                        <small class="paragraph"><?php echo $row['description'] ?></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <hr>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
-                                <?php
-                            }
-                            ?>
-                            <hr/>
-
-                            <!-- charity -->
-                            <?php
-                            foreach ($charityResult as $row) {
-                                ?>
-                                <article class="col-md-12 items blog-home5">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
-                                            <div class="post-type post-img">
-                                                <a href="/article?newsID=<?php echo $row['newsID']; ?>"><img
-                                                            src="assets/banner/<?php echo $row['banner'] ?>"
-                                                            class="img-responsive post-img" alt="image post"></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
-                                            <div class="author-info author-info-2">
-                                                <small><?php
-                                                    $today = date("F j, g:i a", strtotime($row['timeUpdated']));
-                                                    echo $today;
-
-                                                    ?></small>
-                                            </div>
-                                            <div class="caption">
-                                                <h6 class="md-heading"><a
-                                                            href="/article?newsID=<?php echo $row['newsID']; ?>"><?php echo $row['title'] ?></a>
-                                                </h6>
-                                                <small class="paragraph"><?php echo $row['description'] ?></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <hr>
-                                <?php
-                            }
-                            ?>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
-        </div>
-        <div class="row">
-            <section>
-                <div class="row gx-lg-5">
-                    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-
-                            <div class="card b-h-box position-relative font-14 border-0 mb-4 text-white">
-                                <div class="card-body p-4" style="background-color: #B9AFA2">
-                    <span class="badge rounded-pill bg-primary float-md-end mb-3 mb-sm-0"> 3:00pm - 8:00pm</span>
-                                    <h5>Test</h5>
-                                    <div class="mt-3">
-                        <span class="text-muted d-block"><i class="fa-solid fa-calendar-days"></i>  Address </span>
-                                        <span class="text-muted d-block"><i class="fa fa-map-marker"
-                                                                            aria-hidden="true"></i> test</span>
-                                    </div>
-
-                                    <div class="mt-3">
-                                        <a href="page-job-detail.html" class=" btn">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    <div class="col-lg-6 col-md-2 mb-4 mb-lg-0">
-                        <div id="calendar"></div>
-                    </div>
-
-                </div>
-            </section>
-        </div>
-
-        <div class="widget-latest-post">
-            <div class="widget-body bg-transparent">
 
             </div>
         </div>
-
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            }, events: [
-                <?php  foreach ($allEventsResult as $row) {
-
-                $title = $row['eventName'];
-                $myJSONTitle = json_encode($title);
-                $dateDate = date("Y-m-d", strtotime($row['date']));
-                $dateStart = date("H:i:s", strtotime($row['start']));
-                $dateEnd = date("H:i:s", strtotime($row['end']));
-
-                ?>
-
-
-                {
-                    title: '<?php echo $myJSONTitle ?>',
-                    start: '<?php echo $dateDate ?>T<?php echo $dateStart ?>',
-                    end: '<?php echo $dateDate ?>T<?php echo $dateEnd ?>'
-                },
-                <?php
-                }
-                ?>
-            ]
-        });
-        calendar.render();
-    });
-
-</script>
 
 <style>
     <?php include 'styles/index.css'; ?>

@@ -25,7 +25,7 @@ include("view/_partials/adminPanel.php");
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"
                      aria-expanded="true">
                     <div class="panel-body">
-                        <form action="" method="post">
+                        <form class="form-horizontal">
                             <fieldset class="fieldset">
                                 <div class="form-group">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Username</label>
@@ -36,34 +36,8 @@ include("view/_partials/adminPanel.php");
                                 <div class="form-group">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Email</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-<<<<<<< HEAD
-                                        <?php
-                                        while ($row = $user->fetch(PDO::FETCH_ASSOC)) { ?>
-                                        <input type="hidden" name="adminID">
-                                        <input type="email" class="form-control" name="email" placeholder="<?php echo $row["email"]; ?>">
-                                    </div>
-
-                                    <fieldset class="fieldset">
-                                        <div class="form-group">
-                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label">Address</label>
-                                            <div class="col-md-10 col-sm-9 col-xs-12">
-                                                <input type="text" class="form-control" name="address" placeholder="<?php echo $row["address"]; ?>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone</label>
-                                            <div class="col-md-10 col-sm-9 col-xs-12">
-                                                <input type="phone" class="form-control" name="phone" placeholder="<?php echo $row["phone"]; ?>">
-                                            </div>
-                                        </div>
-                                        <?php
-                                        }
-                                        ?>
-                                    </fieldset>
-=======
                                         <input type="email" class="form-control" value="Rebecca@website.com">
                                     </div>
->>>>>>> parent of b918697 (save)
                                 </div>
 
                             </fieldset>
