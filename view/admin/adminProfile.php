@@ -13,14 +13,23 @@ include("view/_partials/adminPanel.php");
         <!-- Billing card 1-->
         <div class="card h-100 border-start-lg border-start-primary">
             <div class="card-body">
-                <div class="small text-muted">Visit</div>
+                <div class="small text-muted">Members</div>
                 <?php
-                while ($row = $visitResult->fetch(PDO::FETCH_ASSOC)) {
+                while ($row = $memberResult->fetch(PDO::FETCH_ASSOC)) {
                     ?>
-                    <div class="h3"><?php echo $row['countVisit'] ?></div>
+                    <div class="h3"><?php echo $row['COUNT(memberID)'] ?></div>
 
                     <?php
                 } ?>
+                <a class="text-arrow-icon small" href="#!">
+                    List of members
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-arrow-right">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
@@ -36,7 +45,7 @@ include("view/_partials/adminPanel.php");
 
                     <?php
                 } ?>
-                <a class="text-arrow-icon small text-secondary" href="/admin-article">
+                <a class="text-arrow-icon small text-secondary" href="#!">
                     Article list
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -60,7 +69,7 @@ include("view/_partials/adminPanel.php");
 
                     <?php
                 } ?>
-                <a class="text-arrow-icon small text-success" href="/admin-photo">
+                <a class="text-arrow-icon small text-success" href="#!">
                     Photo list
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

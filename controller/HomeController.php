@@ -5,4 +5,3 @@ $charityResult = $conn->query($HomeModel->latestCharity);
 $chuaOneResult = $conn->query($HomeModel->latestChuaOne);
 $worldOneResult = $conn->query($HomeModel->latestWorldOne);
 $charityOneResult = $conn->query($HomeModel->latestCharityOne);
-$hitCounterResult = $conn->query($HomeModel->hitVisit);

@@ -1,10 +1,11 @@
 <?php
+
 $errorEmail = false;
 $signupSucess = false;
 $error = false;
 
-$user = $conn->query($SettingModel->selectUser);
 
+<<<<<<< HEAD
 if (isset($_POST['UpdateEmail'])) {
     $email = $sanitized['email'];
     $phone = $sanitized['phone'];
@@ -36,6 +37,8 @@ if (isset($_POST['UpdateEmail'])) {
         }
     }
 }
+=======
+>>>>>>> parent of b918697 (save)
 
 if (isset($_POST['CreateProfile'])) {
 
