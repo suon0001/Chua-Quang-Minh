@@ -28,34 +28,18 @@ include("view/_partials/adminPanel.php");
                     <input type="text" name="address" class="form-control" id="address" placeholder="Address">
                 </div>
                 <div class="form-group">
-                    <label for="address">File</label>
-                    <input type="file" name="pdf_file" class="form-control" id="pdf_file" placeholder="Address">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" name="description" id="content" rows="20"></textarea>
                 </div>
             </div>
             <div class="col-xs-5 col-md-3">
                 <div class="form-group">
-                    <label for="category_id">Category</label>
-                    <?php
-                    while ($row = $newsOption->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <div class="radio">
-                            <label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="newsTypeID" id="inlineRadio1"
-                                           value="<?php echo $row["newsTypeID"]; ?>">
-                                    <label class="form-check-label"
-                                           for="inlineRadio1"><?php echo $row['typeName'] ?></label>
-                                </div>
-                            </label>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                    <label for="start_time">Start time</label>
-                    <input type="time" value="00:00" name="start_time" class="form-control">
-                    <label for="date_start">Start date</label>
-                    <input type="date" value="0000-00-00" name="date_start" class="form-control">
-                    <label for="date_end">End date</label>
-                    <input type="date" value="0000-00-00" name="date_end" class="form-control">
+                    <label for="start">Start time</label>
+                    <input type="time" value="00:00" name="start" class="form-control">
+                    <label for="end">End time</label>
+                    <input type="time" value="23:59" name="end" class="form-control">
+                    <label for="date">Date</label>
+                    <input type="date" value="0000-00-00" name="date" class="form-control">
                     <div class="form-group">
                         <button type="submit" name="create" class="btn btn-primary">Create</button>
                     </div>
@@ -65,3 +49,7 @@ include("view/_partials/adminPanel.php");
     </form>
 </div>
 
+
+<script>
+    CKEDITOR.replace('content');
+</script>

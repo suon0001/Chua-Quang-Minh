@@ -51,23 +51,21 @@ CREATE TABLE News
     timeUpdated TIMESTAMP,
     saveDraft   BOOLEAN,
     banner      VARCHAR(500),
-    hitCount    INT(10),
+    hitCount INT(10),
     newsTypeID  INT                NOT NULL,
     FOREIGN KEY (newsTypeID) REFERENCES NewsType (newsTypeID)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Event
 (
-    eventID    INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    eventName  VARCHAR(255),
-    host       VARCHAR(255),
-    address    VARCHAR(255),
-    start_time TIME,
-    date_start DATE,
-    date_end   DATE,
-    pdf_file   VARCHAR(500),
-    newsTypeID INT                NOT NULL,
-    FOREIGN KEY (newsTypeID) REFERENCES NewsType (newsTypeID)
+    eventID     INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    eventName   VARCHAR(255),
+    host        VARCHAR(255),
+    address     VARCHAR(255),
+    description TEXT,
+    start       TIME,
+    end         TIME,
+    date        DATE
 
 ) ENGINE = InnoDB;
 
@@ -96,7 +94,7 @@ CREATE TABLE Amount
     charity    VARCHAR(255),
     amount     VARCHAR(255),
     timestamp  TIMESTAMP,
-    memberID   INT                NOT NULL,
+    memberID  INT                NOT NULL,
     FOREIGN KEY (memberID) REFERENCES Donation (memberID)
 ) ENGINE = InnoDB;
 
@@ -124,6 +122,51 @@ VALUES (NULL, 'CHUA', 'fa-solid fa-vihara'),
        (NULL, 'WORLD', 'fa-solid fa-globe'),
        (NULL, 'CHARITY', 'fa-solid fa-hand-holding-heart');
 
+<<<<<<< HEAD
+=======
+INSERT INTO `Photo` (`photoID`, `alt`, `photo`, `month`, `year`)
+VALUES (NULL, 'test', 'image1.jpg', '08', '2022'),
+       (NULL, 'test2', 'image2.jpg', '04', '2022'),
+       (NULL, 'test3', 'image3.jpg', '11', '2022'),
+       (NULL, 'test4', 'image4.jpg', '04', '2022'),
+       (NULL, 'test5', 'image5.jpg', '04', '2022'),
+       (NULL, 'test6', 'image6.jpg', '04', '2022'),
+       (NULL, 'test7', 'image7.jpg', '04', '2022'),
+       (NULL, 'test8', 'image8.jpg', '04', '2022'),
+       (NULL, 'test9', 'image9.jpg', '04', '2022');
+
+INSERT INTO `Event` (`eventID`, `eventName`, `host`, `address`, `description`, `start`, `end`, `date`)
+VALUES (1, 'Zeitgeist: Moving Forward', 'Marchelle', '7th Floor',
+        'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\r\n\r\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\r\n\r\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\r\n\r\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\r\n\r\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\r\n\r\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\r\n\r\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\r\n\r\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
+        '23:07', '7:04', '2023-02-07'),
+       (2, 'Melbourne', 'Berthe', 'Suite 50',
+        'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\r\n\r\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\r\n\r\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\r\n\r\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\r\n\r\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\r\n\r\nFusce consequat. Nulla nisl. Nunc nisl.\r\n\r\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\r\n\r\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\r\n\r\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\r\n\r\nSed ante. Vivamus tortor. Duis mattis egestas metus.',
+        '1:06', '16:05', '2023-06-22'),
+       (3, 'Hi-Life', 'Lauren', '9th Floor', 'In congue. Etiam justo. Etiam pretium iaculis justo.', '4:28', '14:36',
+        '2022-06-27'),
+       (4, 'Lie, The', 'Estell', '20th Floor',
+        'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '13:48', '1:22',
+        '2022-08-05'),
+       (5, 'Blue and the Gray, The', 'Nefen', 'PO Box 6243',
+        'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\r\n\r\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
+        '9:18', '13:27', '2023-01-26'),
+       (6, 'Brown of Harvard', 'Doralyn', 'Room 181',
+        'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\r\n\r\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\r\n\r\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\r\n\r\nFusce consequat. Nulla nisl. Nunc nisl.\r\n\r\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\r\n\r\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\r\n\r\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\r\n\r\nSed ante. Vivamus tortor. Duis mattis egestas metus.',
+        '3:42', '3:18', '2023-02-17'),
+       (7, 'America\'s Heart and Soul', 'Colver', 'PO Box 43180',
+        'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\r\n\r\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.',
+        '10:16', '6:16', '2022-07-10'),
+       (8, 'Ace of Hearts', 'Genni', '16th Floor',
+        'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\r\n\r\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\r\n\r\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
+        '2:55', '22:48', '2022-09-03'),
+       (9, 'Seraphim Falls', 'Eolande', 'Suite 87',
+        'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\r\n\r\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\r\n\r\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\r\n\r\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.',
+        '23:14', '3:52', '2024-02-18'),
+       (10, 'Ran', 'Gavin', 'Room 1370',
+        'Phasellus in felis. Donec semper sapien a libero. Nam dui.\r\n\r\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\r\n\r\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\r\n\r\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\r\n\r\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
+        '9:21', '15:23', '2023-11-30');
+
+>>>>>>> parent of 67c00f5 (Merge pull request #5 from suon0001/event-pdf)
 
 INSERT INTO `News` (`newsID`, `title`, `author`, `description`, `paragraph`, `timeUpdated`, `saveDraft`, `banner`,
                     `newsTypeID`)

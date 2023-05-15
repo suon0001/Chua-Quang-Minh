@@ -7,9 +7,11 @@ $user = $conn->query($SettingModel->selectUser);
 
 if (isset($_POST['UpdateEmail'])) {
     $email = $sanitized['email'];
+    $phone = $sanitized['phone'];
+    $address = $sanitized['address'];
     $newsID = $sanitized['adminID'];
     if (
-        !empty($_POST['email'])
+        !empty($_POST['email'])  || !empty($_POST['phone']) || !empty($_POST['address'])
     ) {
 
         try {
@@ -17,6 +19,8 @@ if (isset($_POST['UpdateEmail'])) {
             $editProfile = $conn->prepare($SettingModel->editProfile);
             $editProfile->bindParam(':adminID', $adminID, PDO::PARAM_INT);
             $editProfile->bindParam(':email', $email, PDO::PARAM_STR);
+            $editProfile->bindParam(':phone', $phone, PDO::PARAM_STR);
+            $editProfile->bindParam(':address', $address, PDO::PARAM_STR);
             $editProfileResult = $editProfile->execute();
             $conn->commit();
             ?>

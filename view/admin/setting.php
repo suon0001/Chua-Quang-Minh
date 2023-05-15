@@ -25,32 +25,33 @@ include("view/_partials/adminPanel.php");
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"
                      aria-expanded="true">
                     <div class="panel-body">
-                        <form class="form-horizontal">
+                        <form action="" method="post">
                             <fieldset class="fieldset">
                                 <div class="form-group">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Email</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
                                         <?php
                                         while ($row = $user->fetch(PDO::FETCH_ASSOC)) { ?>
-                                        <input type="email" class="form-control" value="<?php echo $row["email"]; ?>">
+                                        <input type="hidden" name="adminID">
+                                        <input type="email" class="form-control" name="email" placeholder="<?php echo $row["email"]; ?>">
                                     </div>
-                                    <?php
-                                    }
-                                    ?>
+
                                     <fieldset class="fieldset">
                                         <div class="form-group">
                                             <label class="col-md-2 col-sm-3 col-xs-12 control-label">Address</label>
                                             <div class="col-md-10 col-sm-9 col-xs-12">
-                                                <input type="text" class="form-control" value="Rebecca">
+                                                <input type="text" class="form-control" name="address" placeholder="<?php echo $row["address"]; ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone</label>
                                             <div class="col-md-10 col-sm-9 col-xs-12">
-                                                <input type="phone" class="form-control" value="89897978">
+                                                <input type="phone" class="form-control" name="phone" placeholder="<?php echo $row["phone"]; ?>">
                                             </div>
                                         </div>
-
+                                        <?php
+                                        }
+                                        ?>
                                     </fieldset>
                                 </div>
 

@@ -19,6 +19,7 @@ include("view/_partials/adminPanel.php");
                         <th><span>Host</span></th>
                         <th class="text-center"><span>Address</span></th>
                         <th><span>Start</span></th>
+                        <th><span>End</span></th>
                         <th><span>Date</span></th>
                         <th>&nbsp;</th>
                     </tr>
@@ -39,10 +40,13 @@ include("view/_partials/adminPanel.php");
                                 <span><?php echo $row['address'] ?></span>
                             </td>
                             <td>
-                                <span><?php echo $row['start_time'] ?></span>
+                                <span><?php echo $row['start'] ?></span>
                             </td>
                             <td>
-                                <span><?php echo $row['date_start'] ?></span>
+                                <span><?php echo $row['end'] ?></span>
+                            </td>
+                            <td>
+                                <span><?php echo $row['date'] ?></span>
                             </td>
                             <td style="width: 12%;">
                                 <a href="/edit-event?eventID=<?php echo $row['eventID']; ?>" class="table-link">
@@ -53,7 +57,7 @@ include("view/_partials/adminPanel.php");
                                 </a>
                                 <a href="#" class="table-link danger">
                                 </a>
-                                <a href="/admin-event.php?del=1&eventID=<?= $row["eventID"] ?>"
+                                <a href="/admin-article.php?del=1&newsID=<?= $row["eventID"] ?>"
                                    class="table-link danger">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>

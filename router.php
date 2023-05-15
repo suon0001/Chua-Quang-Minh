@@ -23,7 +23,6 @@ $view = match ($toCheck) {
     '/photo' => '/view/photo.php',
     '/contact' => '/view/contact.php',
     '/article' => '/view/article.php',
-    '/details' => '/view/details.php',
     '/login' => '/view/login.php',
     '/logout' => '/view/_partials/logout.php',
     default => null
