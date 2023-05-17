@@ -73,33 +73,3 @@ include("view/_partials/adminPanel.php");
         </div>
     </div>
 </div>
-<div class="card mb-4">
-    <div class="card-header">Donation History</div>
-    <div class="card-body p-0">
-        <div class="table-responsive table-donation-history">
-            <table class="table mb-0">
-                <thead>
-                <tr>
-                    <th class="border-gray-200" scope="col">Transaction ID</th>
-                    <th class="border-gray-200" scope="col">Project</th>
-                    <th class="border-gray-200" scope="col">Date</th>
-                    <th class="border-gray-200" scope="col">Amount</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                while ($row = $amountList->fetch(PDO::FETCH_ASSOC)) {
-                    ?>
-                    <tr>
-                        <td>#<?php echo $row['donationID']; ?></td>
-                        <td><?php echo $row['project']; ?></td>
-                        <td><?php echo $row['timestamp']; ?></td>
-                        <td><?php echo $row['amount']; ?> DKK</td>
-                    </tr>
-                    <?php
-                } ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>

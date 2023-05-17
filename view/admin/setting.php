@@ -51,44 +51,6 @@ include("view/_partials/adminPanel.php");
                 </div>
             </div>
             <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                        <a class="collapse-controle collapsed" data-toggle="collapse" data-parent="#accordion"
-                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Address setting
-                            <span class="expand-icon-wrap"><i class="fa expand-icon"></i></span>
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"
-                     aria-expanded="false" style="height: 0px;">
-                    <div class="panel-body">
-                        <form class="form-horizontal">
-                            <fieldset class="fieldset">
-                                <div class="form-group">
-                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Address</label>
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="Rebecca">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone</label>
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="email" class="form-control" value="89897978">
-                                    </div>
-                                </div>
-
-                            </fieldset>
-                            <div class="form-group">
-                                <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                    <input class="btn btn-primary" type="submit" name="CreateAddress" value="Update">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingThree">
                     <h4 class="panel-title">
                         <a class="collapsed collapse-controle" data-toggle="collapse" data-parent="#accordion"
